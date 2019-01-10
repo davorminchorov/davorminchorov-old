@@ -1769,11 +1769,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted successfully.');
-  }
-});
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -2292,7 +2294,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c(
+    "div",
+    {
+      staticClass:
+        "min-h-screen flex flex-col py-8 lg:py-16 px-6 md:px-16 lg:px-24"
+    },
+    [
+      _c("div", { staticClass: "flex-grow" }, [_c("router-view")], 1),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex items-center justify-center w-full text-grey text-xl p-6"
+        },
+        [
+          _vm._v(
+            "\n        © " +
+              _vm._s(new Date().getFullYear()) +
+              " Design by Davor Minchorov\n    "
+          )
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2324,8 +2350,27 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("h1", { staticClass: "text-white text-center mt-10" }, [
-        _vm._v("Davor Minchorov")
+      _c("div", { staticClass: "flex items-center justify-center w-full" }, [
+        _c("a", { staticClass: "no-underline", attrs: { href: "/" } }, [
+          _c("img", {
+            staticClass:
+              "h-16 w-16 md:h-24 md:w-24 lg:h-32 lg:w-32 rounded-full",
+            attrs: {
+              src: "https://avatars3.githubusercontent.com/u/6518995",
+              alt: "Davor Minchorov"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass:
+              "px-5 text-grey font-bold no-underline hover:text-grey-light",
+            attrs: { href: "/" }
+          },
+          [_c("h2", [_vm._v("Davor Minchorov")])]
+        )
       ])
     ])
   }
@@ -16403,8 +16448,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\davor\Documents\GitHub\davorminchorov\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\davor\Documents\GitHub\davorminchorov\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
