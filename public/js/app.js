@@ -1775,6 +1775,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2296,18 +2305,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass:
-        "min-h-screen flex flex-col py-8 lg:py-16 px-6 md:px-16 lg:px-24"
-    },
+    { staticClass: "min-h-screen flex py-10 flex-col px-6 md:px-16 lg:px-24" },
     [
-      _c("div", { staticClass: "flex-grow" }, [_c("router-view")], 1),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("main", { staticClass: "flex-grow" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c(
-        "div",
+        "footer",
         {
           staticClass:
-            "flex items-center justify-center w-full text-grey text-xl p-6"
+            "flex items-center justify-center w-full text-grey text-md"
         },
         [
           _vm._v(
@@ -2320,7 +2328,62 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "header",
+      { staticClass: "flex flex-row items-center justify-around mb-10" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "no-underline text-grey text-2xl font-bold uppercase",
+            attrs: { href: "/" }
+          },
+          [
+            _vm._v("Davor "),
+            _c("span", { staticClass: "text-green" }, [_vm._v("Minchorov")])
+          ]
+        ),
+        _vm._v(" "),
+        _c("nav", [
+          _c(
+            "a",
+            {
+              staticClass:
+                "no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Resume")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Articles")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6",
+              attrs: { href: "#" }
+            },
+            [_vm._v("Contact")]
+          )
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -2342,39 +2405,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "flex items-center justify-center w-full" }, [
-        _c("a", { staticClass: "no-underline", attrs: { href: "/" } }, [
-          _c("img", {
-            staticClass:
-              "h-16 w-16 md:h-24 md:w-24 lg:h-32 lg:w-32 rounded-full",
-            attrs: {
-              src: "https://avatars3.githubusercontent.com/u/6518995",
-              alt: "Davor Minchorov"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "px-5 text-grey font-bold no-underline hover:text-grey-light",
-            attrs: { href: "/" }
-          },
-          [_c("h2", [_vm._v("Davor Minchorov")])]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
