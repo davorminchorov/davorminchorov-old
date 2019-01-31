@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="flex flex-col justify-around">
-            <div class="flex bg-green text-white border-2 rounded border-green">
-                <div class="w-1/2 p-10 flex justify-center">
+            <div class="flex flex-col lg:flex-row bg-green text-white border-2 rounded border-green">
+                <div class="lg:w-1/2 lg:p-10 p-6 pb-0  flex justify-center">
                     <img class="=rounded lg:w-64 lg:h-64 w-32 h-32" src="https://avatars3.githubusercontent.com/u/6518995?s=274&v=4" alt="Davor Minchorov Photo">
                 </div>
 
-                <div class="w-1/2 p-10 flex flex-col items-center justify-center">
+                <div class="lg:w-1/2 lg:p-10 p-6 flex flex-col items-center justify-center">
                     <h1>Davor Minchorov</h1>
                     <h3>Web Developer</h3>
 
@@ -30,8 +30,8 @@
                 </div>
             </div>
 
-            <div class="flex bg-white text-black border-2 rounded border-white">
-                <div class="flex flex-col w-1/2 p-6">
+            <div class="flex flex-col lg:flex-row bg-white text-black border-2 rounded border-white">
+                <div class="flex flex-col lg:w-1/2 lg:p-6 p-3">
                     <h3>About <span class="text-green">Me</span></h3>
 
                     <div class="pt-4 pr-10 text-md">
@@ -51,7 +51,7 @@
                         If you want to contact me, you can do that by emailing me at <a href="mailto:davorminchorov@gmail.com" class="font-semibold text-green hover:text-green-dark no-underline">davorminchorov@gmail.com</a> or on <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" class="font-semibold text-green hover:text-green-dark no-underline">LinkedIn</a>.
                     </div>
                 </div>
-                <div class="flex flex-col w-1/2 p-6">
+                <div class="flex flex-col lg:w-1/2 lg:p-6 p-3">
                     <h3>Technology <span class="text-green">Stack</span></h3>
                     <div class="pt-4 pr-10 text-md">
                         <svg class="h-12 w-12" viewBox="0 0 128 128">
