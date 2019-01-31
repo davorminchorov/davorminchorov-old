@@ -37,7 +37,7 @@
                     <div class="pt-4 pr-10 text-md">
                         I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at
                         <a href="http://www.uacs.edu.mk/home/" target="_blank" class="font-semibold text-green hover:text-green-dark no-underline">University American College Skopje</a>
-                        and have more than {{ yearsofExperience() }} of experience in the field, interested in building custom web based solutions.
+                        and have more than {{ yearsofExperience() }} of experience building custom web based solutions.
                         <br>
                         <br>
                         I am currently working as a full time Senior PHP Developer at <a href="https://adevait.com/" target="_blank" class="font-semibold text-green hover:text-green-dark no-underline">Adeva</a> and Mentor at <a href="https://femalebootcamp.adevait.com/" target="_blank" class="font-semibold text-green hover:text-green-dark no-underline">Adeva's Female Bootcamp</a>.
