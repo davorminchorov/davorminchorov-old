@@ -4,7 +4,8 @@
 
 ### Things to do next:
 - [x] Add a gradient to the green background
-- [ ] Replace the technology stack icons with text
+- [x] Replace the technology stack icons with text
+- [x] Add Download CV button
 - [ ] Design the login form
 - [ ] Implement the Login API
 - [ ] Integrate the Login API with the login form

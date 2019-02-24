@@ -46,6 +46,9 @@
                         <br>
                         If you want to contact me, you can do that by emailing me at <a href="mailto:davorminchorov@gmail.com" class="font-semibold text-green hover:text-green-dark no-underline">davorminchorov@gmail.com</a> or by sending me a message on <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" class="font-semibold text-green hover:text-green-dark no-underline">LinkedIn</a>.
                     </div>
+                    <div class="text-center mt-12">
+                        <a href="https://www.linkedin.com/dms/C5604AQFenhnpS_Rd8Q/profile-profilePdf/0?m=AQITH3Cv1bUPjgAAAWkgiY68boACvzUsyP4NDG7sYLBtDYk7YQoqWOLb5A&e=1551115479&v=beta&t=y8Kt1LQ_1jVNlyYqiBYzXvGcJ9pr75GJkmFBmbNNHOY" target="_blank" class="font-semibold text-green no-underline border-2 border-solid border-green rounded-full p-5 hover:text-white hover:bg-green">Download CV</a>
+                    </div>
                 </div>
                 <div class="flex flex-col lg:w-1/2 lg:p-6 p-3">
                     <h3>Technology <span class="text-green">Stack</span></h3>
