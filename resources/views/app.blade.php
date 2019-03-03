@@ -1,11 +1,19 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html;" charset=utf-8″ />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Davor Minchorov</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Davor Minchorov - personal website and blog">
+        <meta property="og:title" content="Davor Minchorov"/>
+        <meta property="og:image" content="https://avatars3.githubusercontent.com/u/6518995?s=274&v=4"/>
+        <meta property="og:site_name" content="Davor Minchorov"/>
+        <meta property="og:description" content="Davor Minchorov - personal website and blog"/>
 
+        <title>Davor Minchorov - personal website and blog</title>
+
+        <link rel="alternate" href="http://www.davorminchorov.com" hreflang="en-gb" />
+        <link rel="canonical" href="https://www.davorminchorov.com" />
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
     <body class="font-sans text-grey antialiased leading-tight bg-black">
