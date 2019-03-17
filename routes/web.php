@@ -1,3 +1,3 @@
 <?php
 
-Route::view('/', 'app');
+$router->view('{any?}', 'app');

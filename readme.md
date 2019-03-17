@@ -10,3 +10,8 @@
 - [ ] Implement the Login API
 - [ ] Write integration tests for the Login API
 - [ ] Integrate the Login API with the login form
+- [ ] Design the contact form on the contact page
+- [ ] Implement the Contact API
+- [ ] Write integration tests for the Contact API
+- [ ] Integrate the Contact API with the contact form
+- [ ] Display the blog posts
