@@ -1,3 +1,3 @@
 <?php
 
-$router->view('{any?}', 'app');
+$router->view('{any}', 'app')->where('any', '.*');
