@@ -1,13 +1,6 @@
 <template>
     <div class="min-h-screen flex flex-col lg:py-10 py-3 px-3 md:px-16 lg:px-24">
-        <header class="container mx-auto lg:mb-10 mb-6">
-            <a href="/" class="no-underline text-grey text-2xl font-bold uppercase">Davor <span class="text-green">Minchorov</span></a>
-            <!--<nav>-->
-                <!--<a href="#" class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6">Resume</a>-->
-                <!--<a href="#" class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6">Articles</a>-->
-                <!--<a href="#" class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6">Contact</a>-->
-            <!--</nav>-->
-        </header>
+        <dm-navigation></dm-navigation>
 
         <main class="flex-grow container mx-auto mb-10">
             <router-view></router-view>
@@ -20,7 +13,11 @@
 </template>
 
 <script>
-    export default {
+    import Navigation from './Navigation';
 
+    export default {
+        components: {
+            'dm-navigation': Navigation
+        }
     }
 </script>

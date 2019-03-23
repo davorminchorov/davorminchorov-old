@@ -7,11 +7,12 @@
 - [x] Replace the technology stack icons with text
 - [x] Add meta tags to improve SEO
 - [x] Design the login form on the login page
-- [ ] Implement the Login API
-- [ ] Write integration tests for the Login API
-- [ ] Integrate the Login API with the login form
+- [x] Implement the Authentication API
+- [x] Write integration tests for the Authentication API
+- [ ] Integrate the Authentication API with the login form
 - [ ] Design the contact form on the contact page
 - [ ] Implement the Contact API
 - [ ] Write integration tests for the Contact API
 - [ ] Integrate the Contact API with the contact form
-- [ ] Display the blog posts
+- [ ] Upgrade Laravel to version 5.8
+- [ ] Upgrade Tailwind to version 1.0
