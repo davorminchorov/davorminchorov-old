@@ -3,7 +3,7 @@
         <h2 class="uppercase text-center text-xl font-semibold text-grey mb-4">
             Fleeing somewhere?
         </h2>
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodrigez">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez">
     </div>
 </template>
 

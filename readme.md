@@ -1,6 +1,6 @@
 # Davor Minchorov
 
-## Davor Minchorov's personal website.
+## Davor Minchorov's personal website and blog.
 
 ### Things to do next:
 - [x] Add a gradient to the green background
