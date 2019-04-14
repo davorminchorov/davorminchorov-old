@@ -15,5 +15,6 @@
 - [ ] Implement the Contact API
 - [ ] Write integration tests for the Contact API
 - [ ] Integrate the Contact API with the contact form
+- [ ] Design the admin dashboard
 - [ ] Upgrade Laravel to version 5.8
 - [ ] Upgrade Tailwind to version 1.0

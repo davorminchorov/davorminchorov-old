@@ -19,11 +19,17 @@ export default {
           path: '/login',
           name: 'login',
           component: Login,
+            meta: {
+                guest: true,
+            }
         },
         {
             path: '/admin/dashboard',
             name: 'admin_dashboard',
             component: Dashboard,
+            meta: {
+                requiresAuth: true,
+            }
         },
 
   ],

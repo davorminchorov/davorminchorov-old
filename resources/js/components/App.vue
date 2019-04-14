@@ -18,6 +18,10 @@
     export default {
         components: {
             'dm-navigation': Navigation
+        },
+        created() {
+            let auth = localStorage.getItem('auth');
+            this.$store.commit('authenticate', JSON.parse(auth));
         }
     }
 </script>

@@ -52,15 +52,10 @@
 
         methods: {
             login() {
-                this.form.post('/auth/login')
-                    .then(response => {
-                        let accessToken = response.data.access_token;
-
-                        window.localStorage.setItem('access_token', accessToken);
-
-                        this.$router.push({'name': 'admin_dashboard'})
-                    })
-                    .catch(error => {});
+                this.$store.dispatch('signIn', {
+                    form: this.form,
+                }).then(() => this.$router.push({ name: 'admin_dashboard' }))
+                  .catch((error) => alert(error.message));
             }
         }
     }

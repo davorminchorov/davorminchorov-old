@@ -4,7 +4,6 @@
             Welcome!
         </h1>
     </div>
-
 </template>
 
 <script>
@@ -14,12 +13,5 @@
                 name: ''
             }
         },
-        methods: {},
-        mounted() {
-            let accessToken = window.localStorage.getItem('access_token');
-
-            console.log(accessToken);
-
-        }
     }
 </script>
