@@ -16,23 +16,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let router = new VueRouter(routes);
 let store = new Vuex.Store(vuexStore);
 
-// router.beforeEach((to, from, next) => {
-//     if (to.matched.some(record => record.meta.requiresAuth )) {
-//         if (localStorage.getItem('access_token') === null) {
-//             router.push('/login');
-//         } else {
-//             console.log('Auth');
-//             router.push('/admin/dashboard');
-//         }
-//     } else if (to.matched.some(record => record.meta.guest)) {
-//         if (localStorage.getItem('access_token') === null) {
-//             next();
-//         } else {
-//             console.log('Guest');
-//             router.push('/admin/dashboard');
-//         }
-//     }
-// });
+let auth = localStorage.getItem('auth');
+store.commit('authenticate', JSON.parse(auth));
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters.auth) {
+            next();
+        } else {
+            next({ name: 'home' });
+        }
+    } else if (to.matched.some(record => record.meta.guest)) {
+        if (store.getters.auth) {
+            next({ name: 'admin_dashboard' });
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+});
 
 export default new Vue({
     el: '#app',

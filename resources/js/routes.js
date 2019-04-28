@@ -1,7 +1,7 @@
-import  Home from './components/pages/Home.vue';
-import  Login from './components/pages/Login.vue';
-import  NotFound from './components/pages/NotFound.vue';
-import  Dashboard from './components/pages/Admin/Dashboard.vue';
+import Home from './components/pages/Home.vue';
+import Login from './components/pages/Login.vue';
+import NotFound from './components/pages/NotFound.vue';
+import Dashboard from './components/pages/Admin/Dashboard.vue';
 
 export default {
     mode: 'history',
@@ -11,14 +11,14 @@ export default {
             component: NotFound,
         },
         {
-          path: '/',
-          name: 'home',
-          component: Home,
+            path: '/',
+            name: 'home',
+            component: Home,
         },
         {
-          path: '/login',
-          name: 'login',
-          component: Login,
+            path: '/login',
+            name: 'login',
+            component: Login,
             meta: {
                 guest: true,
             }
@@ -32,5 +32,5 @@ export default {
             }
         },
 
-  ],
+    ],
 }
