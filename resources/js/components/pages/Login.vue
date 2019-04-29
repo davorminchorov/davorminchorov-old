@@ -55,7 +55,7 @@
                 this.$store.dispatch('signIn', {
                     form: this.form,
                 }).then(() => this.$router.push({ name: 'admin_dashboard' }))
-                  .catch((error) => alert(error.message));
+                  .catch((error) => console.log(error.message));
             }
         }
     }

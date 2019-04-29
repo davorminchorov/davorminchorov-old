@@ -10,7 +10,7 @@
 - [x] Implement the Authentication API
 - [x] Write integration tests for the Authentication API
 - [x] Integrate the Authentication API with the login form
-- [ ] Implement the authorization for the admin routes
+- [x] Implement the authorization for the admin routes
 - [ ] Design the contact form on the contact page
 - [ ] Implement the Contact API
 - [ ] Write integration tests for the Contact API
