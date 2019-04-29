@@ -26,7 +26,7 @@ router.beforeEach((to, from, next) => {
         } else {
             next({ name: 'home' });
         }
-    } else if (to.matched.some(record => record.meta.guest)) {
+    } else if (to.matched.some(record => record.meta.requiresGuest)) {
         if (store.getters.auth) {
             next({ name: 'admin_dashboard' });
         } else {

@@ -11,6 +11,7 @@
 - [x] Write integration tests for the Authentication API
 - [x] Integrate the Authentication API with the login form
 - [x] Implement the authorization for the admin routes
+- [x] Setup Bugsnag for error reporting
 - [ ] Design the contact form on the contact page
 - [ ] Implement the Contact API
 - [ ] Write integration tests for the Contact API

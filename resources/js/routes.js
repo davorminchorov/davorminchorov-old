@@ -20,7 +20,7 @@ export default {
             name: 'login',
             component: Login,
             meta: {
-                guest: true,
+                requiresGuest: true,
             }
         },
         {
