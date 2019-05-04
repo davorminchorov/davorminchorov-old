@@ -13,15 +13,20 @@
                     <dm-technology-stack></dm-technology-stack>
                 </div>
             </div>
+
+            <div class="flex flex-row items-center justify-center gradient-green text-grey rounded">
+                <dm-contact-form></dm-contact-form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Image from '../Image.vue';
-    import Info from '../Info.vue';
+    import Image from '../Image';
+    import Info from '../Info';
     import AboutMe from '../AboutMe';
     import TechnologyStack from '../TechnologyStack';
+    import ContactForm from '../ContactForm';
 
     export default {
         components: {
@@ -29,6 +34,7 @@
             'dm-info': Info,
             'dm-about-me': AboutMe,
             'dm-technology-stack': TechnologyStack,
+            'dm-contact-form': ContactForm,
         },
     }
 </script>

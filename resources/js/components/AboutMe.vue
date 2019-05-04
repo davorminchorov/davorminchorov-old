@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>About <span class="text-green">Me</span></h3>
+        <h3 class="text-grey uppercase semibold text-xl">About <span class="text-green">Me</span></h3>
         <div class="pt-4 pr-10 text-md">
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green hover:text-green-dark no-underline">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
