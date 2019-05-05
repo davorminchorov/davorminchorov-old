@@ -6,6 +6,7 @@ use App\Api\V1\Requests\ContactRequest;
 use App\Mail\SendContactEmail;
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Http\JsonResponse;
+use TimeHunter\LaravelGoogleReCaptchaV3\GoogleReCaptchaV3;
 
 class ContactController extends ApiController
 {
@@ -15,10 +16,17 @@ class ContactController extends ApiController
      *
      * @param ContactRequest $contactRequest
      * @param Mailer $mailer
+     * @param GoogleReCaptchaV3 $googleReCaptchaV3
      * @return JsonResponse
      */
-    public function sendContactEmail(ContactRequest $contactRequest, Mailer $mailer): JsonResponse
+    public function sendContactEmail(ContactRequest $contactRequest, Mailer $mailer, GoogleReCaptchaV3 $googleReCaptchaV3): JsonResponse
     {
+        $googleRecaptchaResponse = $googleReCaptchaV3->verifyResponse($contactRequest->get('gRecaptchaResponse'), $contactRequest->getClientIp());
+
+        if (! $googleRecaptchaResponse->isSuccess()) {
+            return $this->respondWithBadRequest('It looks like you are a robot or you did something a robot would do.');
+        }
+
         $mailer->to('davorminchorov@gmail.com')
                ->send(new SendContactEmail($contactRequest->only(['name', 'email', 'message'])));
 

@@ -44,10 +44,9 @@ class ApiController
         ], Response::HTTP_UNAUTHORIZED);
     }
 
-    /*
-     * Respond with the status code of 200 and data if applicable
-     */
     /**
+     * Respond with the status code of 200 and data if applicable
+     *
      * @param $message
      * @param array $data
      * @return JsonResponse
@@ -61,5 +60,21 @@ class ApiController
             'message' => $message,
             'data' => $data,
         ], Response::HTTP_OK);
+    }
+
+    /**
+     * Respond with the status code of 400 and data if applicable
+     *
+     * @param $message
+     * @return JsonResponse
+     */
+    protected function respondWithBadRequest($message): JsonResponse
+    {
+        return response()->json([
+            'status_code' => Response::HTTP_BAD_REQUEST,
+            'status_message' => 'Bad Request',
+            'status' => 'error',
+            'message' => $message,
+        ], Response::HTTP_BAD_REQUEST);
     }
 }

@@ -35,6 +35,15 @@
                     <span class="w-full text-red-lighter block" v-if="form.errors.has('message')" v-text="form.errors.get('message')"></span>
                 </label>
 
+                <div class="block mb-4">
+                    <google-re-captcha-v3
+                            ref="captcha" v-model="form.gRecaptchaResponse"
+                            :id="'contact'"
+                            :inline="true"
+                            :action="'contact'">
+                    </google-re-captcha-v3>
+                </div>
+
                 <button type="submit"
                         :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() || isLoading }"
                         class="w-full rounded px-4 py-2 uppercase bg-green text-white text-lg leading-normal font-bold hover:bg-green-dark focus:outline-none active:bg-green"
@@ -50,14 +59,19 @@
 
 <script>
     import {Form} from "../Helpers/Form";
+    import GoogleRecaptchaV3 from './googlerecaptchav3/GoogleReCaptchaV3';
 
     export default {
+        components: {
+            'google-re-captcha-v3': GoogleRecaptchaV3,
+        },
         data() {
             return {
                 form: new Form({
                     name: '',
                     email: '',
                     message: '',
+                    gRecaptchaResponse: '',
                 }),
                 buttonText: 'Send',
                 isLoading: false,
@@ -68,6 +82,7 @@
             send() {
                 this.isLoading = true;
                 this.buttonText = 'Sending...';
+                this.$refs.captcha.execute();
                 this.$store.dispatch('sendContactEmail', {
                     form: this.form,
                 }).then((response) => {
