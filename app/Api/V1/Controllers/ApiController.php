@@ -10,11 +10,11 @@ class ApiController
     /**
      * Get the token array structure.
      *
-     * @param  string $token
+     * @param string $token
      *
      * @return JsonResponse
      */
-    protected function respondWithToken($token) : JsonResponse
+    protected function respondWithToken($token): JsonResponse
     {
         return response()->json([
             'status_code' => Response::HTTP_OK,
@@ -42,5 +42,24 @@ class ApiController
             'status' => 'error',
             'message' => 'Wrong email address or password.',
         ], Response::HTTP_UNAUTHORIZED);
+    }
+
+    /*
+     * Respond with the status code of 200 and data if applicable
+     */
+    /**
+     * @param $message
+     * @param array $data
+     * @return JsonResponse
+     */
+    protected function respondWithOk($message, $data = []): JsonResponse
+    {
+        return response()->json([
+            'status_code' => Response::HTTP_OK,
+            'status_message' => 'OK',
+            'status' => 'success',
+            'message' => $message,
+            'data' => $data,
+        ], Response::HTTP_OK);
     }
 }

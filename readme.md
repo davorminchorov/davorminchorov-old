@@ -12,10 +12,11 @@
 - [x] Integrate the Authentication API with the login form
 - [x] Implement the authorization for the admin routes
 - [x] Setup Bugsnag for error reporting
-- [ ] Design the contact form on the contact page
-- [ ] Implement the Contact API
-- [ ] Write integration tests for the Contact API
+- [x] Design the contact form on the contact page
+- [x] Implement the Contact API
+- [x] Write integration tests for the Contact API
 - [ ] Integrate the Contact API with the contact form
+- [ ] Implement Google Recaptcha for the contact form
 - [ ] Design the admin dashboard
 - [ ] Upgrade Laravel to version 5.8
 - [ ] Upgrade Tailwind to version 1.0
