@@ -25,12 +25,11 @@
                 </label>
 
                 <button type="submit"
-                        :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() }"
+                        :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() || isLoading }"
                         class="w-full rounded px-4 py-2 uppercase bg-green text-white text-lg leading-normal font-bold hover:bg-green-dark focus:outline-none active:bg-green"
-                        :disabled="form.errors.any()"
-                >
-                    Login
-                </button>
+                        :disabled="isLoading || form.errors.any()"
+                        v-text="buttonText"
+                ></button>
 
             </form>
         </div>
@@ -47,15 +46,40 @@
                     email: '',
                     password: ''
                 }),
+                buttonText: 'Login',
+                isLoading: false,
             }
         },
 
         methods: {
             login() {
+                this.isLoading = true;
+                this.buttonText = 'Logging In...';
                 this.$store.dispatch('signIn', {
                     form: this.form,
-                }).then(() => this.$router.push({ name: 'admin_dashboard' }))
-                  .catch((error) => console.log(error.message));
+                }).then((response) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Login';
+                    this.$router.push({ name: 'admin_dashboard' });
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Success!',
+                        text: 'You logged in successfully!',
+                        type: 'success',
+                        duration: '5000',
+                    });
+                })
+                  .catch((error) => {
+                      this.isLoading = false;
+                      this.buttonText = 'Login';
+                      this.$notify({
+                          group: 'notifications',
+                          title: 'Error!',
+                          text: error.message,
+                          type: 'error',
+                          duration: '5000',
+                      });
+                  });
             }
         }
     }

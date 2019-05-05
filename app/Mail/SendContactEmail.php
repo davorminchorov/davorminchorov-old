@@ -38,7 +38,6 @@ class SendContactEmail extends Mailable implements ShouldQueue
                    ->from('info@davorminchorov.com',  $this->contactDetails->get('name') . ' (' . $this->contactDetails->get('email') . ')')
                    ->subject('Davor Minchorov, you have a message from ' . $this->contactDetails->get('name') . ' (' . $this->contactDetails->get('email') . ')')
                    ->replyTo($this->contactDetails->get('email'), $this->contactDetails->get('name'))
-                   ->markdown('emails.contact')
-                   ->onQueue('emails');
+                   ->markdown('emails.contact');
     }
 }

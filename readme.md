@@ -15,7 +15,7 @@
 - [x] Design the contact form on the contact page
 - [x] Implement the Contact API
 - [x] Write integration tests for the Contact API
-- [ ] Integrate the Contact API with the contact form
+- [x] Integrate the Contact API with the contact form
 - [ ] Implement Google Recaptcha for the contact form
 - [ ] Design the admin dashboard
 - [ ] Upgrade Laravel to version 5.8

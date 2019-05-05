@@ -2,12 +2,15 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';
+import Notifications from 'vue-notification';
+import velocity from 'velocity-animate'
 import routes from './routes';
 import App from './components/App.vue';
 import vuexStore from './store';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(Notifications, { velocity });
 
 window.axios = axios;
 Vue.config.productionTip = false;

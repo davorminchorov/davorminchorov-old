@@ -19,7 +19,8 @@ class ContactController extends ApiController
      */
     public function sendContactEmail(ContactRequest $contactRequest, Mailer $mailer): JsonResponse
     {
-        $mailer->send(new SendContactEmail($contactRequest->only(['name', 'email', 'message'])));
+        $mailer->to('davorminchorov@gmail.com')
+               ->send(new SendContactEmail($contactRequest->only(['name', 'email', 'message'])));
 
         return $this->respondWithOk('Thank you! Your message was sent successfully. I will respond as soon as possible.');
     }

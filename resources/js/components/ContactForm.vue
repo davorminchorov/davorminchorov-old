@@ -36,11 +36,11 @@
                 </label>
 
                 <button type="submit"
-                        :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() }"
+                        :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() || isLoading }"
                         class="w-full rounded px-4 py-2 uppercase bg-green text-white text-lg leading-normal font-bold hover:bg-green-dark focus:outline-none active:bg-green"
-                        :disabled="form.errors.any()"
+                        :disabled="isLoading || form.errors.any()"
+                        v-text="buttonText"
                 >
-                    Send
                 </button>
 
             </form>
@@ -59,12 +59,38 @@
                     email: '',
                     message: '',
                 }),
+                buttonText: 'Send',
+                isLoading: false,
             }
         },
 
         methods: {
             send() {
-                console.log('Message sent successfully!');
+                this.isLoading = true;
+                this.buttonText = 'Sending...';
+                this.$store.dispatch('sendContactEmail', {
+                    form: this.form,
+                }).then((response) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Send';
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Success!',
+                        text: response.message,
+                        type: 'success',
+                        duration: '5000',
+                    });
+                }).catch((error) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Send';
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Error!',
+                        text: error.message,
+                        type: 'error',
+                        duration: '5000',
+                    });
+                });
             }
         }
     }

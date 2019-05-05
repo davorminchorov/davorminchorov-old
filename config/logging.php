@@ -36,7 +36,7 @@ return [
     'channels' => [
         'local' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['single'],
         ],
 
         'staging' => [
