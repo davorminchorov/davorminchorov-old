@@ -17,6 +17,8 @@
 - [x] Write integration tests for the Contact API
 - [x] Integrate the Contact API with the contact form
 - [x] Implement Google Recaptcha for the contact form
+- [x] Fix the feature tests to exclude Google Recaptcha V3 validation
+- [ ] Implement Google Recaptcha for the login form
 - [ ] Design the admin dashboard
 - [ ] Upgrade Laravel to version 5.8
 - [ ] Upgrade Tailwind to version 1.0

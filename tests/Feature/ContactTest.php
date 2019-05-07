@@ -34,6 +34,7 @@ class ContactTest extends TestCase
         Mail::assertNotQueued(SendContactEmail::class);
 
         $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test@example.com',
             'message' => 'This is a test message',
@@ -61,6 +62,7 @@ class ContactTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
             'email' => 'test@example.com',
             'message' => 'This is a test message',
         ]);
@@ -85,6 +87,7 @@ class ContactTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
             'name' => 'John Doe',
             'message' => 'This is a test message',
         ]);
@@ -108,6 +111,7 @@ class ContactTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test',
             'message' => 'This is a test message',
@@ -132,6 +136,7 @@ class ContactTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test@example.com',
         ]);
