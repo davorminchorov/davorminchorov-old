@@ -21,7 +21,7 @@ class ContactController extends ApiController
      */
     public function sendContactEmail(ContactRequest $contactRequest, Mailer $mailer, GoogleReCaptchaV3 $googleReCaptchaV3): JsonResponse
     {
-        $googleRecaptchaResponse = $googleReCaptchaV3->verifyResponse($contactRequest->get('gRecaptchaResponse'), $contactRequest->getClientIp());
+        $googleRecaptchaResponse = $googleReCaptchaV3->verifyResponse($contactRequest->get('recaptcha'), $contactRequest->getClientIp());
         $googleRecaptchaIsSuccessful = $contactRequest->has('test') || $googleRecaptchaResponse->isSuccess();
 
         if (! $googleRecaptchaIsSuccessful) {

@@ -5,18 +5,27 @@ namespace App\Api\V1\Controllers;
 use App\Api\V1\Requests\LoginRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+use TimeHunter\LaravelGoogleReCaptchaV3\GoogleReCaptchaV3;
 
 class AuthenticationController extends ApiController
 {
     /**
      * Get a JWT via given credentials.
      *
-     * @param LoginRequest $request
+     * @param LoginRequest $loginRequest
+     * @param GoogleReCaptchaV3 $googleReCaptchaV3
      * @return JsonResponse
      */
-    public function login(LoginRequest $request) : JsonResponse
+    public function login(LoginRequest $loginRequest, GoogleReCaptchaV3 $googleReCaptchaV3) : JsonResponse
     {
-        if (!$token = auth()->attempt($request->only(['email', 'password']))) {
+        $googleRecaptchaResponse = $googleReCaptchaV3->verifyResponse($loginRequest->get('recaptcha'), $loginRequest->getClientIp());
+        $googleRecaptchaIsSuccessful = $loginRequest->has('test') || $googleRecaptchaResponse->isSuccess();
+
+        if (! $googleRecaptchaIsSuccessful) {
+            return $this->respondWithBadRequest('It looks like you are a robot or you did something a robot would do.');
+        }
+
+        if (!$token = auth()->attempt($loginRequest->only(['email', 'password']))) {
             return $this->respondWithUnauthorized();
         }
 

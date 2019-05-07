@@ -35,13 +35,21 @@
                     <span class="w-full text-red-lighter block" v-if="form.errors.has('message')" v-text="form.errors.get('message')"></span>
                 </label>
 
-                <div class="block mb-4">
+                <div class="block mb-4 text-grey">
                     <google-re-captcha-v3
-                            ref="captcha" v-model="form.gRecaptchaResponse"
+                            ref="captcha" v-model="form.recaptcha"
                             :id="'contact'"
                             :inline="true"
-                            :action="'contact'">
+                            :action="'contact'"
+                            class="hidden">
                     </google-re-captcha-v3>
+                    This site is protected by reCAPTCHA and the Google
+                    <a href="https://policies.google.com/privacy" class="font-semibold text-green hover:text-green-dark no-underline">
+                        Privacy Policy
+                    </a> and
+                    <a href="https://policies.google.com/terms" class="font-semibold text-green hover:text-green-dark no-underline">
+                        Terms of Service
+                    </a> apply.
                 </div>
 
                 <button type="submit"
@@ -71,7 +79,7 @@
                     name: '',
                     email: '',
                     message: '',
-                    gRecaptchaResponse: '',
+                    recaptcha: '',
                 }),
                 buttonText: 'Send',
                 isLoading: false,
