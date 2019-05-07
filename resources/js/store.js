@@ -18,6 +18,13 @@ export default {
                 }
             });
             return commit('logout');
+        },
+
+        sendContactEmail({commit}, {form}) {
+            return form.post('/contact')
+                .then((response) => {
+                    return response;
+                });
         }
     },
 

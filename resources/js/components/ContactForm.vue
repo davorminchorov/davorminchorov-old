@@ -1,8 +1,18 @@
 <template>
-    <div class="flex items-center justify-center">
-        <div class="bg-white p-6 max-w-sm w-full p-8 rounded-lg shadow-lg">
-            <form action="#" @submit.prevent="login()" @keydown="form.errors.clear($event.target.name)">
-                <h2 class="uppercase text-center text-xl font-semibold text-grey mb-4">Admin <span class="text-green">Login</span></h2>
+    <div class="max-w-lg w-full lg:p-10 p-6">
+        <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
+            <form action="#" @submit.prevent="send()" @keydown="form.errors.clear($event.target.name)">
+                <h2 class="uppercase text-center text-xl font-semibold text-grey mb-4">Contact <span class="text-green">Me</span></h2>
+
+                <label class="block mb-4">
+                    <span class="block text-sm font-bold mb-2 uppercase">Full <span class="text-green">Name</span>:</span>
+                    <input type="name"
+                           name="name"
+                           class="text-black leading-normal block w-full rounded bg-grey-lighter px-4 py-2 focus:outline-none"
+                           v-model="form.name"
+                    >
+                    <span class="w-full text-red-lighter block" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
+                </label>
 
                 <label class="block mb-4">
                     <span class="block text-sm font-bold mb-2 uppercase">Email <span class="text-green">Address</span>:</span>
@@ -14,22 +24,23 @@
                     <span class="w-full text-red-lighter block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
                 </label>
 
-                <label class="block mb-6">
-                    <span class="block text-sm font-bold mb-2 uppercase">Password:</span>
-                    <input type="password"
-                           name="password"
-                           class="text-black leading-normal block w-full rounded bg-grey-lighter px-4 py-2 focus:outline-none"
-                           v-model="form.password"
-                    >
-                    <span class="w-full text-red-lighter block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
+
+                <label class="block mb-4">
+                    <span class="block text-sm font-bold mb-2 uppercase">Message:</span>
+                    <textarea name="message"
+                              class="text-black leading-normal block w-full rounded bg-grey-lighter px-4 py-2 focus:outline-none"
+                              v-model="form.message"
+                              rows="5"
+                    ></textarea>
+                    <span class="w-full text-red-lighter block" v-if="form.errors.has('message')" v-text="form.errors.get('message')"></span>
                 </label>
 
                 <div class="block mb-4 text-grey">
                     <google-re-captcha-v3
                             ref="captcha" v-model="form.recaptcha"
-                            :id="'login'"
+                            :id="'contact'"
                             :inline="true"
-                            :action="'login'"
+                            :action="'contact'"
                             class="hidden">
                     </google-re-captcha-v3>
                     This site is protected by reCAPTCHA and the Google
@@ -46,7 +57,8 @@
                         class="w-full rounded px-4 py-2 uppercase bg-green text-white text-lg leading-normal font-bold hover:bg-green-dark focus:outline-none active:bg-green"
                         :disabled="isLoading || form.errors.any()"
                         v-text="buttonText"
-                ></button>
+                >
+                </button>
 
             </form>
         </div>
@@ -54,8 +66,8 @@
 </template>
 
 <script>
-    import {Form} from "../../Helpers/Form";
-    import GoogleRecaptchaV3 from '../googlerecaptchav3/GoogleReCaptchaV3';
+    import {Form} from "../Helpers/Form";
+    import GoogleRecaptchaV3 from './googlerecaptchav3/GoogleReCaptchaV3';
 
     export default {
         components: {
@@ -64,45 +76,44 @@
         data() {
             return {
                 form: new Form({
+                    name: '',
                     email: '',
-                    password: '',
+                    message: '',
                     recaptcha: '',
                 }),
-                buttonText: 'Login',
+                buttonText: 'Send',
                 isLoading: false,
             }
         },
 
         methods: {
-            login() {
+            send() {
                 this.isLoading = true;
-                this.buttonText = 'Logging In...';
+                this.buttonText = 'Sending...';
                 this.$refs.captcha.execute();
-                this.$store.dispatch('signIn', {
+                this.$store.dispatch('sendContactEmail', {
                     form: this.form,
                 }).then((response) => {
                     this.isLoading = false;
-                    this.buttonText = 'Login';
-                    this.$router.push({ name: 'admin_dashboard' });
+                    this.buttonText = 'Send';
                     this.$notify({
                         group: 'notifications',
                         title: 'Success!',
-                        text: 'You logged in successfully!',
+                        text: response.message,
                         type: 'success',
                         duration: '5000',
                     });
-                })
-                  .catch((error) => {
-                      this.isLoading = false;
-                      this.buttonText = 'Login';
-                      this.$notify({
-                          group: 'notifications',
-                          title: 'Error!',
-                          text: error.message,
-                          type: 'error',
-                          duration: '5000',
-                      });
-                  });
+                }).catch((error) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Send';
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Error!',
+                        text: error.message,
+                        type: 'error',
+                        duration: '5000',
+                    });
+                });
             }
         }
     }

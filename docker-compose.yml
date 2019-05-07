@@ -22,6 +22,18 @@ services:
     command: php-fpm
     network_mode: "bridge"
 
+  queue:
+    build: ./docker/development/php
+    links:
+      - mysql
+      - redis
+    volumes_from:
+      - storage
+    environment:
+      REDIS_PORT: 6379
+    entrypoint: "php /var/www/html/artisan queue:work --tries=3 --verbose"
+    network_mode: "bridge"
+
   nginx:
     build: ./docker/development/nginx
     links:

@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h3>Technology <span class="text-green">Stack</span></h3>
+        <h3 class="text-grey uppercase semibold text-xl">Technology <span class="text-green">Stack</span></h3>
         <div class="pt-4 pr-10 text-md">
             <div class="flex flex-wrap">
                 <div class="flex-1 mb-2">
-                    The technology stack that I use depends on the project but I usually use or have experience with the following languages, technologies, libraries and tools:
+                    The technology stack that I use depends on the project but I usually use and have experience with the following languages, technologies, libraries and tools:
                     <br>
                     <br>
                     For the front end, I use HTML5, CSS3, JavaScript, Bootstrap, JQuery, VueJS, Webpack and Tailwind CSS.

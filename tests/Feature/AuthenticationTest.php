@@ -33,6 +33,7 @@ class AuthenticationTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
         ]);
@@ -63,6 +64,7 @@ class AuthenticationTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => 'test@example.com',
             'password' => 'secret'
         ]);
@@ -86,6 +88,7 @@ class AuthenticationTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
         ]);
@@ -137,6 +140,7 @@ class AuthenticationTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
         ]);
@@ -184,6 +188,7 @@ class AuthenticationTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
         ]);
@@ -263,6 +268,7 @@ class AuthenticationTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'password' => 'secret'
         ]);
 
@@ -286,6 +292,7 @@ class AuthenticationTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => 'test@example.com'
         ]);
 
@@ -309,6 +316,7 @@ class AuthenticationTest extends TestCase
         $this->withExceptionHandling();
 
         $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
             'email' => 'test',
             'password' => 'secret'
         ]);

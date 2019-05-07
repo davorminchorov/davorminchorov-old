@@ -6,3 +6,5 @@ $this->group(['prefix' => 'auth'], function () {
     $this->post('refresh', 'AuthenticationController@refresh')->middleware('auth')->name('refresh');
     $this->post('me', 'AuthenticationController@me')->middleware('auth')->name('me');
 });
+
+$this->post('contact', 'ContactController@sendContactEmail')->name('contact');
