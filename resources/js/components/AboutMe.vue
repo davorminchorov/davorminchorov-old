@@ -11,7 +11,7 @@
             Previously, I worked at <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green hover:text-green-dark no-underline">Tabellarius</a> (2015), New Media Corp (2016) and <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green hover:text-green-dark no-underline">Intertec</a> as part of the <a href="http://routyx.com/" target="_blank" rel="noreferrer" class="font-semibold text-green hover:text-green-dark no-underline">Routyx</a> team (2017).
             <br>
             <br>
-            If you want to contact me, you can do that by emailing me at <a href="mailto:davorminchorov@gmail.com" class="font-semibold text-green hover:text-green-dark no-underline">davorminchorov@gmail.com</a> or by sending me a message on <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" rel="noreferrer" class="font-semibold text-green hover:text-green-dark no-underline">LinkedIn</a>.
+            If you want to contact me, you can do that by using the contact form below.
         </div>
     </div>
 </template>
