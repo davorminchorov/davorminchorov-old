@@ -22,10 +22,10 @@
     export default {
         methods: {
             age() {
-                return moment('1990-11-22').fromNow(true);
+                return moment().diff('1990-11-22', 'years') + ' years';
             },
             yearsOfExperience() {
-                return moment('2015-06-01').fromNow(true);
+                return moment().diff('2015-06-01', 'years') + ' years';
             }
         }
     }
