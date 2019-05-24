@@ -20,8 +20,8 @@
 - [x] Fix the feature tests to exclude Google Recaptcha V3 validation for the contact form
 - [x] Implement Google Recaptcha for the login form
 - [x] Fix the feature tests to exclude Google Recaptcha V3 validation for the login form
+- [x] Upgrade Laravel to version 5.8
+- [ ] Upgrade Tailwind to version 1.0
 - [ ] Make improvements to the code
 - [ ] Design the admin dashboard
 - [ ] Design the notifications
-- [ ] Upgrade Laravel to version 5.8
-- [ ] Upgrade Tailwind to version 1.0

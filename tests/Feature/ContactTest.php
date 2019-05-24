@@ -15,7 +15,7 @@ class ContactTest extends TestCase
      */
     protected $apiV1Url;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
 

@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
         curl \
         wget \
         git \
-        libzip-dev
+        libzip-dev \
+        zip \
+        unzip
 
 RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install mbstring
