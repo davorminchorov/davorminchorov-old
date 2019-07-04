@@ -8,24 +8,3 @@
 .gradient-green {
   background-image: linear-gradient(to right, #48bb78 , #38a169);
 }
-
-.notifications {
-  top: 0;
-  right: 0;
-}
-
-.notification-wrapper {
-
-}
-
-.notification-title {
-  @apply .text-lg;
-}
-
-.notification-content {
-  @apply .text-xl;
-}
-
-.vue-notification {
-  padding: 20px;
-}
