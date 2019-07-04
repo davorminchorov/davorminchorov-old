@@ -3,7 +3,11 @@
         <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
             <form action="#" @submit.prevent="send()" @keydown="form.errors.clear($event.target.name)">
                 <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Contact <span class="text-green-500">Me</span></h2>
-
+                <div class="text-center font-semibold text-sm mb-4"
+                     :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
+                     v-if="form.errors.any() || status === 'success'"
+                     v-text="message">
+                </div>
                 <label class="block mb-4">
                     <span class="block text-sm font-bold mb-2 uppercase">Full <span class="text-green-500">Name</span>:</span>
                     <input type="name"
@@ -83,6 +87,8 @@
                 }),
                 buttonText: 'Send',
                 isLoading: false,
+                message: '',
+                status: '',
             }
         },
 
@@ -90,29 +96,21 @@
             send() {
                 this.isLoading = true;
                 this.buttonText = 'Sending...';
+                this.message = '';
+                this.status = '';
                 this.$refs.captcha.execute();
                 this.$store.dispatch('sendContactEmail', {
                     form: this.form,
                 }).then((response) => {
                     this.isLoading = false;
                     this.buttonText = 'Send';
-                    this.$notify({
-                        group: 'notifications',
-                        title: 'Success!',
-                        text: response.message,
-                        type: 'success',
-                        duration: '5000',
-                    });
+                    this.message = response.message;
+                    this.status = response.status;
                 }).catch((error) => {
                     this.isLoading = false;
                     this.buttonText = 'Send';
-                    this.$notify({
-                        group: 'notifications',
-                        title: 'Error!',
-                        text: error.message,
-                        type: 'error',
-                        duration: '5000',
-                    });
+                    this.message = 'Oh oh, there were errors.';
+                    this.status = 'error';
                 });
             }
         }

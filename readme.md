@@ -22,8 +22,8 @@
 - [x] Fix the feature tests to exclude Google Recaptcha V3 validation for the login form
 - [x] Upgrade Laravel to version 5.8
 - [x] Upgrade Tailwind to version 1.0
-- [ ] Make improvements to the code
+- [x] Improve the design of the notifications
 - [ ] Design the admin dashboard
-- [ ] Design the notifications
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
+- [ ] Make improvements to the code
