@@ -7,6 +7,6 @@ mix.extend('prettyNotifications', new Notifications)
     .js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .version()
-    .tailwind()
+    .tailwind('./tailwind.config.js')
     .purgeCss()
     .prettyNotifications();

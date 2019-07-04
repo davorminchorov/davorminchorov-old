@@ -1,30 +1,30 @@
 <template>
     <div class="flex items-center justify-center">
-        <div class="bg-white p-6 max-w-sm w-full p-8 rounded-lg shadow-lg">
+        <div class="bg-white p-6 max-w-xl w-full p-8 rounded-lg shadow-lg">
             <form action="#" @submit.prevent="login()" @keydown="form.errors.clear($event.target.name)">
-                <h2 class="uppercase text-center text-xl font-semibold text-grey mb-4">Admin <span class="text-green">Login</span></h2>
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Admin <span class="text-green-500">Login</span></h2>
 
                 <label class="block mb-4">
-                    <span class="block text-sm font-bold mb-2 uppercase">Email <span class="text-green">Address</span>:</span>
+                    <span class="block text-sm font-bold mb-2 uppercase">Email <span class="text-green-500">Address</span>:</span>
                     <input type="email"
                            name="email"
-                           class="text-black leading-normal block w-full rounded bg-grey-lighter px-4 py-2 focus:outline-none"
+                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
                            v-model="form.email"
                     >
-                    <span class="w-full text-red-lighter block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
+                    <span class="w-full text-red-200 block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
                 </label>
 
                 <label class="block mb-6">
                     <span class="block text-sm font-bold mb-2 uppercase">Password:</span>
                     <input type="password"
                            name="password"
-                           class="text-black leading-normal block w-full rounded bg-grey-lighter px-4 py-2 focus:outline-none"
+                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
                            v-model="form.password"
                     >
-                    <span class="w-full text-red-lighter block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
+                    <span class="w-full text-red-200 block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
                 </label>
 
-                <div class="block mb-4 text-grey">
+                <div class="block mb-4 text-gray-500">
                     <google-re-captcha-v3
                             ref="captcha" v-model="form.recaptcha"
                             :id="'login'"
@@ -33,17 +33,17 @@
                             class="hidden">
                     </google-re-captcha-v3>
                     This site is protected by reCAPTCHA and the Google
-                    <a href="https://policies.google.com/privacy" class="font-semibold text-green hover:text-green-dark no-underline">
+                    <a href="https://policies.google.com/privacy" class="font-semibold text-green-500 hover:text-green-600 ">
                         Privacy Policy
                     </a> and
-                    <a href="https://policies.google.com/terms" class="font-semibold text-green hover:text-green-dark no-underline">
+                    <a href="https://policies.google.com/terms" class="font-semibold text-green-500 hover:text-green-600 ">
                         Terms of Service
                     </a> apply.
                 </div>
 
                 <button type="submit"
-                        :class="{ 'bg-green-lightest hover:bg-green-lightest cursor-not-allowed': form.errors.any() || isLoading }"
-                        class="w-full rounded px-4 py-2 uppercase bg-green text-white text-lg leading-normal font-bold hover:bg-green-dark focus:outline-none active:bg-green"
+                        :class="{ 'opacity-50 cursor-not-allowed': form.errors.any() || isLoading }"
+                        class="w-full rounded px-4 py-2 uppercase bg-green-500 text-white text-lg leading-normal font-bold hover:bg-green-600 focus:outline-none active:bg-green-500"
                         :disabled="isLoading || form.errors.any()"
                         v-text="buttonText"
                 ></button>

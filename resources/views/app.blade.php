@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://www.davorminchorov.com" />
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
-    <body class="font-sans text-grey antialiased leading-tight bg-black">
+    <body class="font-sans text-gray-500 antialiased leading-tight bg-gray-900">
 
         <noscript>
             <div class="flex items-center justify-center">
-                <h2 class="uppercase text-center text-xl font-semibold text-grey mb-4">
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">
                     I'm 100% JavaScript!
                 </h2>
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez">

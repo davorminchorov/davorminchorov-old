@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-grey uppercase semibold text-xl">Technology <span class="text-green">Stack</span></h3>
+        <h3 class="text-gray-500 uppercase font-semibold text-xl">Technology <span class="text-green-500">Stack</span></h3>
         <div class="pt-4 pr-10 text-md">
             <div class="flex flex-wrap">
                 <div class="flex-1 mb-2">

@@ -6,7 +6,7 @@
             <router-view></router-view>
         </main>
 
-        <footer class="flex items-center justify-center w-full text-grey text-md">
+        <footer class="flex items-center justify-center w-full text-gray-500 text-md">
             &copy; {{ (new Date()).getFullYear() }} Design by Davor Minchorov
         </footer>
 
