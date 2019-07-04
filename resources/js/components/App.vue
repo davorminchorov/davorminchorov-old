@@ -10,7 +10,6 @@
             &copy; {{ (new Date()).getFullYear() }} Design by Davor Minchorov
         </footer>
 
-        <notifications group="notifications" animation-type="velocity" />
     </div>
 </template>
 
