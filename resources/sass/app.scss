@@ -1,10 +1,10 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
-@tailwind preflight;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .gradient-green {
-  background-image: linear-gradient(to right, #38C172 , #1f9d55);
+  background-image: linear-gradient(to right, #48bb78 , #38a169);
 }

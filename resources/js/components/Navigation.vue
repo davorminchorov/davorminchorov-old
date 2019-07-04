@@ -1,15 +1,14 @@
 <template>
     <nav class="container mx-auto lg:mb-10 mb-6 flex justify-between">
-        <router-link :to="{name: 'home'}" class="no-underline text-grey text-2xl font-bold uppercase">Davor <span class="text-green">Minchorov</span></router-link>
+        <router-link :to="{name: 'home'}" class=" text-gray-500 text-2xl font-bold uppercase">Davor <span class="text-green-500">Minchorov</span></router-link>
         <a href="#"
-           class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6"
+           class=" text-lg text-gray-500 hover:text-green-500 uppercase font-semibold tracking-wider text-xs pl-6"
             v-if="authenticated"
             @click.prevent="logout">
-
             Logout
         </a>
-<!--        <a href="#" class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6">Articles</a>-->
-<!--        <a href="#" class="no-underline text-lg text-grey hover:text-green uppercase font-semibold tracking-wide text-xs pl-6">Contact</a>-->
+<!--        <a href="#" class=" text-lg text-gray-500 hover:text-green-500 uppercase font-semibold tracking-wider text-xs pl-6">Articles</a>-->
+<!--        <a href="#" class=" text-lg text-gray-500 hover:text-green-500 uppercase font-semibold tracking-wider text-xs pl-6">Contact</a>-->
     </nav>
 </template>
 

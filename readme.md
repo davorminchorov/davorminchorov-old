@@ -21,7 +21,9 @@
 - [x] Implement Google Recaptcha for the login form
 - [x] Fix the feature tests to exclude Google Recaptcha V3 validation for the login form
 - [x] Upgrade Laravel to version 5.8
-- [ ] Upgrade Tailwind to version 1.0
+- [x] Upgrade Tailwind to version 1.0
 - [ ] Make improvements to the code
 - [ ] Design the admin dashboard
 - [ ] Design the notifications
+- [ ] Design the bootcamp page
+- [ ] Implement the bootcamp page
