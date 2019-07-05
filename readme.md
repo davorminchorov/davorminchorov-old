@@ -23,6 +23,7 @@
 - [x] Upgrade Laravel to version 5.8
 - [x] Upgrade Tailwind to version 1.0
 - [x] Improve the design of the notifications
+- [x] Redesign the layout of the home page
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
