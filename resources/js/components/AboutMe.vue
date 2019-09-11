@@ -5,7 +5,7 @@
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
-            I am currently working as a Senior PHP Developer at <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva</a> since January 2018.
+            Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, since January 2018.
             <br>
             <br>
             Previously, I worked at:
