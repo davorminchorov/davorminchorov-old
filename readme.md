@@ -24,9 +24,20 @@
 - [x] Upgrade Tailwind to version 1.0
 - [x] Improve the design of the notifications
 - [x] Redesign the layout of the home page
-- [ ] Update the content on the home page
+- [x] Update the content on the home page
 - [x] Upgrade Laravel to version 6.0
 - [x] Upgrade Tailwind to version 1.1
+- [ ] Design the blog page
+- [ ] Design the single blog article page
+- [ ] Implement the Blog API
+- [ ] Implement the single blog article API
+- [ ] Implement the publish new blog article API
+- [ ] Implement the edit existing blog article API
+- [ ] Implement the delete existing blog article API
+- [ ] Design the admin blog articles page
+- [ ] Design the publish new blog article admin page
+- [ ] Design the edit existing blog article admin page
+- [ ] Design the admin blog articles page
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page

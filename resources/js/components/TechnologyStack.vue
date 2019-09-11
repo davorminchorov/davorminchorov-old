@@ -7,28 +7,21 @@
                     The technology stack that I use depends on the project but I usually use and have experience with the following languages, technologies, libraries and tools:
                     <br>
                     <br>
-                    For the front end, I use HTML5, CSS3, JavaScript, Bootstrap, JQuery, VueJS, Webpack and Tailwind CSS.
+                    - For the front end, I use HTML5, CSS3, JavaScript, Bootstrap, JQuery, VueJS, Webpack and Tailwind CSS.
                     <br>
+                    - For the backend, I use PHP, Laravel, NodeJS and Express.
                     <br>
-                    For the backend, I use PHP, Laravel, NodeJS and Express.
+                    - For the databases, I use MySQL, MongoDB and Redis.
                     <br>
+                    - For the web server, I use NGINX.
                     <br>
-                    For the databases, I use MySQL, MongoDB and Redis.
+                    - For version control, I use Git and GitHub for hosting the code.
                     <br>
+                    - For the operating system I use is Ubuntu.
                     <br>
-                    For the web server, I use NGINX.
+                    - For the development environment I use Docker.
                     <br>
-                    <br>
-                    For version control, I use Git and GitHub for hosting the code.
-                    <br>
-                    <br>
-                    For the operating system I use is Ubuntu.
-                    <br>
-                    <br>
-                    For the development environment I use Docker.
-                    <br>
-                    <br>
-                    From the coding editors, I use the Jetbrains PHPStorm IDE.
+                    - From the coding editors, I use the Jetbrains PHPStorm IDE.
                 </div>
             </div>
         </div>
