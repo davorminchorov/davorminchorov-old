@@ -17,7 +17,7 @@
                     <br>
                     - For version control, I use Git and GitHub for hosting the code.
                     <br>
-                    - For the operating system I use is Ubuntu.
+                    - For the operating system I use Ubuntu.
                     <br>
                     - For the development environment I use Docker.
                     <br>
