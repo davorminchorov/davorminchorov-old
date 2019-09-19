@@ -27,7 +27,7 @@
 - [x] Update the content on the home page
 - [x] Upgrade Laravel to version 6.0
 - [x] Upgrade Tailwind to version 1.1
-- [ ] Design the blog page
+- [x] Design the blog page
 - [ ] Design the single blog article page
 - [ ] Implement the Blog API
 - [ ] Implement the single blog article API

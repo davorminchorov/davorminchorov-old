@@ -1,4 +1,5 @@
 import Home from './components/pages/Home.vue';
+import Blog from './components/pages/Blog.vue';
 import Login from './components/pages/Login.vue';
 import NotFound from './components/pages/NotFound.vue';
 import Dashboard from './components/pages/Admin/Dashboard.vue';
@@ -15,6 +16,12 @@ export default {
             name: 'home',
             component: Home,
         },
+        {
+            path: '/blog',
+            name: 'blog',
+            component: Blog,
+        },
+
         {
             path: '/login',
             name: 'login',
