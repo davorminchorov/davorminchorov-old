@@ -7,7 +7,7 @@
         <div class="flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
             <div>
                 <div class="flex flex-col pb-6" v-for="post in posts">
-                    <router-link :to="{name: 'blog'}" class="text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2">{{ post.title }}</router-link>
+                    <router-link :to="{name: 'single_blog_post'}" class="text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2">{{ post.title }}</router-link>
                     <span class="text-center text-md text-gray-500 pb-2 tracking-normal"> by {{ post.author }} on {{ post.published_at }}</span>
                     <span class="text-lg text-gray-500 pb-2 tracking-normal"> {{ post.summary }} </span>
                 </div>

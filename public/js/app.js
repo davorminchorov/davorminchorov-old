@@ -2354,6 +2354,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      post: {
+        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, impedit. 1',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam autem laboriosam nostrum possimus suscipit, velit. Ad adipisci aliquam animi commodi debitis doloribus eaque enim, eos est ex illo impedit incidunt ipsam maxime molestiae molestias nam natus neque nulla obcaecati officia, omnis quaerat quam repudiandae similique sint soluta sunt suscipit tempore temporibus tenetur veritatis voluptas voluptatum! Non odit sit ut voluptate. Adipisci aliquid aspernatur atque aut beatae consequatur, dolorem ea, facere harum inventore ipsa libero, molestias pariatur praesentium qui quibusdam suscipit velit? Ad esse nihil, officia perferendis quisquam quod tempore ut vel velit. Accusamus, ipsa labore laborum maiores necessitatibus nulla numquam optio porro provident quaerat quas quidem quod soluta velit voluptatum? Architecto dolor doloribus ducimus eaque incidunt natus reiciendis tenetur! Alias assumenda deserunt excepturi id, ipsum mollitia odit, praesentium quidem tempore totam ullam voluptas. Accusamus ad adipisci alias aliquid, earum eligendi maiores molestiae porro quidem repudiandae vel, voluptate voluptates! Laborum? \n' + 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at commodi obcaecati quibusdam! Esse libero quae quia reiciendis sint sit tempore temporibus. Aperiam corporis dicta dignissimos dolorem, dolorum et eum, fuga impedit ipsa minus numquam quam quas rerum sapiente unde. Blanditiis molestiae similique ullam? Aliquam amet asperiores atque consectetur dicta dignissimos ducimus ea eveniet excepturi fugit hic inventore, iste nesciunt optio pariatur quas, quis voluptas, voluptatum? A accusamus aliquam aperiam asperiores assumenda beatae commodi deleniti dolorum ducimus eaque excepturi fugiat id in ipsa iste magnam, maxime molestiae, mollitia natus nemo numquam odio omnis pariatur provident quia quis reiciendis repellat saepe sequi similique sint totam veniam veritatis vitae voluptatem voluptatibus voluptatum. Assumenda aut doloribus eligendi hic mollitia obcaecati sed suscipit totam vero! Ipsam itaque non sit. Aut ea, harum impedit molestiae provident similique sit voluptatibus. Accusamus beatae enim esse est fuga labore laudantium minus omnis quae quibusdam, quidem quo, quos vitae. Beatae consectetur, dignissimos, eveniet facere magni natus, nisi odio praesentium quis quisquam reiciendis rem sequi ut. Aut error maxime quibusdam! Aliquid maxime molestiae nostrum porro temporibus. Est eveniet nulla quos reprehenderit repudiandae. Ab animi, architecto distinctio dolorem doloribus dolorum eligendi eum eveniet excepturi fugiat id impedit laboriosam minima molestiae molestias, nam necessitatibus nisi officiis optio pariatur quas quos ratione repellat rerum tempore ut velit vero vitae voluptas, voluptatibus. Assumenda delectus esse maxime, nobis non possimus quibusdam repellendus vero. Asperiores, atque cupiditate dolor doloribus, ea, inventore officiis quibusdam quo quod repellendus reprehenderit sed. Accusamus autem debitis enim itaque labore modi necessitatibus quas quod reprehenderit repudiandae. Ad cum dignissimos eos ex facilis impedit, magni molestiae necessitatibus nihil optio placeat similique unde voluptas voluptates voluptatibus! Amet aperiam delectus dolore explicabo impedit labore laudantium, nesciunt perspiciatis quae quia repellat repellendus temporibus ut velit vero vitae, voluptates! Adipisci aliquam corporis dolorem earum, ex expedita illo ipsam ipsum iusto modi perferendis quos repudiandae sunt. Adipisci et id optio placeat quos tempore temporibus voluptatibus! Ad ducimus odit officia pariatur sequi? Ab animi assumenda, blanditiis debitis esse eum eveniet exercitationem, inventore ipsum iusto molestiae natus obcaecati odit pariatur quaerat quasi voluptatum? Aspernatur earum expedita harum labore laboriosam odit quo tempore ut vel vitae. Expedita modi nulla tenetur! Ab accusamus aspernatur modi voluptas! Amet autem cumque delectus dolor doloribus ea earum explicabo incidunt natus, perferendis perspiciatis reiciendis repudiandae voluptate. Accusantium est eveniet explicabo inventore ipsam libero, maiores mollitia odit omnis reprehenderit, tempora vero! Atque iure nobis perferendis quisquam quod velit voluptas! Blanditiis cupiditate debitis distinctio dolorum ea eaque eligendi fuga hic in laboriosam libero magnam modi molestiae molestias nesciunt odit perspiciatis quasi recusandae, reiciendis repellat repudiandae sunt vel voluptas. Ab ad, aliquid assumenda consectetur debitis dolores doloribus illo illum in maiores odit, pariatur placeat possimus quis rerum totam ullam? Animi autem commodi consequuntur, dicta dignissimos distinctio ducimus eligendi est fugiat fugit illum magni natus nihil nulla obcaecati odio placeat praesentium provident quae quas quasi quidem saepe soluta tenetur ut voluptate voluptatum. Atque aut cum, cupiditate dignissimos eligendi est expedita facilis in, incidunt ipsum iusto nam non quibusdam vitae voluptate.',
+        author: 'Davor Minchorov',
+        published_at: 'September 19, 2019'
+      }
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/Home.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/Home.vue?vue&type=script&lang=js& ***!
@@ -21523,7 +21559,7 @@ var render = function() {
                   {
                     staticClass:
                       "text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2",
-                    attrs: { to: { name: "blog" } }
+                    attrs: { to: { name: "single_blog_post" } }
                   },
                   [_vm._v(_vm._s(post.title))]
                 ),
@@ -21593,6 +21629,78 @@ var staticRenderFns = [
     )
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex flex-col justify-around" }, [
+    _c(
+      "div",
+      { staticClass: "gradient-green flex flex-col text-white rounded" },
+      [
+        _c(
+          "h1",
+          {
+            staticClass:
+              "text-center text-3xl font-bold pt-10 text-white uppercase tracking-wider"
+          },
+          [_vm._v(_vm._s(_vm.post.title))]
+        ),
+        _vm._v(" "),
+        _c(
+          "h3",
+          {
+            staticClass:
+              "text-center text-xl font-bold pt-5 pb-10 text-white tracking-normal"
+          },
+          [
+            _vm._v(
+              "by " +
+                _vm._s(_vm.post.author) +
+                " on " +
+                _vm._s(_vm.post.published_at)
+            )
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white"
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "text-lg text-gray-500 pb-2 tracking-normal flex-grow"
+          },
+          [_vm._v(" " + _vm._s(_vm.post.body) + " ")]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39020,6 +39128,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/BlogPost.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/pages/BlogPost.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BlogPost.vue?vue&type=template&id=4fa01df8& */ "./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8&");
+/* harmony import */ var _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BlogPost.vue?vue&type=script&lang=js& */ "./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/pages/BlogPost.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./BlogPost.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/BlogPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./BlogPost.vue?vue&type=template&id=4fa01df8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/BlogPost.vue?vue&type=template&id=4fa01df8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_4fa01df8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/Home.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/pages/Home.vue ***!
@@ -39238,9 +39415,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pages_Home_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/pages/Home.vue */ "./resources/js/components/pages/Home.vue");
 /* harmony import */ var _components_pages_Blog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/pages/Blog.vue */ "./resources/js/components/pages/Blog.vue");
-/* harmony import */ var _components_pages_Login_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/pages/Login.vue */ "./resources/js/components/pages/Login.vue");
-/* harmony import */ var _components_pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/pages/NotFound.vue */ "./resources/js/components/pages/NotFound.vue");
-/* harmony import */ var _components_pages_Admin_Dashboard_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pages/Admin/Dashboard.vue */ "./resources/js/components/pages/Admin/Dashboard.vue");
+/* harmony import */ var _components_pages_BlogPost_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/pages/BlogPost.vue */ "./resources/js/components/pages/BlogPost.vue");
+/* harmony import */ var _components_pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/pages/Login.vue */ "./resources/js/components/pages/Login.vue");
+/* harmony import */ var _components_pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pages/NotFound.vue */ "./resources/js/components/pages/NotFound.vue");
+/* harmony import */ var _components_pages_Admin_Dashboard_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/pages/Admin/Dashboard.vue */ "./resources/js/components/pages/Admin/Dashboard.vue");
+
 
 
 
@@ -39250,7 +39429,7 @@ __webpack_require__.r(__webpack_exports__);
   mode: 'history',
   routes: [{
     path: '*',
-    component: _components_pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _components_pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: '/',
     name: 'home',
@@ -39260,16 +39439,20 @@ __webpack_require__.r(__webpack_exports__);
     name: 'blog',
     component: _components_pages_Blog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }, {
+    path: '/single-blog-post',
+    name: 'single_blog_post',
+    component: _components_pages_BlogPost_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
     path: '/login',
     name: 'login',
-    component: _components_pages_Login_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    component: _components_pages_Login_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       requiresGuest: true
     }
   }, {
     path: '/admin/dashboard',
     name: 'admin_dashboard',
-    component: _components_pages_Admin_Dashboard_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    component: _components_pages_Admin_Dashboard_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
       requiresAuth: true
     }

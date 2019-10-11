@@ -28,16 +28,16 @@
 - [x] Upgrade Laravel to version 6.0
 - [x] Upgrade Tailwind to version 1.1
 - [x] Design the blog page
-- [ ] Design the single blog article page
+- [x] Design the single blog post page
 - [ ] Implement the Blog API
-- [ ] Implement the single blog article API
-- [ ] Implement the publish new blog article API
-- [ ] Implement the edit existing blog article API
-- [ ] Implement the delete existing blog article API
-- [ ] Design the admin blog articles page
-- [ ] Design the publish new blog article admin page
-- [ ] Design the edit existing blog article admin page
-- [ ] Design the admin blog articles page
+- [ ] Implement the single blog post API
+- [ ] Implement the publish new blog post API
+- [ ] Implement the edit existing blog post API
+- [ ] Implement the delete existing blog post API
+- [ ] Design the admin blog posts page
+- [ ] Design the publish new blog post admin page
+- [ ] Design the edit existing blog post admin page
+- [ ] Design the admin blog posts page
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
