@@ -2311,6 +2311,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -21161,11 +21164,11 @@ var render = function() {
     "div",
     { staticClass: "p-6 flex flex-col items-center justify-center" },
     [
-      _c("h1", { staticClass: "text-3xl font-bold" }, [
+      _c("h1", { staticClass: "text-3xl font-bold uppercase" }, [
         _vm._v("Davor Minchorov")
       ]),
       _vm._v(" "),
-      _c("h3", { staticClass: "text-xl font-bold" }, [
+      _c("h3", { staticClass: "text-xl font-bold uppercase" }, [
         _vm._v("Senior Web Developer")
       ]),
       _vm._v(" "),
@@ -21498,80 +21501,96 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white"
-    },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        _vm._l(_vm.posts, function(post) {
-          return _c(
-            "div",
-            { staticClass: "flex flex-col pb-6" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass:
-                    "text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2",
-                  attrs: { to: { name: "blog" } }
-                },
-                [_vm._v(_vm._s(post.title))]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "text-center text-md text-gray-500 pb-2 tracking-normal"
-                },
-                [
-                  _vm._v(
-                    " by " +
-                      _vm._s(post.author) +
-                      " on " +
-                      _vm._s(post.published_at)
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                { staticClass: "text-lg text-gray-500 pb-2 tracking-normal" },
-                [_vm._v(" " + _vm._s(post.summary) + " ")]
-              )
-            ],
-            1
-          )
-        }),
-        0
-      )
-    ]
-  )
+  return _c("div", { staticClass: "flex flex-col justify-around" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white"
+      },
+      [
+        _c(
+          "div",
+          _vm._l(_vm.posts, function(post) {
+            return _c(
+              "div",
+              { staticClass: "flex flex-col pb-6" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass:
+                      "text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2",
+                    attrs: { to: { name: "blog" } }
+                  },
+                  [_vm._v(_vm._s(post.title))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "text-center text-md text-gray-500 pb-2 tracking-normal"
+                  },
+                  [
+                    _vm._v(
+                      " by " +
+                        _vm._s(post.author) +
+                        " on " +
+                        _vm._s(post.published_at)
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "text-lg text-gray-500 pb-2 tracking-normal" },
+                  [_vm._v(" " + _vm._s(post.summary) + " ")]
+                )
+              ],
+              1
+            )
+          }),
+          0
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "h2",
-        {
-          staticClass:
-            "text-center text-2xl font-semibold mb-10 text-gray-600 uppercase"
-        },
-        [
-          _vm._v("My "),
-          _c("span", { staticClass: "text-green-500" }, [_vm._v("Blog")])
-        ]
-      )
-    ])
+    return _c(
+      "div",
+      { staticClass: "gradient-green flex flex-col text-white rounded" },
+      [
+        _c(
+          "h1",
+          {
+            staticClass:
+              "text-center text-3xl font-bold pt-10 text-white uppercase"
+          },
+          [_vm._v("My Blog")]
+        ),
+        _vm._v(" "),
+        _c(
+          "h3",
+          {
+            staticClass:
+              "text-center text-xl font-bold pt-5 pb-10 text-white uppercase"
+          },
+          [
+            _vm._v(
+              "My thoughts and experiences in the web development industry"
+            )
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
