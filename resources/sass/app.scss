@@ -1,5 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import '~vue-material-design-icons/styles.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,4 +10,14 @@
 
 .gradient-green {
   background-image: linear-gradient(to right, #48bb78 , #38a169);
+}
+
+.material-design-icon.icon-2x {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.material-design-icon.icon-2x > .material-design-icon__svg {
+    height: 1.5em;
+    width: 1.5em;
 }

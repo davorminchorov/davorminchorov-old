@@ -4,6 +4,7 @@ import BlogPost from './components/pages/BlogPost.vue';
 import Login from './components/pages/Login.vue';
 import NotFound from './components/pages/NotFound.vue';
 import Dashboard from './components/pages/Admin/Dashboard.vue';
+import BlogPosts from './components/pages/Admin/BlogPosts.vue';
 
 export default {
     mode: 'history',
@@ -39,6 +40,14 @@ export default {
             path: '/admin/dashboard',
             name: 'admin_dashboard',
             component: Dashboard,
+            meta: {
+                requiresAuth: true,
+            }
+        },
+        {
+            path: '/admin/posts',
+            name: 'admin_blog_posts',
+            component: BlogPosts,
             meta: {
                 requiresAuth: true,
             }
