@@ -35,7 +35,7 @@
 - [ ] Implement the edit existing blog post API
 - [ ] Implement the delete existing blog post API
 - [x] Design the admin blog posts page
-- [ ] Design the publish new blog post admin page
+- [x] Design the publish new blog post admin page
 - [ ] Design the edit existing blog post admin page
 - [ ] Design the admin blog posts page
 - [ ] Design the admin dashboard

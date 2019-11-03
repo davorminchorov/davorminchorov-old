@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);.material-design-icon {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);.material-design-icon {
   display: inline-flex;
   align-self: center;
   position: relative;
@@ -11352,6 +11352,20 @@ video {
 .material-design-icon.icon-2x > .material-design-icon__svg {
   height: 1.5em;
   width: 1.5em;
+}
+
+.datetime-theme .vdatetime-popup__header,
+.datetime-theme .vdatetime-calendar__month__day--selected > span > span,
+.datetime-theme .vdatetime-calendar__month__day--selected:hover > span > span {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+.datetime-theme .vdatetime-year-picker__item--selected,
+.datetime-theme .vdatetime-time-picker__item--selected,
+.datetime-theme .vdatetime-popup__actions__button {
+  background-color: #48bb78;
+  color: #fff;
 }
 
 @media (min-width: 640px){

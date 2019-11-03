@@ -5,6 +5,11 @@
                 <h1 class="text-center text-3xl font-bold pt-10 pb-10 text-white uppercase tracking-wider">Blog Posts</h1>
             </div>
             <div class="flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
+                <div class="flex flex-col items-end pb-6">
+                    <router-link :to="{name: 'admin_new_blog_post'}" class="border-2 rounded px-4 py-2 uppercase bg-white hover:bg-green-600 text-green-600 hover:text-white border-green-600 text-lg leading-normal font-bold focus:outline-none active:bg-green-500">
+                        Publish New Blog Post
+                    </router-link>
+                </div>
                 <table class="p-10 text-center text-gray-900">
                     <thead class="p-10 bg-green-500 text-white uppercase">
                         <th class="p-2">ID</th>
