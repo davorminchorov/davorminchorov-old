@@ -17,7 +17,7 @@
         "laravel/tinker": "^1.0",
         "predis/predis": "^1.1",
         "timehunter/laravel-google-recaptcha-v3": "~2.2.16",
-        "tymon/jwt-auth": "1.0.x-dev",
+        "tymon/jwt-auth": "1.0.0-rc.5",
         "vemcogroup/laravel-sparkpost-driver": "^1.0"
     },
     "require-dev": {

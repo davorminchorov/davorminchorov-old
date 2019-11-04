@@ -29,7 +29,7 @@
 - [x] Upgrade Tailwind to version 1.1
 - [x] Design the blog page
 - [x] Design the single blog post page
-- [ ] Implement the Blog API
+- [ ] Implement the Blog Posts API
 - [ ] Implement the single blog post API
 - [ ] Implement the publish new blog post API
 - [ ] Implement the edit existing blog post API
@@ -37,7 +37,6 @@
 - [x] Design the admin blog posts page
 - [x] Design the publish new blog post admin page
 - [ ] Design the edit existing blog post admin page
-- [ ] Design the admin blog posts page
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
