@@ -6,6 +6,7 @@ import NotFound from './components/pages/NotFound.vue';
 import Dashboard from './components/pages/Admin/Dashboard.vue';
 import BlogPosts from './components/pages/Admin/BlogPosts.vue';
 import NewBlogPost from './components/pages/Admin/NewBlogPost.vue';
+import EditBlogPost from "./components/pages/Admin/EditBlogPost";
 
 export default {
     mode: 'history',
@@ -61,6 +62,13 @@ export default {
                 requiresAuth: true,
             }
         },
-
+        {
+            path: '/admin/blog-posts/:id/edit',
+            name: 'admin_edit_blog_post',
+            component: EditBlogPost,
+            meta: {
+                requiresAuth: true,
+            }
+        },
     ],
 }

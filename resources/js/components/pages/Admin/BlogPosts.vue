@@ -27,9 +27,9 @@
                             <td class="p-2">October 13, 2019</td>
                             <td class="p-2">October 13, 2019</td>
                             <td class="p-2">
-                                <a href="#">
+                                <router-link :to="{name: 'admin_edit_blog_post', params: {id: 1}}">
                                     <pencil-icon class="pr-5 icon-2x" />
-                                </a>
+                                </router-link>
                                 <a href="#">
                                     <trash-can-icon class="pr-5 icon-2x" />
                                 </a>
@@ -42,9 +42,9 @@
                             <td class="p-2">October 13, 2019</td>
                             <td class="p-2">October 13, 2019</td>
                             <td class="p-2">
-                                <a href="#">
+                                <router-link :to="{name: 'admin_edit_blog_post', params: {id: 2}}">
                                     <pencil-icon class="pr-5 icon-2x" />
-                                </a>
+                                </router-link>
                                 <a href="#">
                                     <trash-can-icon class="pr-5 icon-2x" />
                                 </a>

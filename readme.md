@@ -36,7 +36,7 @@
 - [ ] Implement the delete existing blog post API
 - [x] Design the admin blog posts page
 - [x] Design the publish new blog post admin page
-- [ ] Design the edit existing blog post admin page
+- [x] Design the edit existing blog post admin page
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
