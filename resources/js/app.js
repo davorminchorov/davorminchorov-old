@@ -2,12 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';
+import VModal from 'vue-js-modal'
 import routes from './routes';
 import App from './components/App.vue';
 import vuexStore from './store';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(VModal);
 
 window.axios = axios;
 Vue.config.productionTip = false;

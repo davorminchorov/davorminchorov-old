@@ -30,7 +30,7 @@
                                 <router-link :to="{name: 'admin_edit_blog_post', params: {id: 1}}">
                                     <pencil-icon class="pr-5 icon-2x" />
                                 </router-link>
-                                <a href="#">
+                                <a href="#" @click.prevent="$modal.show('delete-confirmation')">
                                     <trash-can-icon class="pr-5 icon-2x" />
                                 </a>
                             </td>
@@ -45,7 +45,7 @@
                                 <router-link :to="{name: 'admin_edit_blog_post', params: {id: 2}}">
                                     <pencil-icon class="pr-5 icon-2x" />
                                 </router-link>
-                                <a href="#">
+                                <a href="#" @click.prevent="$modal.show('delete-confirmation')">
                                     <trash-can-icon class="pr-5 icon-2x" />
                                 </a>
                             </td>
@@ -54,8 +54,20 @@
                 </table>
             </div>
         </div>
-    </div>
 
+        <modal name="delete-confirmation" classes="bg-white rounded-lg" height="auto">
+            <div class="bg-red-600 flex flex-col p-6">
+                <h1 class="text-center text-2xl font-semibold uppercase text-white tracking-wider">Delete Confirmation</h1>
+            </div>
+            <div class="bg-white p-6">
+                <p class="text-normal">Are you sure you want to delete this blog post?</p>
+            </div>
+            <div class="text-right p-6">
+                <button class="border-2 rounded px-4 py-2 uppercase bg-white hover:bg-gray-600 text-gray-600 hover:text-white border-gray-600 text-normal leading-normal font-semibold focus:outline-none active:bg-gray-500" @click="$modal.hide('delete-confirmation')">Cancel</button>
+                <button class="border-2 rounded px-4 py-2 uppercase bg-white hover:bg-red-600 text-red-600 hover:text-white border-red-600 text-normal leading-normal font-semibold focus:outline-none active:bg-red-500">Delete</button>
+            </div>
+        </modal>
+    </div>
 </template>
 
 <script>
@@ -65,7 +77,7 @@
     export default {
         components: {
             PencilIcon,
-            TrashCanIcon
+            TrashCanIcon,
         }
     }
 </script>

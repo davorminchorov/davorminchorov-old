@@ -37,6 +37,7 @@
 - [x] Design the admin blog posts page
 - [x] Design the publish new blog post admin page
 - [x] Design the edit existing blog post admin page
+- [x] Design the delete admin blog post confirmation modal
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
