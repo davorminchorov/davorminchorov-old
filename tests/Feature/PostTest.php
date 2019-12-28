@@ -69,4 +69,31 @@ class PostTest extends TestCase
         $response->assertSeeText($publishedPost->title);
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function it_shows_a_single_blog_post(): void
+    {
+        $publishedPost = factory(Post::class)->states('published')->create();
+
+        $response = $this->json('GET', $this->apiV1Url . 'posts/' . $publishedPost->slug);
+
+        $response->assertJson([
+            'status_code' => Response::HTTP_OK,
+            'status_message' => 'OK',
+            'status' => 'success',
+            'message' => 'The posts were retrieved successfully!',
+            'data' => [
+                'id' => $publishedPost->id,
+                'title' => $publishedPost->title,
+                'slug' => $publishedPost->slug,
+                'body' => $publishedPost->body,
+                'excerpt' => $publishedPost->excerpt,
+                'published_at' => $publishedPost->published_at->format('F j, Y H:i:s'),
+            ],
+        ]);
+
+        $response->assertStatus(200);
+    }
 }
