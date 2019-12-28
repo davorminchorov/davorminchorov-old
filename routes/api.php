@@ -8,3 +8,4 @@ $router->group(['prefix' => 'auth'], function ($router) {
 });
 
 $router->post('contact', 'ContactController@sendContactEmail')->name('contact');
+$router->get('posts', 'PostsController@index')->name('posts.index');

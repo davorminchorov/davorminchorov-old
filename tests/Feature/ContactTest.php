@@ -11,18 +11,6 @@ class ContactTest extends TestCase
 {
 
     /**
-     * @var
-     */
-    protected $apiV1Url;
-
-    public function setUp() : void
-    {
-        parent::setUp();
-
-        $this->apiV1Url = config('app.url') . '/api/v1/';
-    }
-
-    /**
      * @test
      */
     public function a_user_can_send_a_contact_email(): void
@@ -41,7 +29,7 @@ class ContactTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -68,7 +56,7 @@ class ContactTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'name' => [
@@ -93,7 +81,7 @@ class ContactTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
@@ -118,7 +106,7 @@ class ContactTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
@@ -142,7 +130,7 @@ class ContactTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'message' => [

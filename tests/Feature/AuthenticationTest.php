@@ -12,18 +12,6 @@ class AuthenticationTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @var
-     */
-    protected $apiV1Url;
-
-    public function setUp() : void
-    {
-        parent::setUp();
-
-        $this->apiV1Url = config('app.url') . '/api/v1/';
-    }
-
-    /**
      * @test
      */
     public function a_user_gets_an_access_token_when_trying_to_login_with_valid_credentials(): void
@@ -40,7 +28,7 @@ class AuthenticationTest extends TestCase
         $jsonResponse = $response->json();
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -70,7 +58,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_UNAUTHORIZED,
             'status_message' => 'Unauthorized',
             'status' => 'error',
@@ -95,7 +83,7 @@ class AuthenticationTest extends TestCase
         $jsonResponse = $response->json();
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -112,7 +100,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -124,7 +112,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'Unauthenticated.'
         ]);
 
@@ -147,7 +135,7 @@ class AuthenticationTest extends TestCase
         $jsonResponse = $response->json();
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -164,7 +152,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -197,7 +185,7 @@ class AuthenticationTest extends TestCase
         $accessToken = $jsonResponse['data']['access_token'];
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -218,7 +206,7 @@ class AuthenticationTest extends TestCase
         $newAccessToken = $jsonResponse['data']['access_token'];
 
         $response->assertStatus(Response::HTTP_OK);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
@@ -237,7 +225,7 @@ class AuthenticationTest extends TestCase
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
-        $response->assertJson([
+        $response->assertExactJson([
             'status_code' => Response::HTTP_UNAUTHORIZED,
             'status_message' => 'The token has been blacklisted',
             'status' => 'error',
@@ -255,7 +243,7 @@ class AuthenticationTest extends TestCase
         $response = $this->json('post', $this->apiV1Url . 'auth/me');
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'Unauthenticated.'
         ]);
     }
@@ -274,7 +262,7 @@ class AuthenticationTest extends TestCase
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
@@ -298,7 +286,7 @@ class AuthenticationTest extends TestCase
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'password' => [
@@ -323,7 +311,7 @@ class AuthenticationTest extends TestCase
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
