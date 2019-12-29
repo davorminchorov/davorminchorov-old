@@ -31,7 +31,7 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[0]['slug'],
                     'body' => $publishedPosts[0]['body'],
                     'excerpt' => $publishedPosts[0]['excerpt'],
-                    'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i:s'),
+                    'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
                 ],
                 [
                     'id' => $publishedPosts[1]['id'],
@@ -39,7 +39,7 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[1]['slug'],
                     'body' => $publishedPosts[1]['body'],
                     'excerpt' => $publishedPosts[1]['excerpt'],
-                    'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i:s'),
+                    'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i'),
                 ],
                 [
                     'id' => $publishedPosts[2]['id'],
@@ -47,7 +47,7 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[2]['slug'],
                     'body' => $publishedPosts[2]['body'],
                     'excerpt' => $publishedPosts[2]['excerpt'],
-                    'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i:s'),
+                    'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
                 ],
             ],
         ]);
@@ -83,14 +83,14 @@ class PostTest extends TestCase
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
-            'message' => 'The posts were retrieved successfully!',
+            'message' => 'The post was retrieved successfully!',
             'data' => [
                 'id' => $publishedPost->id,
                 'title' => $publishedPost->title,
                 'slug' => $publishedPost->slug,
                 'body' => $publishedPost->body,
                 'excerpt' => $publishedPost->excerpt,
-                'published_at' => $publishedPost->published_at->format('F j, Y H:i:s'),
+                'published_at' => $publishedPost->published_at->format('F j, Y H:i'),
             ],
         ]);
 

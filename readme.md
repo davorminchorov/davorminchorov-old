@@ -31,7 +31,7 @@
 - [x] Design the single blog post page
 - [x] Implement the Blog Posts API
 - [x] Implement the single blog post API
-- [ ] Implement the publish new blog post API
+- [x] Implement the publish new blog post API
 - [ ] Implement the edit existing blog post API
 - [ ] Implement the delete existing blog post API
 - [x] Design the admin blog posts page

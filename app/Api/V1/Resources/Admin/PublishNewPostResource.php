@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Api\V1\Resources;
+namespace App\Api\V1\Resources\Admin;
 
+use App\Api\V1\Resources\PostResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 
-class SinglePostResource extends JsonResource
+class PublishNewPostResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +18,10 @@ class SinglePostResource extends JsonResource
     public function toArray($request) : array
     {
         return [
-            'status_code' => Response::HTTP_OK,
-            'status_message' => 'OK',
+            'status_code' => Response::HTTP_CREATED,
+            'status_message' => 'Created',
             'status' => 'success',
-            'message' => 'The post was retrieved successfully!',
+            'message' => 'The post was published successfully!',
             'data' => new PostResource($this->resource),
         ];
     }
