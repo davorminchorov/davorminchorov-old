@@ -150,7 +150,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function a_title_is_required(): void
+    public function a_title_is_required_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
@@ -180,7 +180,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function a_slug_is_required(): void
+    public function a_slug_is_required_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
@@ -211,7 +211,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function an_excerpt_is_required(): void
+    public function an_excerpt_is_required_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
@@ -242,7 +242,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function a_body_is_required(): void
+    public function a_body_is_required_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
@@ -272,7 +272,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function a_published_at_date_is_required(): void
+    public function a_published_at_date_is_required_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
@@ -303,7 +303,7 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function a_published_at_date_needs_to_be_in_proper_format(): void
+    public function a_published_at_date_needs_to_be_in_proper_format_when_publishing_a_new_post(): void
     {
         $this->withExceptionHandling();
 
