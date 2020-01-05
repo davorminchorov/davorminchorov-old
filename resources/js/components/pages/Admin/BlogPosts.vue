@@ -10,7 +10,7 @@
                         Publish New Blog Post
                     </router-link>
                 </div>
-                <table class="p-10 text-center text-gray-900">
+                <table class="p-10 text-center text-gray-900" v-if="posts.length">
                     <thead class="p-10 bg-green-500 text-white uppercase">
                         <th class="p-2">ID</th>
                         <th class="p-2">Title</th>
@@ -20,29 +20,14 @@
                         <th class="p-2" colspan="2">Actions</th>
                     </thead>
                     <tbody class="bg-gray-300">
-                        <tr>
-                            <td class="p-2">1</td>
-                            <td class="p-2">Welcome To My Blog</td>
-                            <td class="p-2">October 13, 2019</td>
-                            <td class="p-2">October 13, 2019</td>
-                            <td class="p-2">October 13, 2019</td>
+                        <tr v-for="post in posts" :key="post.id">
+                            <td class="p-2"> {{ post.id }}</td>
+                            <td class="p-2">{{ post.title }}</td>
+                            <td class="p-2"> {{ post.published_at }} </td>
+                            <td class="p-2">{{ post.created_at }}</td>
+                            <td class="p-2">{{ post.updated_at }}</td>
                             <td class="p-2">
-                                <router-link :to="{name: 'admin_edit_blog_post', params: {id: 1}}">
-                                    <pencil-icon class="pr-5 icon-2x" />
-                                </router-link>
-                                <a href="#" @click.prevent="$modal.show('delete-confirmation')">
-                                    <trash-can-icon class="pr-5 icon-2x" />
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="p-2">2</td>
-                            <td class="p-2">Another blog title here</td>
-                            <td class="p-2">October 13, 2019</td>
-                            <td class="p-2">October 13, 2019</td>
-                            <td class="p-2">October 13, 2019</td>
-                            <td class="p-2">
-                                <router-link :to="{name: 'admin_edit_blog_post', params: {id: 2}}">
+                                <router-link :to="{name: 'admin_edit_blog_post', params: {id: post.id }}">
                                     <pencil-icon class="pr-5 icon-2x" />
                                 </router-link>
                                 <a href="#" @click.prevent="$modal.show('delete-confirmation')">
@@ -52,6 +37,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="p-10 text-center bg-green-500 text-gray-100" v-else>
+                    There are no blog posts at the moment.
+                </div>
             </div>
         </div>
 
@@ -78,6 +66,22 @@
         components: {
             PencilIcon,
             TrashCanIcon,
+        },
+        data() {
+            return {
+                posts: [],
+            }
+        },
+        mounted() {
+            window.axios.get('/api/v1/admin/posts', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + this.$store.getters.auth.access_token,
+                }
+            }).then(response => {
+                this.posts = response.data.data;
+            });
         }
     }
 </script>

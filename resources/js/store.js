@@ -19,13 +19,12 @@ export default {
             });
             return commit('logout');
         },
-
         sendContactEmail({commit}, {form}) {
             return form.post('/contact')
                 .then((response) => {
                     return response;
                 });
-        }
+        },
     },
 
     mutations: {
@@ -42,7 +41,7 @@ export default {
     getters: {
         auth(state) {
             return state.auth;
-        }
+        },
     }
 
 }
