@@ -331,5 +331,242 @@ class PostTest extends TestCase
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
+    /**
+     * @test
+     */
+    public function the_admin_can_update_an_existing_blog_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => $title = 'A new updated title',
+            'slug' => str_slug($title),
+            'body' => 'This is test body updated text',
+            'excerpt' => 'This is test excerpt updated text',
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJson([
+            'status_code' => Response::HTTP_OK,
+            'status_message' => 'OK',
+            'status' => 'success',
+            'message' => 'The post was updated successfully!',
+            'data' => [
+                'id' => 1,
+                'title' => $title = 'A new updated title',
+                'slug' => str_slug($title),
+                'body' => 'This is test body updated text',
+                'excerpt' => 'This is test excerpt updated text',
+                'published_at' => now()->subDays(3)->format('F j, Y H:i'),
+                'created_at' => now()->format('F j, Y H:i'),
+                'updated_at' => now()->format('F j, Y H:i'),
+            ],
+        ]);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    /**
+     * @test
+     */
+    public function a_title_is_required_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'slug' => str_slug('A new title'),
+            'body' => 'This is test body text',
+            'excerpt' => 'This is test excerpt test',
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('title');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    /**
+     * @test
+     */
+    public function a_slug_is_required_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => 'A new title',
+            'body' => 'This is test body text',
+            'excerpt' => 'This is test excerpt test',
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('slug');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+
+    /**
+     * @test
+     */
+    public function an_excerpt_is_required_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => 'A new title',
+            'slug' => str_slug('A new title'),
+            'body' => 'This is test body text',
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('excerpt');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+
+    /**
+     * @test
+     */
+    public function a_body_is_required_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => 'A new title',
+            'slug' => str_slug('A new title'),
+            'excerpt' => 'This is test excerpt test',
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('body');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    /**
+     * @test
+     */
+    public function a_published_at_date_is_required_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => 'A new title',
+            'slug' => str_slug('A new title'),
+            'body' => 'This is test body text',
+            'excerpt' => 'This is test excerpt test',
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('published_at');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+
+    /**
+     * @test
+     */
+    public function a_published_at_date_needs_to_be_in_proper_format_when_updating_an_existing_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+            'user_id' => $user->id,
+            'title' => 'A new title',
+            'slug' => str_slug('A new title'),
+            'body' => 'This is test body text',
+            'excerpt' => 'This is test excerpt test',
+            'published_at' => now()->subDays(3)->format('Y/m/d H:i:s'),
+        ], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $response->assertJsonValidationErrors('published_at');
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
 
 }
