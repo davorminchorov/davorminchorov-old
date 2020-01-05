@@ -12,6 +12,7 @@ $this->router->group(['prefix' => 'admin', 'middleware' => ['auth']], function (
     $this->router->get('posts/{slug}', 'Admin\PostsController@show')->name('admin.posts.show');
     $this->router->post('posts', 'Admin\PostsController@store')->name('admin.posts.store');
     $this->router->patch('posts/{id}', 'Admin\PostsController@update')->name('admin.posts.update');
+    $this->router->delete('posts/{id}', 'Admin\PostsController@delete')->name('admin.posts.delete');
 });
 
 $this->router->post('contact', 'ContactController@sendContactEmail')->name('contact');

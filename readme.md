@@ -33,7 +33,7 @@
 - [x] Implement the single blog post API
 - [x] Implement the publish new blog post API
 - [x] Implement the edit existing blog post API
-- [ ] Implement the delete existing blog post API
+- [x] Implement the delete existing blog post API
 - [x] Design the admin blog posts page
 - [x] Design the publish new blog post admin page
 - [x] Design the edit existing blog post admin page

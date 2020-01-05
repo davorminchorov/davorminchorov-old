@@ -22,7 +22,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -81,7 +81,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -108,7 +108,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -124,6 +124,17 @@ class PostTest extends TestCase
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
             'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $this->assertDatabaseHas('posts', [
+            'id' => 1,
+            'title' => $title = 'A new title',
+            'slug' => str_slug($title),
+            'body' => 'This is test body text',
+            'excerpt' => 'This is test excerpt test',
+            'published_at' => now()->subDays(3),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         $response->assertJson([
@@ -156,7 +167,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -186,7 +197,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -217,7 +228,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -248,7 +259,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -278,7 +289,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -309,7 +320,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -341,7 +352,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -357,6 +368,18 @@ class PostTest extends TestCase
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
             'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+
+        $this->assertDatabaseHas('posts', [
+            'id' => 1,
+            'title' => $title = 'A new updated title',
+            'slug' => str_slug($title),
+            'body' => 'This is test body updated text',
+            'excerpt' => 'This is test excerpt updated text',
+            'published_at' => now()->subDays(3),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         $response->assertJson([
@@ -389,7 +412,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -420,7 +443,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -452,7 +475,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -484,7 +507,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -515,7 +538,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -547,7 +570,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
             'test' => 'test',
             'email' => $user->email,
             'password' => 'secret'
@@ -567,6 +590,42 @@ class PostTest extends TestCase
 
         $response->assertJsonValidationErrors('published_at');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    /**
+     * @test
+     */
+    public function the_admin_can_delete_an_existing_blog_post(): void
+    {
+        $this->withExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $post = factory(Post::class)->create();
+
+        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+            'test' => 'test',
+            'email' => $user->email,
+            'password' => 'secret'
+        ]);
+        $jsonResponse = $response->json();
+
+        $response = $this->json('DELETE', $this->apiV1Url . 'admin/posts/' . $post->id, [], [
+            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        ]);
+
+        $this->assertDatabaseMissing('posts', [
+            'id' => $post->id,
+        ]);
+
+        $response->assertJson([
+            'status_code' => Response::HTTP_OK,
+            'status_message' => 'OK',
+            'status' => 'success',
+            'message' => 'The post was deleted successfully!',
+            'data' => [],
+        ]);
+
+        $response->assertStatus(Response::HTTP_OK);
     }
 
 }

@@ -5,6 +5,7 @@ namespace App\Api\V1\Controllers\Admin;
 use App\Api\V1\Controllers\ApiController;
 use App\Api\V1\Requests\Admin\PublishNewPostRequest;
 use App\Api\V1\Requests\Admin\UpdateExistingPostRequest;
+use App\Api\V1\Resources\Admin\DeleteExistingPostResource;
 use App\Api\V1\Resources\Admin\PublishNewPostResource;
 use App\Api\V1\Resources\Admin\UpdateExistingPostResource;
 use App\Api\V1\Resources\PostsCollection;
@@ -77,5 +78,21 @@ class PostsController extends ApiController
         ]));
 
         return new UpdateExistingPostResource($post->fresh());
+    }
+
+    /**
+     * Update an existing blog post by ID.
+     *
+     * @param UpdateExistingPostRequest $request
+     * @param int $id
+     * @return UpdateExistingPostResource
+     */
+    public function delete(int $id): DeleteExistingPostResource
+    {
+        $post = $this->post->findOrFail($id);
+
+        $post->delete();
+
+        return new DeleteExistingPostResource($post);
     }
 }
