@@ -1,6 +1,11 @@
 export default {
     state: {
         auth: null,
+        notification: {
+            show: false,
+            message: '',
+            classes: '',
+        },
     },
     actions: {
         signIn({ commit }, {form}) {
@@ -20,7 +25,13 @@ export default {
             return commit('logout');
         },
         sendContactEmail({commit}, {form}) {
-            return form.post('/contact')
+            return form.post('/admin/posts')
+                .then((response) => {
+                    return response;
+                });
+        },
+        publishNewPost({commit}, {form}) {
+            return form.post('/admin/posts')
                 .then((response) => {
                     return response;
                 });
@@ -41,6 +52,9 @@ export default {
     getters: {
         auth(state) {
             return state.auth;
+        },
+        notification(state) {
+            return state.notification;
         },
     }
 

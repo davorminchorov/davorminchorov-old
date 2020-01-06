@@ -5,9 +5,11 @@ export class Form {
      * Create a new Form instance.
      *
      * @param {object} data
+     * @param {string} accessToken
      */
-    constructor(data) {
+    constructor(data, accessToken) {
         this.apiUrl = '/api/v1';
+        this.accessToken = accessToken;
 
         this.originalData = data;
 
@@ -92,8 +94,16 @@ export class Form {
      * @param {string} url
      */
     submit(requestType, url) {
+        let config = this.accessToken ? {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + this.accessToken,
+            }
+        } : {};
+
         return new Promise((resolve, reject) => {
-            window.axios[requestType](this.apiUrl + url, this.data())
+            window.axios[requestType](this.apiUrl + url, this.data(), config)
                 .then(response => {
                     this.onSuccess(response.data);
 

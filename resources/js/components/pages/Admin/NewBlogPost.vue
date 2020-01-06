@@ -8,12 +8,6 @@
                 <div class="max-w-full w-full lg:p-10 p-6">
                     <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
                         <form @submit.prevent="publish()" @keydown="form.errors.clear($event.target.name)">
-                            <div class="text-center font-semibold text-sm mb-4"
-                                 :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
-                                 v-if="form.errors.any() || status === 'success'"
-                                 v-text="message"
-                            >
-                            </div>
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Title:</span>
                                 <input type="text"
@@ -91,6 +85,7 @@
     import {Form} from '../../../Helpers/Form';
     import { Datetime } from 'vue-datetime';
     import { Editor } from '@toast-ui/vue-editor';
+    import moment from 'moment';
 
     export default {
         mounted() {
@@ -101,15 +96,16 @@
             'datetime': Datetime,
         },
         data() {
+            let accessToken = this.$store.getters.auth.access_token;
+
             return {
                 form: new Form({
                     title: '',
+                    slug: '',
                     body: '',
                     excerpt: '',
                     published_at: '',
-                }),
-                message: '',
-                status: '',
+                }, accessToken),
                 buttonText: 'Publish',
                 isLoading: false,
             }
@@ -117,24 +113,18 @@
 
         methods: {
             publish() {
+                this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
                 this.isLoading = true;
                 this.buttonText = 'Publishing...';
-                this.excerpt = '';
-                this.body = '';
-                this.status = '';
-                // this.$store.dispatch('PublishNewBlogPost', {
-                //     form: this.form,
-                // }).then((response) => {
-                //     this.isLoading = false;
-                //     this.buttonText = 'Publish';
-                //     this.message = response.message;
-                //     this.status = response.status;
-                // }).catch((error) => {
-                //     this.isLoading = false;
-                //     this.buttonText = 'Publish';
-                //     this.message = 'Oh oh, there were errors.';
-                //     this.status = 'error';
-                // });
+                this.$store.dispatch('publishNewPost', {
+                    form: this.form,
+                }).then((response) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Publish';
+                }).catch((error) => {
+                    this.isLoading = false;
+                    this.buttonText = 'Publish';
+                });
             }
         }
     }

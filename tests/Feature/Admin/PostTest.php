@@ -116,7 +116,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => $title = 'A new title',
             'slug' => str_slug($title),
             'body' => 'This is test body text',
@@ -132,9 +131,9 @@ class PostTest extends TestCase
             'slug' => str_slug($title),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
-            'published_at' => now()->subDays(3),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+            'created_at' => now()->format('Y-m-d H:i:s'),
+            'updated_at' => now()->format('Y-m-d H:i:s'),
         ]);
 
         $response->assertJson([
@@ -175,7 +174,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
@@ -205,7 +203,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
@@ -236,7 +233,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
@@ -267,7 +263,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'excerpt' => 'This is test excerpt test',
@@ -297,7 +292,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
@@ -328,7 +322,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
@@ -360,7 +353,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => $title = 'A new updated title',
             'slug' => str_slug($title),
             'body' => 'This is test body updated text',
@@ -377,9 +369,9 @@ class PostTest extends TestCase
             'slug' => str_slug($title),
             'body' => 'This is test body updated text',
             'excerpt' => 'This is test excerpt updated text',
-            'published_at' => now()->subDays(3),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
+            'created_at' => now()->format('Y-m-d H:i:s'),
+            'updated_at' => now()->format('Y-m-d H:i:s'),
         ]);
 
         $response->assertJson([
@@ -420,7 +412,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
@@ -451,7 +442,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
@@ -483,7 +473,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
@@ -515,7 +504,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'excerpt' => 'This is test excerpt test',
@@ -546,7 +534,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
@@ -578,7 +565,6 @@ class PostTest extends TestCase
         $jsonResponse = $response->json();
 
         $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
-            'user_id' => $user->id,
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',

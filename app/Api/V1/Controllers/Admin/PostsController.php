@@ -45,14 +45,13 @@ class PostsController extends ApiController
      */
     public function store(PublishNewPostRequest $request): PublishNewPostResource
     {
-        $post = $this->post->create($request->only([
-            'user_id',
+        $post = $this->post->create(array_merge($request->only([
             'title',
             'slug',
             'body',
             'excerpt',
             'published_at',
-        ]));
+        ]), ['user_id' => auth('api')->id()]));
 
         return new PublishNewPostResource($post);
     }
@@ -68,14 +67,13 @@ class PostsController extends ApiController
     {
         $post = $this->post->findOrFail($id);
 
-        $post->update($request->only([
-            'user_id',
+        $post->update(array_merge($request->only([
             'title',
             'slug',
             'body',
             'excerpt',
             'published_at',
-        ]));
+        ]), ['user_id' => auth('api')->id()]));
 
         return new UpdateExistingPostResource($post->fresh());
     }
