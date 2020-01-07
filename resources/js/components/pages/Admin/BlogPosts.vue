@@ -39,7 +39,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="p-10 text-center bg-green-500 text-gray-100" v-else>
+                <div class="p-10 text-center bg-gray-300 text-gray-600" v-else>
                     <span v-if="isLoading">Loading posts, please wait...</span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
