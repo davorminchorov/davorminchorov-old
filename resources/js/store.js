@@ -26,21 +26,32 @@ export default {
         },
         sendContactEmail({commit}, {form}) {
             return form.post('/admin/posts')
-                .then((response) => {
+                .then(response => {
                     return response;
                 });
         },
         publishNewPost({commit}, {form}) {
             return form.post('/admin/posts')
-                .then((response) => {
+                .then(response => {
                     return response;
                 });
         },
         updateExistingPost({commit}, {form, id}) {
             return form.patch('/admin/posts/' + id)
-                .then((response) => {
+                .then(response => {
                     return response;
                 });
+        },
+        deleteExistingPost({commit}, {id}) {
+            return window.axios.delete('/api/v1/admin/posts/' + id, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + this.getters.auth.access_token,
+                }
+            }).then(response => {
+                return response;
+            });
         },
     },
 

@@ -80,13 +80,12 @@ class PostsController extends ApiController
     }
 
     /**
-     * Update an existing blog post by ID.
+     * Delete an existing blog post by ID.
      *
-     * @param UpdateExistingPostRequest $request
      * @param int $id
-     * @return UpdateExistingPostResource
+     * @return DeleteExistingPostResource
      */
-    public function delete(int $id): DeleteExistingPostResource
+    public function destroy(int $id): DeleteExistingPostResource
     {
         $post = $this->post->findOrFail($id);
 
