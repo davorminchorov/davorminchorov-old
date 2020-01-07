@@ -121,6 +121,7 @@
                 }).then((response) => {
                     this.isLoading = false;
                     this.buttonText = 'Publish';
+                    this.$router.push({name : 'admin_blog_posts'});
                 }).catch((error) => {
                     this.isLoading = false;
                     this.buttonText = 'Publish';

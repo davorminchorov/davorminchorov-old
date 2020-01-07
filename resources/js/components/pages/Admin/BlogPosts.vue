@@ -14,6 +14,7 @@
                     <thead class="p-10 bg-green-500 text-white uppercase">
                         <th class="p-2">ID</th>
                         <th class="p-2">Title</th>
+                        <th class="p-2">Slug</th>
                         <th class="p-2">Published At</th>
                         <th class="p-2">Created At</th>
                         <th class="p-2">Last Updated At</th>
@@ -23,6 +24,7 @@
                         <tr v-for="post in posts" :key="post.id">
                             <td class="p-2"> {{ post.id }}</td>
                             <td class="p-2">{{ post.title }}</td>
+                            <td class="p-2">{{ post.slug }}</td>
                             <td class="p-2"> {{ post.published_at }} </td>
                             <td class="p-2">{{ post.created_at }}</td>
                             <td class="p-2">{{ post.updated_at }}</td>
@@ -38,7 +40,8 @@
                     </tbody>
                 </table>
                 <div class="p-10 text-center bg-green-500 text-gray-100" v-else>
-                    There are no blog posts at the moment.
+                    <span v-if="isLoading">Loading posts, please wait...</span>
+                    <span v-else>There are no blog posts at the moment.</span>
                 </div>
             </div>
         </div>
@@ -60,6 +63,7 @@
         },
         data() {
             return {
+                isLoading: true,
                 selectedPostId: null,
             }
         },
@@ -75,7 +79,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch('getAdminBlogPosts');
+            this.$store.dispatch('getAdminBlogPosts').then(response => ( this.isLoading = false ));
         }
     }
 </script>

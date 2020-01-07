@@ -26,7 +26,7 @@ export default {
             component: Blog,
         },
         {
-            path: '/single-blog-post',
+            path: '/blog/:slug',
             name: 'single_blog_post',
             component: BlogPost,
         },
