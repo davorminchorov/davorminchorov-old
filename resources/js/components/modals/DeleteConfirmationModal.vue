@@ -41,7 +41,8 @@
                     this.isLoading = false;
                     this.buttonText = 'Delete';
                     this.$modal.hide('delete-confirmation');
-                }).catch((error) => {
+                    this.$store.dispatch('getAdminBlogPosts');
+                }).catch(error => {
                     this.isLoading = false;
                     this.buttonText = 'Delete';
                     this.$modal.hide('delete-confirmation');

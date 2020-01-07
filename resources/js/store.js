@@ -1,6 +1,7 @@
 export default {
     state: {
         auth: null,
+        adminPosts: [],
         notification: {
             show: false,
             message: '',
@@ -53,6 +54,17 @@ export default {
                 return response;
             });
         },
+        getAdminBlogPosts({commit}) {
+            window.axios.get('/api/v1/admin/posts', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + this.getters.auth.access_token,
+                }
+            }).then(response => {
+                return commit('refreshAdminPosts', response.data);
+            });
+        }
     },
 
     mutations: {
@@ -63,6 +75,9 @@ export default {
         logout(state) {
             localStorage.setItem('auth', null);
             state.auth = null;
+        },
+        refreshAdminPosts(state, response) {
+            state.adminPosts = response.data;
         }
     },
 
@@ -73,6 +88,9 @@ export default {
         notification(state) {
             return state.notification;
         },
+        adminPosts(state) {
+            return state.adminPosts;
+        }
     }
 
 }

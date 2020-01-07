@@ -60,8 +60,12 @@
         },
         data() {
             return {
-                posts: [],
                 selectedPostId: null,
+            }
+        },
+        computed: {
+            posts() {
+                return this.$store.state.adminPosts;
             }
         },
         methods: {
@@ -71,15 +75,7 @@
             }
         },
         mounted() {
-            window.axios.get('/api/v1/admin/posts', {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + this.$store.getters.auth.access_token,
-                }
-            }).then(response => {
-                this.posts = response.data.data;
-            });
+            this.$store.dispatch('getAdminBlogPosts');
         }
     }
 </script>
