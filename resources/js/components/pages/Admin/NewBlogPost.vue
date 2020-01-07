@@ -107,23 +107,23 @@
                     published_at: '',
                 }, accessToken),
                 buttonText: 'Publish',
-                isLoading: false,
             }
         },
-
+        computed: {
+            isLoading() {
+                return this.$store.state.isLoading;
+            }
+        },
         methods: {
             publish() {
                 this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
-                this.isLoading = true;
                 this.buttonText = 'Publishing...';
                 this.$store.dispatch('publishNewPost', {
                     form: this.form,
                 }).then((response) => {
-                    this.isLoading = false;
                     this.buttonText = 'Publish';
                     this.$router.push({name : 'admin_blog_posts'});
                 }).catch((error) => {
-                    this.isLoading = false;
                     this.buttonText = 'Publish';
                 });
             }

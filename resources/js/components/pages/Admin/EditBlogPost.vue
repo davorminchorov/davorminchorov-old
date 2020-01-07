@@ -110,7 +110,6 @@
             let accessToken = this.$store.getters.auth.access_token;
 
             return {
-                isLoading: false,
                 form: new Form({
                     title: '',
                     slug: '',
@@ -121,21 +120,22 @@
                 buttonText: 'Save Changes',
             }
         },
-
+        computed: {
+            isLoading() {
+                return this.$store.state.isLoading;
+            }
+        },
         methods: {
             updateExistingPost() {
                 this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
-                this.isLoading = true;
                 this.buttonText = 'Saving Changes...';
                 this.$store.dispatch('updateExistingPost', {
                     form: this.form,
                     id: this.$route.params.id,
                 }).then(response => {
-                    this.isLoading = false;
                     this.buttonText = 'Save Changes';
                     this.$router.push({name : 'admin_blog_posts'});
                 }).catch(error => {
-                    this.isLoading = false;
                     this.buttonText = 'Save Changes';
                 });
             }

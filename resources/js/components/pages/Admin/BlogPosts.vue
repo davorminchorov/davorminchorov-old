@@ -10,7 +10,11 @@
                         Publish New Blog Post
                     </router-link>
                 </div>
-                <table class="p-10 text-center text-gray-900" v-if="posts.length">
+                <div class="p-10 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
+                    <span v-if="isLoading">Loading posts, please wait...</span>
+                    <span v-else>There are no blog posts at the moment.</span>
+                </div>
+                <table class="p-10 text-center text-gray-900" v-else>
                     <thead class="p-10 bg-green-500 text-white uppercase">
                         <th class="p-2">ID</th>
                         <th class="p-2">Title</th>
@@ -39,10 +43,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="p-10 text-center bg-gray-300 text-gray-600" v-else>
-                    <span v-if="isLoading">Loading posts, please wait...</span>
-                    <span v-else>There are no blog posts at the moment.</span>
-                </div>
             </div>
         </div>
 
@@ -63,13 +63,15 @@
         },
         data() {
             return {
-                isLoading: true,
                 selectedPostId: null,
             }
         },
         computed: {
             posts() {
                 return this.$store.state.adminPosts;
+            },
+            isLoading() {
+                return this.$store.state.isLoading;
             }
         },
         methods: {
@@ -79,7 +81,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch('getAdminBlogPosts').then(response => ( this.isLoading = false ));
+            this.$store.dispatch('getAdminBlogPosts');
         }
     }
 </script>

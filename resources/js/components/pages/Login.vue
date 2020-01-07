@@ -78,10 +78,13 @@
                 status: '',
             }
         },
-
+        computed: {
+            isLoading() {
+                return this.$store.state.isLoading;
+            }
+        },
         methods: {
             login() {
-                this.isLoading = true;
                 this.buttonText = 'Logging In...';
                 this.message = '';
                 this.status = '';
@@ -89,12 +92,10 @@
                 this.$store.dispatch('signIn', {
                     form: this.form,
                 }).then((response) => {
-                    this.isLoading = false;
                     this.buttonText = 'Login';
                     this.$router.push({ name: 'admin_dashboard' });
                 })
                   .catch((error) => {
-                      this.isLoading = false;
                       this.buttonText = 'Login';
                       this.message = 'Oh oh, there were errors.';
                       this.status = 'error';

@@ -27,23 +27,24 @@
         props: ['selectedPostId'],
         data() {
             return {
-                isLoading: false,
                 buttonText: 'Delete',
+            }
+        },
+        computed: {
+            isLoading() {
+                return this.$store.state.isLoading;
             }
         },
         methods: {
             deleteExistingPost() {
-                this.isLoading = true;
                 this.buttonText = 'Deleting...';
                 this.$store.dispatch('deleteExistingPost', {
                     id: this.selectedPostId,
                 }).then(response => {
-                    this.isLoading = false;
                     this.buttonText = 'Delete';
                     this.$modal.hide('delete-confirmation');
                     this.$store.dispatch('getAdminBlogPosts');
                 }).catch(error => {
-                    this.isLoading = false;
                     this.buttonText = 'Delete';
                     this.$modal.hide('delete-confirmation');
                 });

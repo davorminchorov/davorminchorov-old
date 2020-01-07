@@ -38,7 +38,7 @@
 - [x] Design the publish new blog post admin page
 - [x] Design the edit existing blog post admin page
 - [x] Design the delete admin blog post confirmation modal
-- [ ] Integrate the admin blog APIs with the front-end
+- [x] Integrate the admin blog APIs with the front-end
 - [ ] Integrate the blog APIs with the front-end
 - [ ] Design the admin dashboard
 - [ ] Design the bootcamp page
