@@ -7,13 +7,7 @@
             <div class="flex flex-col items-center justify-around pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
                 <div class="max-w-full w-full lg:p-10 p-6">
                     <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
-                        <form @submit.prevent="publish()" @keydown="form.errors.clear($event.target.name)">
-                            <div class="text-center font-semibold text-sm mb-4"
-                                 :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
-                                 v-if="form.errors.any() || status === 'success'"
-                                 v-text="message"
-                            >
-                            </div>
+                        <form @submit.prevent="updateExistingPost()" @keydown="form.errors.clear($event.target.name)">
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Title:</span>
                                 <input type="text"
@@ -91,51 +85,58 @@
     import {Form} from '../../../Helpers/Form';
     import { Datetime } from 'vue-datetime';
     import { Editor } from '@toast-ui/vue-editor';
+    import moment from "moment";
 
     export default {
         mounted() {
             Editor.usageStatistics = false;
+            window.axios.get('/api/v1/admin/posts/' + this.$route.params.id , {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + this.$store.getters.auth.access_token,
+                }
+            }).then(response => {
+                let accessToken = this.$store.getters.auth.access_token;
+                this.form = new Form(response.data.data, accessToken);
+                this.form.published_at = new Date(this.form.published_at).toISOString();
+            });
         },
         components: {
             'editor': Editor,
             'datetime': Datetime,
         },
         data() {
+            let accessToken = this.$store.getters.auth.access_token;
+
             return {
-                form: new Form({
-                    title: 'test',
-                    body: 'some body content',
-                    excerpt: 'some excerpt content',
-                    slug: 'test',
-                    published_at: '2019-11-22T09:41:00.000Z',
-                }),
-                message: '',
-                status: '',
-                buttonText: 'Save Changes',
                 isLoading: false,
+                form: new Form({
+                    title: '',
+                    slug: '',
+                    body: '',
+                    excerpt: '',
+                    published_at: '',
+                }, accessToken),
+                buttonText: 'Save Changes',
             }
         },
 
         methods: {
-            publish() {
+            updateExistingPost() {
+                this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
                 this.isLoading = true;
-                this.buttonText = 'Saving...';
-                this.excerpt = '';
-                this.body = '';
-                this.status = '';
-                // this.$store.dispatch('PublishNewBlogPost', {
-                //     form: this.form,
-                // }).then((response) => {
-                //     this.isLoading = false;
-                //     this.buttonText = 'Save Changes';
-                //     this.message = response.message;
-                //     this.status = response.status;
-                // }).catch((error) => {
-                //     this.isLoading = false;
-                //     this.buttonText = 'Save Changes';
-                //     this.message = 'Oh oh, there were errors.';
-                //     this.status = 'error';
-                // });
+                this.buttonText = 'Saving Changes...';
+                this.$store.dispatch('updateExistingPost', {
+                    form: this.form,
+                    id: this.$route.params.id,
+                }).then(response => {
+                    this.isLoading = false;
+                    this.buttonText = 'Save Changes';
+                }).catch(error => {
+                    this.isLoading = false;
+                    this.buttonText = 'Save Changes';
+                });
             }
         }
     }

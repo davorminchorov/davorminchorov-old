@@ -36,6 +36,12 @@ export default {
                     return response;
                 });
         },
+        updateExistingPost({commit}, {form, id}) {
+            return form.patch('/admin/posts/' + id)
+                .then((response) => {
+                    return response;
+                });
+        },
     },
 
     mutations: {

@@ -9,6 +9,7 @@ use App\Api\V1\Resources\Admin\DeleteExistingPostResource;
 use App\Api\V1\Resources\Admin\PublishNewPostResource;
 use App\Api\V1\Resources\Admin\UpdateExistingPostResource;
 use App\Api\V1\Resources\PostsCollection;
+use App\Api\V1\Resources\SinglePostResource;
 use App\Models\Post;
 
 class PostsController extends ApiController
@@ -92,5 +93,18 @@ class PostsController extends ApiController
         $post->delete();
 
         return new DeleteExistingPostResource($post);
+    }
+
+    /**
+     * Show a single blog post.
+     *
+     * @param int $id
+     * @return SinglePostResource
+     */
+    public function show(int $id): SinglePostResource
+    {
+        $post = $this->post->findOrFail($id);
+
+        return new SinglePostResource($post);
     }
 }
