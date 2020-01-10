@@ -2,6 +2,8 @@ export default {
     state: {
         auth: null,
         adminPosts: [],
+        blogPosts: [],
+        blogPost: [],
         notification: {
             show: false,
             message: '',
@@ -81,6 +83,31 @@ export default {
                 this.state.isLoading = false;
                 return commit('refreshAdminPosts', response.data);
             });
+        },
+        getBlogPosts({commit}) {
+            this.state.isLoading = true;
+            window.axios.get('/api/v1/posts', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                }
+            }).then(response => {
+                this.state.isLoading = false;
+                return commit('refreshBlogPosts', response.data);
+            });
+        },
+        getSingleBlogPost({commit}, {slug}) {
+            this.state.isLoading = true;
+            window.axios.get('/api/v1/posts/' + slug, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                }
+            }).then(response => {
+                this.state.isLoading = false;
+
+                return commit('refreshSingleBlogPost', response.data);
+            });
         }
     },
 
@@ -95,6 +122,12 @@ export default {
         },
         refreshAdminPosts(state, response) {
             state.adminPosts = response.data;
+        },
+        refreshBlogPosts(state, response) {
+            state.blogPosts = response.data;
+        },
+        refreshSingleBlogPost(state, response) {
+            state.blogPost = response.data;
         }
     },
 
@@ -107,6 +140,12 @@ export default {
         },
         adminPosts(state) {
             return state.adminPosts;
+        },
+        blogPosts(state) {
+            return state.blogPosts;
+        },
+        blogPost(state) {
+            return state.blogPost;
         },
         isLoading(state) {
             return state.isLoading;

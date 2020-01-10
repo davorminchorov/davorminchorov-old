@@ -47,7 +47,7 @@ export default {
             }
         },
         {
-            path: '/admin/blog-posts',
+            path: '/admin/posts',
             name: 'admin_blog_posts',
             component: BlogPosts,
             meta: {
@@ -55,7 +55,7 @@ export default {
             }
         },
         {
-            path: '/admin/blog-posts/new',
+            path: '/admin/posts/new',
             name: 'admin_new_blog_post',
             component: NewBlogPost,
             meta: {
@@ -63,7 +63,7 @@ export default {
             }
         },
         {
-            path: '/admin/blog-posts/:id/edit',
+            path: '/admin/posts/:id/edit',
             name: 'admin_edit_blog_post',
             component: EditBlogPost,
             meta: {

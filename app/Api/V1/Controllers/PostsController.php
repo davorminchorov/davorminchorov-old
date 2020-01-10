@@ -29,7 +29,7 @@ class PostsController extends ApiController
      */
     public function index(): PostsCollection
     {
-        return new PostsCollection($this->post->where('published_at', '<', now())->latest()->get());
+        return new PostsCollection($this->post->where('published_at', '<', now())->latest('id')->get());
     }
 
     /**
