@@ -9,7 +9,7 @@
                 <h3 class="text-center text-xl font-bold pt-5 pb-10 text-white tracking-normal">by Davor Minchorov on {{ post.published_at }}</h3>
             </div>
             <div class="flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
-                <p class="text-lg text-gray-500 pb-2 tracking-normal flex-grow"> {{ post.body }} </p>
+                <vue-simple-markdown :source="post.body"></vue-simple-markdown>
             </div>
         </div>
 
@@ -17,7 +17,6 @@
 </template>
 
 <script>
-
     export default {
         data() {
             return {

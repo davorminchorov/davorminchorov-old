@@ -6,10 +6,13 @@ import VModal from 'vue-js-modal'
 import routes from './routes';
 import App from './components/App.vue';
 import vuexStore from './store';
+import VueSimpleMarkdown from 'vue-simple-markdown';
+import 'vue-simple-markdown/dist/vue-simple-markdown.css';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VModal);
+Vue.use(VueSimpleMarkdown);
 
 window.axios = axios;
 Vue.config.productionTip = false;

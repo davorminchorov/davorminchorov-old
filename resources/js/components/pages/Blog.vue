@@ -7,13 +7,15 @@
         <div class="flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
             <div>
                 <div class="p-10 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
-                    <span v-if="isLoading">Loading posts, please wait...</span>
+                    <span v-if="isLoading">Loading blog posts, please wait...</span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
                 <div class="flex flex-col pb-6" v-for="post in posts" v-else>
                     <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2">{{ post.title }}</router-link>
                     <span class="text-center text-md text-gray-500 pb-2 tracking-normal"> by Davor Minchorov on {{ post.published_at }}</span>
-                    <span class="text-lg text-gray-500 pb-2 tracking-normal text-center"> {{ post.excerpt }} </span>
+                    <div class="text-center">
+                        <vue-simple-markdown :source="post.excerpt"></vue-simple-markdown>
+                    </div>
                 </div>
             </div>
         </div>
