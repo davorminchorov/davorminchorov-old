@@ -6,7 +6,7 @@
         <div v-else>
             <div class="gradient-green flex flex-col text-white rounded">
                 <h1 class="text-center text-3xl font-bold pt-10 text-white uppercase tracking-wider">{{ post.title }}</h1>
-                <h3 class="text-center text-xl font-bold pt-5 pb-10 text-white tracking-normal">by Davor Minchorov on {{ post.published_at }}</h3>
+                <h3 class="text-center text-xl font-bold pt-5 pb-10 text-white tracking-normal">by {{ post.author.name }} on {{ post.published_at }}</h3>
             </div>
             <div class="flex flex-col pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
                 <vue-simple-markdown :source="post.body"></vue-simple-markdown>
@@ -21,7 +21,17 @@
         data() {
             return {
                 isLoading: false,
-                post: {},
+                post: {
+                    id: '',
+                    title: '',
+                    slug: '',
+                    excerpt: '',
+                    body: '',
+                    author: {
+                        id: '', name: ''
+                    },
+                    published_at: ''
+                },
             }
         },
         mounted() {

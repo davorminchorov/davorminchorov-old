@@ -29,7 +29,9 @@ class PostsController extends ApiController
      */
     public function index(): PostsCollection
     {
-        return new PostsCollection($this->post->where('published_at', '<', now())->latest('id')->get());
+        $posts = $this->post->with(['author'])->where('published_at', '<', now())->latest('id')->get();
+
+        return new PostsCollection($posts);
     }
 
     /**
@@ -40,7 +42,7 @@ class PostsController extends ApiController
      */
     public function show(string $slug): SinglePostResource
     {
-        $post = $this->post->where('slug', $slug)->where('published_at', '<', now())->firstOrFail();
+        $post = $this->post->with(['author'])->where('slug', $slug)->where('published_at', '<', now())->firstOrFail();
 
         return new SinglePostResource($post);
     }

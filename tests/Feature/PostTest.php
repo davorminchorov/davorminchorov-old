@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Response;
 use Tests\TestCase;
@@ -16,9 +17,13 @@ class PostTest extends TestCase
      */
     public function it_shows_a_list_of_published_posts(): void
     {
-        $publishedPosts = factory(Post::class, 3)->states('published')->create();
+        $user = factory(User::class)->create();
+        $publishedPosts = factory(Post::class, 3)->state('published')->create();
+        dump($publishedPosts[0]->toArray());
+        dump($publishedPosts[1]->toArray());
+        dump($publishedPosts[2]->toArray());
         $response = $this->json('GET', $this->apiV1Url . 'posts');
-
+        dd(json_decode($response->getContent(), true));
         $response->assertJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
@@ -31,6 +36,10 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[0]['slug'],
                     'body' => $publishedPosts[0]['body'],
                     'excerpt' => $publishedPosts[0]['excerpt'],
+                    'author' => [
+                        'id' => 1,
+                        'name' => 'Davor Minchorov'
+                    ],
                     'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
                 ],
                 [
@@ -39,6 +48,10 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[1]['slug'],
                     'body' => $publishedPosts[1]['body'],
                     'excerpt' => $publishedPosts[1]['excerpt'],
+                    'author' => [
+                        'id' => 1,
+                        'name' => 'Davor Minchorov'
+                    ],
                     'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i'),
                 ],
                 [
@@ -47,6 +60,10 @@ class PostTest extends TestCase
                     'slug' => $publishedPosts[2]['slug'],
                     'body' => $publishedPosts[2]['body'],
                     'excerpt' => $publishedPosts[2]['excerpt'],
+                    'author' => [
+                        'id' => 1,
+                        'name' => 'Davor Minchorov'
+                    ],
                     'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
                 ],
             ],
@@ -60,8 +77,9 @@ class PostTest extends TestCase
      */
     public function it_does_not_show_a_list_of_unpublished_posts(): void
     {
-        $publishedPost = factory(Post::class)->states('published')->create();
-        $unpublishedPost = factory(Post::class)->states('unpublished')->create();
+        $user = factory(User::class)->create();
+        $publishedPost = factory(Post::class)->state('published')->create();
+        $unpublishedPost = factory(Post::class)->state('unpublished')->create();
 
         $response = $this->json('GET', $this->apiV1Url . 'posts');
 
@@ -75,7 +93,8 @@ class PostTest extends TestCase
      */
     public function it_shows_a_single_blog_post(): void
     {
-        $publishedPost = factory(Post::class)->states('published')->create();
+        $user = factory(User::class)->create();
+        $publishedPost = factory(Post::class)->state('published')->create();
 
         $response = $this->json('GET', $this->apiV1Url . 'posts/' . $publishedPost->slug);
 
