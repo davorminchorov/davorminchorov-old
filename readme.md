@@ -44,3 +44,9 @@
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
 - [ ] Make improvements to the code
+- [ ] Upgrade Tailwind CSS to version 1.2
+- [ ] Redesign the website
+- [ ] Make design improvements to the blog and single blog post pages
+- [ ] Make the admin panel responsive
+- [ ] Make the navigation bar responsive
+- [ ] Implement refresh JWT with interceptors when the token expires
