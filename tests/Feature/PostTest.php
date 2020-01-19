@@ -19,11 +19,8 @@ class PostTest extends TestCase
     {
         $user = factory(User::class)->create();
         $publishedPosts = factory(Post::class, 3)->state('published')->create();
-        dump($publishedPosts[0]->toArray());
-        dump($publishedPosts[1]->toArray());
-        dump($publishedPosts[2]->toArray());
         $response = $this->json('GET', $this->apiV1Url . 'posts');
-        dd(json_decode($response->getContent(), true));
+
         $response->assertJson([
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
@@ -31,16 +28,16 @@ class PostTest extends TestCase
             'message' => 'The posts were retrieved successfully!',
             'data' => [
                 [
-                    'id' => $publishedPosts[0]['id'],
-                    'title' => $publishedPosts[0]['title'],
-                    'slug' => $publishedPosts[0]['slug'],
-                    'body' => $publishedPosts[0]['body'],
-                    'excerpt' => $publishedPosts[0]['excerpt'],
+                    'id' => $publishedPosts[2]['id'],
+                    'title' => $publishedPosts[2]['title'],
+                    'slug' => $publishedPosts[2]['slug'],
+                    'body' => $publishedPosts[2]['body'],
+                    'excerpt' => $publishedPosts[2]['excerpt'],
                     'author' => [
                         'id' => 1,
                         'name' => 'Davor Minchorov'
                     ],
-                    'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
+                    'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
                 ],
                 [
                     'id' => $publishedPosts[1]['id'],
@@ -55,16 +52,16 @@ class PostTest extends TestCase
                     'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i'),
                 ],
                 [
-                    'id' => $publishedPosts[2]['id'],
-                    'title' => $publishedPosts[2]['title'],
-                    'slug' => $publishedPosts[2]['slug'],
-                    'body' => $publishedPosts[2]['body'],
-                    'excerpt' => $publishedPosts[2]['excerpt'],
+                    'id' => $publishedPosts[0]['id'],
+                    'title' => $publishedPosts[0]['title'],
+                    'slug' => $publishedPosts[0]['slug'],
+                    'body' => $publishedPosts[0]['body'],
+                    'excerpt' => $publishedPosts[0]['excerpt'],
                     'author' => [
                         'id' => 1,
                         'name' => 'Davor Minchorov'
                     ],
-                    'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
+                    'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
                 ],
             ],
         ]);
