@@ -21,7 +21,7 @@
                     <br>
                     - For the development environment I use Docker.
                     <br>
-                    - From the coding editors, I use the Jetbrains PHPStorm IDE.
+                    - For the coding editors, I use the Jetbrains PHPStorm IDE.
                 </div>
             </div>
         </div>
