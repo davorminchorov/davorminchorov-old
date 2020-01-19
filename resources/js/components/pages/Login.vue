@@ -73,7 +73,6 @@
                     recaptcha: '',
                 }),
                 buttonText: 'Login',
-                isLoading: false,
                 message: '',
                 status: '',
             }

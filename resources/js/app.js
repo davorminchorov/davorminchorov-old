@@ -25,6 +25,20 @@ let store = new Vuex.Store(vuexStore);
 let auth = localStorage.getItem('auth');
 store.commit('authenticate', JSON.parse(auth));
 
+window.axios.interceptors.response.use(function (response) {
+    return response;
+}, function (error) {
+    if (error.response.status !== 401) {
+        return new Promise((resolve, reject) => {
+            reject(error);
+        });
+    }
+
+    store.commit('logout');
+
+    router.push({ name: 'login' });
+});
+
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (store.getters.auth) {

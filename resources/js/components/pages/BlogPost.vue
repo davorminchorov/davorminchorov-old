@@ -46,6 +46,8 @@
                 this.isLoading = false;
 
                 this.post = response.data.data;
+            }).catch(error => {
+
             });
         },
     }

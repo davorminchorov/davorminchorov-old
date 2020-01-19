@@ -40,13 +40,14 @@
 - [x] Design the delete admin blog post confirmation modal
 - [x] Integrate the admin blog APIs with the front-end
 - [x] Integrate the blog APIs with the front-end
-- [ ] Design the admin dashboard
-- [ ] Design the bootcamp page
-- [ ] Implement the bootcamp page
-- [ ] Make improvements to the code
-- [ ] Upgrade Tailwind CSS to version 1.2
-- [ ] Redesign the website
+- [ ] Implement refresh JWT with interceptors when the token expires
 - [ ] Make design improvements to the blog and single blog post pages
 - [ ] Make the admin panel responsive
 - [ ] Make the navigation bar responsive
-- [ ] Implement refresh JWT with interceptors when the token expires
+- [ ] Make improvements to the code
+- [ ] Upgrade Tailwind CSS to version 1.2
+- [ ] Redesign the website
+- [ ] Design the bootcamp page
+- [ ] Implement the bootcamp page
+- [ ] Design the admin dashboard
+- [ ] Integrate Google Analytics API on the admin dashboard

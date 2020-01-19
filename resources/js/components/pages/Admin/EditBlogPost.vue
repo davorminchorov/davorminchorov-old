@@ -100,6 +100,8 @@
                 let accessToken = this.$store.getters.auth.access_token;
                 this.form = new Form(response.data.data, accessToken);
                 this.form.published_at = new Date(this.form.published_at).toISOString();
+            }).catch(error => {
+
             });
         },
         components: {

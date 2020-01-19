@@ -18,7 +18,24 @@ export default {
                 .then((response) => {
                     this.state.isLoading = false;
                     return commit('authenticate', response.data);
+                }).catch(error => {
+
                 });
+        },
+        refreshToken({ commit }) {
+            this.state.isLoading = true;
+            return window.axios.post('/api/v1/auth/refresh', {}, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + this.getters.auth.access_token,
+                }
+            }).then(response => {
+                this.state.isLoading = false;
+                return commit('refreshToken', response.data);
+            }).catch(error => {
+
+            });
         },
         signOut({ state, commit }) {
             this.state.isLoading = true;
@@ -28,6 +45,8 @@ export default {
                     'Accept': 'application/json',
                     'Authorization': 'Bearer ' + this.getters.auth.access_token,
                 }
+            }).catch(error => {
+
             });
 
             this.state.isLoading = false;
@@ -40,6 +59,8 @@ export default {
                 .then(response => {
                     this.state.isLoading = false;
                     return response;
+                }).catch(error => {
+
                 });
         },
         publishNewPost({commit}, {form}) {
@@ -48,6 +69,8 @@ export default {
                 .then(response => {
                     this.state.isLoading = false;
                     return response;
+                }).catch(error => {
+
                 });
         },
         updateExistingPost({commit}, {form, id}) {
@@ -56,6 +79,8 @@ export default {
                 .then(response => {
                     this.state.isLoading = false;
                     return response;
+                }).catch(error => {
+
                 });
         },
         deleteExistingPost({commit}, {id}) {
@@ -69,6 +94,8 @@ export default {
             }).then(response => {
                 this.state.isLoading = false;
                 return response;
+            }).catch(error => {
+
             });
         },
         getAdminBlogPosts({commit}) {
@@ -82,6 +109,8 @@ export default {
             }).then(response => {
                 this.state.isLoading = false;
                 return commit('refreshAdminPosts', response.data);
+            }).catch(error => {
+
             });
         },
         getBlogPosts({commit}) {
@@ -119,6 +148,10 @@ export default {
         logout(state) {
             localStorage.setItem('auth', null);
             state.auth = null;
+        },
+        refreshToken(state, auth) {
+            localStorage.setItem('auth', JSON.stringify(auth));
+            state.auth = auth;
         },
         refreshAdminPosts(state, response) {
             state.adminPosts = response.data;
