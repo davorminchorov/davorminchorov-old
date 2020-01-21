@@ -2,7 +2,7 @@
     <div>
         <div class="flex flex-col justify-around">
             <div class="gradient-green flex flex-col text-white rounded">
-                <h1 class="text-center text-3xl font-bold pt-10 pb-10 text-white uppercase tracking-wider">Edit Blog Post</h1>
+                <h1 class="text-center lg:text-2xl text-xl font-bold pt-10 pb-10 text-white uppercase tracking-wider">Edit Blog Post</h1>
             </div>
             <div class="flex flex-col items-center justify-around pt-6 pl-24 pr-24 pb-6 bg-white text-gray-900 border-2 rounded border-white">
                 <div class="max-w-full w-full lg:p-10 p-6">
