@@ -8,7 +8,7 @@ import App from './components/App.vue';
 import vuexStore from './store';
 import VueSimpleMarkdown from 'vue-simple-markdown/dist/vue-simple-markdown';
 import '../vendor/css/vue-simple-markdown.css';
-import 'highlight.js/styles/tomorrow-night.css';
+import 'highlight.js/styles/obsidian.css';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);

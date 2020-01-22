@@ -9,10 +9,8 @@
                 <h3 class="text-center lg:text-lg text-md lg:font-bold font-semibold pt-5 pb-10 text-white tracking-normal">by {{ post.author.name }}
                     <br class="lg:hidden"> on {{ post.published_at }}</h3>
             </div>
-            <div class="flex flex-col leading-normal text-lg pt-6 lg:pl-24 lg:pr-24 pl-6 pr-6 pb-6 bg-white text-gray-900 border-2 rounded-lg border-white">
-                <div class="lg:w-2/3">
-                    <vue-simple-markdown :source="post.body"></vue-simple-markdown>
-                </div>
+            <div class="tracking-wider leading-normal text-lg lg:pl-32 lg:pr-32 p-6 bg-white text-gray-900 border-2 rounded-lg border-white">
+                <vue-simple-markdown :source="post.body"></vue-simple-markdown>
             </div>
         </div>
 

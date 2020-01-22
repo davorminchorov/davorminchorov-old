@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3 class="text-gray-500 uppercase font-semibold text-xl text-center">About <span class="text-green-500">Me</span></h3>
-        <div class="pt-4 pr-10 text-md">
+        <div class="pt-4 pr-10 text-lg tracking-wide leading-normal">
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
