@@ -48,7 +48,9 @@
 
                 this.post = response.data.data;
             }).catch(error => {
-
+                if (error.response.status === 404) {
+                    this.$router.push({ name: 'blog' });
+                }
             });
         },
     }
