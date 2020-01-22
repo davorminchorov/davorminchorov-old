@@ -43,7 +43,7 @@
 - [ ] Implement refresh JWT with interceptors before the token expires
 - [x] Make responsive design improvements to the blog and single blog post pages
 - [ ] Make the admin panel responsive
-- [ ] Make the navigation bar responsive
+- [x] Make the navigation bar responsive
 - [ ] Make improvements to the code
 - [ ] Redesign the website
 - [ ] Design the bootcamp page
