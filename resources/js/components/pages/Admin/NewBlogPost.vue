@@ -30,13 +30,13 @@
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Excerpt:</span>
-                                <editor v-model="form.excerpt" previewStyle="vertical" height="300px" />
+                                <editor v-model="form.excerpt" previewStyle="tab" height="300px" />
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('excerpt')" v-text="form.errors.get('excerpt')"></span>
                             </label>
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Body:</span>
-                                <editor v-model="form.body" previewStyle="vertical" height="300px" />
+                                <editor v-model="form.body" previewStyle="tab" height="300px" />
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('body')" v-text="form.errors.get('body')"></span>
                             </label>
 
