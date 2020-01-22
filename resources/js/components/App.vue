@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col lg:py-10 py-3">
         <dm-navigation></dm-navigation>
 
-        <main class="flex-grow mb-10">
+        <main class="mb-10 container lg:mx-auto shadow-xl rounded-lg">
             <router-view></router-view>
         </main>
 

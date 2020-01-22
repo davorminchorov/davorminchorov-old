@@ -27,18 +27,27 @@
 - [x] Update the content on the home page
 - [x] Upgrade Laravel to version 6.0
 - [x] Upgrade Tailwind to version 1.1
-- [ ] Design the blog page
-- [ ] Design the single blog article page
-- [ ] Implement the Blog API
-- [ ] Implement the single blog article API
-- [ ] Implement the publish new blog article API
-- [ ] Implement the edit existing blog article API
-- [ ] Implement the delete existing blog article API
-- [ ] Design the admin blog articles page
-- [ ] Design the publish new blog article admin page
-- [ ] Design the edit existing blog article admin page
-- [ ] Design the admin blog articles page
-- [ ] Design the admin dashboard
+- [x] Design the blog page
+- [x] Design the single blog post page
+- [x] Implement the Blog Posts API
+- [x] Implement the single blog post API
+- [x] Implement the publish new blog post API
+- [x] Implement the edit existing blog post API
+- [x] Implement the delete existing blog post API
+- [x] Design the admin blog posts page
+- [x] Design the publish new blog post admin page
+- [x] Design the edit existing blog post admin page
+- [x] Design the delete admin blog post confirmation modal
+- [x] Integrate the admin blog APIs with the front-end
+- [x] Integrate the blog APIs with the front-end
+- [ ] Implement refresh JWT with interceptors before the token expires
+- [x] Make responsive design improvements to the blog and single blog post pages
+- [ ] Make the admin panel responsive
+- [x] Make the navigation bar responsive
+- [ ] Make improvements to the code
+- [ ] Redesign the website
 - [ ] Design the bootcamp page
 - [ ] Implement the bootcamp page
-- [ ] Make improvements to the code
+- [ ] Design the admin dashboard
+- [ ] Integrate Google Analytics API on the admin dashboard
+- [ ] Upgrade Tailwind CSS to version 1.2

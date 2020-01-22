@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Api\V1\Requests;
+namespace App\Api\V1\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class UpdateExistingPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,11 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email',
-            'password' => 'required',
+            'title' => 'required',
+            'slug' => 'required',
+            'body' => 'required',
+            'excerpt' => 'required',
+            'published_at' => 'required|date_format:Y-m-d H:i:s',
         ];
     }
 }

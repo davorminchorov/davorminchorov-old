@@ -1,7 +1,7 @@
 <template>
     <div class="p-6 flex flex-col items-center justify-center">
-        <h1 class="text-3xl font-bold">Davor Minchorov</h1>
-        <h3 class="text-xl font-bold">Senior Web Developer</h3>
+        <h1 class="text-3xl font-bold uppercase">Davor Minchorov</h1>
+        <h3 class="text-xl font-bold uppercase">Senior Web Developer</h3>
 
         <div class="flex mt-6">
             <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" rel="noreferrer" class="pl-1">

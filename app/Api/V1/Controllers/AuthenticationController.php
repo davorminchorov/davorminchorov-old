@@ -2,7 +2,7 @@
 
 namespace App\Api\V1\Controllers;
 
-use App\Api\V1\Requests\LoginRequest;
+use App\Api\V1\Requests\Admin\LoginRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use TimeHunter\LaravelGoogleReCaptchaV3\GoogleReCaptchaV3;

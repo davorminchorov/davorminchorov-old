@@ -10,7 +10,7 @@
                 </div>
                 <label class="block mb-4">
                     <span class="block text-sm font-bold mb-2 uppercase">Full <span class="text-green-500">Name</span>:</span>
-                    <input type="name"
+                    <input type="text"
                            name="name"
                            class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
                            v-model="form.name"

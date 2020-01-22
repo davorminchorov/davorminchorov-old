@@ -1,5 +1,5 @@
-// Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import '~vue-material-design-icons/styles.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,4 +7,26 @@
 
 .gradient-green {
   background-image: linear-gradient(to right, #48bb78 , #38a169);
+}
+
+.material-design-icon.icon-2x {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.material-design-icon.icon-2x > .material-design-icon__svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.datetime-theme .vdatetime-popup__header,
+.datetime-theme .vdatetime-calendar__month__day--selected > span > span,
+.datetime-theme .vdatetime-calendar__month__day--selected:hover > span > span {
+    @apply .bg-green-500 .text-white;
+}
+
+.datetime-theme .vdatetime-year-picker__item--selected,
+.datetime-theme .vdatetime-time-picker__item--selected,
+.datetime-theme .vdatetime-popup__actions__button {
+    @apply .bg-green-500 .text-white;
 }
