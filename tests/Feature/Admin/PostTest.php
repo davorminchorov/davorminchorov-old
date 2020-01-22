@@ -148,7 +148,6 @@ class PostTest extends TestCase
                 'body' => 'This is test body text',
                 'excerpt' => 'This is test excerpt test',
                 'author' => [
-                    'id' => 1,
                     'name' => 'Davor Minchorov'
                 ],
                 'published_at' => now()->subDays(3)->format('F j, Y H:i'),
@@ -388,7 +387,6 @@ class PostTest extends TestCase
                 'body' => 'This is test body updated text',
                 'excerpt' => 'This is test excerpt updated text',
                 'author' => [
-                    'id' => 1,
                     'name' => 'Davor Minchorov'
                 ],
                 'published_at' => now()->subDays(3)->format('F j, Y H:i'),

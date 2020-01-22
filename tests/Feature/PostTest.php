@@ -34,7 +34,6 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[2]['body'],
                     'excerpt' => $publishedPosts[2]['excerpt'],
                     'author' => [
-                        'id' => 1,
                         'name' => 'Davor Minchorov'
                     ],
                     'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
@@ -46,7 +45,6 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[1]['body'],
                     'excerpt' => $publishedPosts[1]['excerpt'],
                     'author' => [
-                        'id' => 1,
                         'name' => 'Davor Minchorov'
                     ],
                     'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i'),
@@ -58,7 +56,6 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[0]['body'],
                     'excerpt' => $publishedPosts[0]['excerpt'],
                     'author' => [
-                        'id' => 1,
                         'name' => 'Davor Minchorov'
                     ],
                     'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
