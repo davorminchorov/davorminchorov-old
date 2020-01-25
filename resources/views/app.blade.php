@@ -10,6 +10,15 @@
         <meta property="og:site_name" content="Davor Minchorov"/>
         <meta property="og:description" content="Davor Minchorov - personal website and blog"/>
 
+        @if(env('APP_ENV') !== 'local')
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-53NH9B9');</script>
+            <!-- End Google Tag Manager -->
+        @endif
         <title>Davor Minchorov - personal website and blog</title>
 
         <link rel="alternate" href="http://www.davorminchorov.com" hreflang="en-gb" />
@@ -19,6 +28,9 @@
     <body class="font-sans text-gray-500 antialiased leading-tight bg-gray-900">
 
         <noscript>
+            @if(env('APP_ENV') !== 'local')
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53NH9B9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            @endif
             <div class="flex items-center justify-center">
                 <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">
                     I'm 100% JavaScript!
@@ -31,16 +43,4 @@
     </body>
 
     <script src="{{ mix('/js/app.js') }}"></script>
-    @if(env('APP_ENV') !== 'local')
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-80366434-1', 'auto');
-            ga('send', 'pageview');
-
-        </script>
-    @endif
 </html>

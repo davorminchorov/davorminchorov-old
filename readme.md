@@ -51,3 +51,9 @@
 - [ ] Design the admin dashboard
 - [ ] Integrate Google Analytics API on the admin dashboard
 - [ ] Upgrade Tailwind CSS to version 1.2
+- [ ] Implement the admin tags API
+- [ ] Implement the admin create new tag API
+- [ ] Implement the admin update existing tag API
+- [ ] Implement the admin delete existing tag API
+- [ ] Implement Laravel Passport for storing http only cookies for the JWT token
+- [ ] Make improvements to the vuex store using Vuex ORM
