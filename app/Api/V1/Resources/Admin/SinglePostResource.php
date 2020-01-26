@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 
-class UpdateExistingPostResource extends JsonResource
+class SinglePostResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,7 +20,7 @@ class UpdateExistingPostResource extends JsonResource
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
-            'message' => 'The post was updated successfully!',
+            'message' => 'The admin post was retrieved successfully!',
             'data' => new PostResource($this->resource),
         ];
     }

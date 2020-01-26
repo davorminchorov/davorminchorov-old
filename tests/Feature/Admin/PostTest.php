@@ -38,7 +38,7 @@ class PostTest extends TestCase
             'status_code' => Response::HTTP_OK,
             'status_message' => 'OK',
             'status' => 'success',
-            'message' => 'The posts were retrieved successfully!',
+            'message' => 'The admin posts were retrieved successfully!',
             'data' => [
                 [
                     'id' => $posts[0]['id'],
@@ -47,6 +47,8 @@ class PostTest extends TestCase
                     'body' => $posts[0]['body'],
                     'excerpt' => $posts[0]['excerpt'],
                     'published_at' => $posts[0]['published_at']->format('F j, Y H:i'),
+                    'created_at' => $posts[0]['created_at']->format('F j, Y H:i'),
+                    'updated_at' => $posts[0]['updated_at']->format('F j, Y H:i'),
                 ],
                 [
                     'id' => $posts[1]['id'],
@@ -55,6 +57,8 @@ class PostTest extends TestCase
                     'body' => $posts[1]['body'],
                     'excerpt' => $posts[1]['excerpt'],
                     'published_at' => $posts[1]['published_at']->format('F j, Y H:i'),
+                    'created_at' => $posts[1]['created_at']->format('F j, Y H:i'),
+                    'updated_at' => $posts[1]['updated_at']->format('F j, Y H:i'),
                 ],
                 [
                     'id' => $posts[2]['id'],
@@ -63,6 +67,8 @@ class PostTest extends TestCase
                     'body' => $posts[2]['body'],
                     'excerpt' => $posts[2]['excerpt'],
                     'published_at' => $posts[2]['published_at']->format('F j, Y H:i'),
+                    'created_at' => $posts[2]['created_at']->format('F j, Y H:i'),
+                    'updated_at' => $posts[2]['updated_at']->format('F j, Y H:i'),
                 ],
             ],
         ]);
@@ -147,10 +153,9 @@ class PostTest extends TestCase
                 'slug' => str_slug($title),
                 'body' => 'This is test body text',
                 'excerpt' => 'This is test excerpt test',
-                'author' => [
-                    'name' => 'Davor Minchorov'
-                ],
                 'published_at' => now()->subDays(3)->format('F j, Y H:i'),
+                'created_at' => now()->format('F j, Y H:i'),
+                'updated_at' => now()->format('F j, Y H:i'),
             ],
         ]);
 
@@ -386,10 +391,10 @@ class PostTest extends TestCase
                 'slug' => str_slug($title),
                 'body' => 'This is test body updated text',
                 'excerpt' => 'This is test excerpt updated text',
-                'author' => [
-                    'name' => 'Davor Minchorov'
-                ],
                 'published_at' => now()->subDays(3)->format('F j, Y H:i'),
+                'created_at' => now()->format('F j, Y H:i'),
+                'updated_at' => now()->format('F j, Y H:i'),
+
             ],
         ]);
 

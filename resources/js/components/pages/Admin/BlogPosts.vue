@@ -10,7 +10,7 @@
                         Publish New Blog Post
                     </router-link>
                 </div>
-                <div class="lg:p-10 p-6 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
+                <div class="p-6 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
                     <span v-if="isLoading">Loading posts, please wait...</span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>

@@ -2,7 +2,6 @@
 
 namespace App\Api\V1\Resources\Admin;
 
-use App\Api\V1\Resources\PostResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;

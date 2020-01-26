@@ -8,8 +8,8 @@ use App\Api\V1\Requests\Admin\UpdateExistingPostRequest;
 use App\Api\V1\Resources\Admin\DeleteExistingPostResource;
 use App\Api\V1\Resources\Admin\PublishNewPostResource;
 use App\Api\V1\Resources\Admin\UpdateExistingPostResource;
-use App\Api\V1\Resources\PostsCollection;
-use App\Api\V1\Resources\SinglePostResource;
+use App\Api\V1\Resources\Admin\PostsCollection;
+use App\Api\V1\Resources\Admin\SinglePostResource;
 use App\Models\Post;
 
 class PostsController extends ApiController
