@@ -144,3 +144,20 @@
         }
     }
 </script>
+
+
+<style>
+    .datetime-theme .vdatetime-popup__header,
+    .datetime-theme .vdatetime-calendar__month__day--selected > span > span,
+    .datetime-theme .vdatetime-calendar__month__day--selected:hover > span > span {
+        background-color: #48bb78;
+        color: white;
+    }
+
+    .datetime-theme .vdatetime-year-picker__item--selected,
+    .datetime-theme .vdatetime-time-picker__item--selected,
+    .datetime-theme .vdatetime-popup__actions__button {
+        background-color: #48bb78;
+        color: white;
+    }
+</style>

@@ -4,17 +4,17 @@
             <div class="gradient-green flex flex-col text-white rounded">
                 <h1 class="text-center lg:text-2xl text-xl lg:font-bold font-semibold pt-10 pb-10 text-white uppercase tracking-wider">Blog Posts</h1>
             </div>
-            <div class="flex flex-col pt-6 lg:pl-6 lg:pr-6 lg:pl-4 lg:pr-4 pb-6 bg-white text-gray-900 border-2 rounded border-white">
+            <div class="flex flex-col p-4 lg:pl-4 lg:pr-4 bg-white text-gray-900 border-2 rounded border-white">
                 <div class="flex flex-col items-end pb-6">
                     <router-link :to="{name: 'admin_new_blog_post'}" class="border-2 rounded px-4 py-2 uppercase bg-white hover:bg-green-600 text-green-600 hover:text-white border-green-600 text-lg leading-normal font-bold focus:outline-none active:bg-green-500">
                         Publish New Blog Post
                     </router-link>
                 </div>
-                <div class="p-6 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
+                <div class="lg:p-10 p-6 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
                     <span v-if="isLoading">Loading posts, please wait...</span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
-                <table class="lg:p-10 text-center text-gray-900" v-else>
+                <table class="lg:p-10 p-6 text-center text-gray-900" v-else>
                     <thead class="lg:p-10 p-6 bg-green-500 text-white uppercase">
                         <th class="p-2">ID</th>
                         <th class="p-2">Title</th>
@@ -34,10 +34,10 @@
                             <td class="p-2">{{ post.updated_at }}</td>
                             <td class="p-2">
                                 <router-link :to="{name: 'admin_edit_blog_post', params: {id: post.id }}">
-                                    <pencil-icon class="pr-5 icon-2x" />
+                                    <pencil-icon class="pr-2 icon-2x" />
                                 </router-link>
                                 <a href="#" @click.prevent="showDeleteConfirmationModal(post.id)">
-                                    <trash-can-icon class="pr-5 icon-2x" />
+                                    <trash-can-icon class="pr-2 icon-2x" />
                                 </a>
                             </td>
                         </tr>
