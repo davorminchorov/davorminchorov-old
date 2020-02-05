@@ -50,7 +50,7 @@
 - [ ] Implement the bootcamp page
 - [ ] Design the admin dashboard
 - [ ] Integrate Google Analytics API on the admin dashboard
-- [ ] Upgrade Tailwind CSS to version 1.2
+- [x] Upgrade Tailwind CSS to version 1.2
 - [ ] Implement the admin tags API
 - [ ] Implement the admin create new tag API
 - [ ] Implement the admin update existing tag API

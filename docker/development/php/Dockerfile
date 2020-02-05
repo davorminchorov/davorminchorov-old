@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:7.3-fpm
 
 # Install modules
 RUN apt-get update && apt-get install -y \
@@ -44,7 +44,7 @@ ENV DOCKERIZE_VERSION v0.3.0
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-    
+
 ENV TERM xterm
 
 # This directive is used to prevent permission issues when using shared volumes. Do not use in production!
