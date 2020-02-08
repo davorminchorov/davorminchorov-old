@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
         git \
         libzip-dev \
         zip \
-        unzip
+        unzip \
+        cron
 
 RUN docker-php-ext-install bcmath
 RUN docker-php-ext-install mbstring
@@ -32,11 +33,13 @@ RUN docker-php-ext-install zip
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN apt-get install -y gnupg gnupg2 gnupg1
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update
 RUN apt-get install -y nodejs yarn
+
+RUN echo "* * * * * cd /var/www/html && php artisan schedule:run >> /dev/null 2>&1" >> /etc/crontab
 
 # Install dockerize. Needed to make php container wait for services it depends on.
 # Using wget instead of ADD command to utilize docker cache

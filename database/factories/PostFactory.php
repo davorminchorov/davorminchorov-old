@@ -1,10 +1,7 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
 use App\Models\Post;
-use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {

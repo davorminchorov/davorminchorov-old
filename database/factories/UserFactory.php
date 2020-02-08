@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\User;
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'name' => 'Davor Minchorov',
         'email' => 'davorminchorov@gmail.com',

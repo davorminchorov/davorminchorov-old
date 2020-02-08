@@ -32,8 +32,6 @@ class User extends Authenticatable implements JWTSubject
         'remember_token',
     ];
 
-    protected $dateFormat = 'F j, Y H:i:s';
-
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
