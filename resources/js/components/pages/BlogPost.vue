@@ -7,7 +7,9 @@
             <div class="gradient-green flex flex-col pl-6 pr-6 text-white rounded-lg">
                 <h1 class="text-center lg:text-2xl text-xl lg:font-bold font-semibold pt-10 text-white uppercase tracking-wider">{{ post.title }}</h1>
                 <h3 class="text-center lg:text-lg text-md lg:font-bold font-semibold pt-5 pb-10 text-white tracking-normal">by {{ post.author.name }}
-                    <br class="lg:hidden"> on {{ post.published_at }}</h3>
+                    <br class="lg:hidden"> on {{ post.published_at }}
+                    <span v-if="post.created_at !== post.updated_at"><br> Last update on {{ post.updated_at }} </span>
+                </h3>
             </div>
             <div class="tracking-wider leading-normal text-lg lg:pl-32 lg:pr-32 p-6 bg-white text-gray-900 border-2 rounded-lg border-white">
                 <vue-simple-markdown :source="post.body"></vue-simple-markdown>
@@ -31,7 +33,9 @@
                     author: {
                         id: '', name: ''
                     },
-                    published_at: ''
+                    published_at: '',
+                    created_at: '',
+                    updated_at: '',
                 },
             }
         },

@@ -12,7 +12,9 @@
                 </div>
                 <div class="flex flex-col pb-6" v-for="post in posts" v-else>
                     <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="text-center text-lg text-green-500 hover:text-green-600 font-semibold tracking-wider text-xl pb-2">{{ post.title }}</router-link>
-                    <span class="text-center text-md text-gray-500 pb-2 tracking-normal"> by {{ post.author.name }} <br class="lg:hidden"> on {{ post.published_at }}</span>
+                    <span class="text-center text-md text-gray-500 pb-2 tracking-normal"> by {{ post.author.name }} <br class="lg:hidden"> on {{ post.published_at }}
+                        <span v-if="post.created_at !== post.updated_at"><br> Last update on {{ post.updated_at }} </span>
+                    </span>
                     <div class="text-center text-lg tracking-wider leading-normal">
                         <vue-simple-markdown :source="post.excerpt"></vue-simple-markdown>
                     </div>
