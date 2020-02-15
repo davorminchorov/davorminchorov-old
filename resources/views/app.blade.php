@@ -19,7 +19,7 @@
         <meta name="twitter:creator" content="@davorminchorov">
         <meta name="twitter:title" content="Davor Minchorov">
         <meta name="twitter:description" content="Davor Minchorov - personal website and blog">
-        
+
         <meta name="author" content="Davor Minchorov">
         <meta name="application-name" content="Davor Minchorov">
         <meta name="robots" content="index,follow,noodp">

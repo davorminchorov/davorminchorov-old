@@ -5,19 +5,22 @@
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
-            Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, since December 2019.
+            After I finished my college education, I started exploring the internet for more and better education in the world of web development. I started watching video courses, conference talks, read books, blogs, listen to podcasts and even participate in forum discussions and other community chats which helped me teach myself everything I need to know to start my career as a web developer.
             <br>
             <br>
-            I am also a PHP Community Tech Lead as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, since January 2018.
+            Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
+            <br>
+            <br>
+            I am also a PHP Community Tech Lead as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, for about {{ withAdevaSince() }}. <a href="https://adevait.com/apply?ref=baaah" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Wanna apply to join the community?</a>
             <br>
             <br>
             Previously, I worked at:
             <br>
-            - <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016),
+            - <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016, {{ workedAtTabellariusFor() }}),
             <br>
-            - New Media Corp (April 2016 - February 2017)
+            - New Media Corp (April 2016 - February 2017, {{ workedAtNewMediaCorpFor() }})
             <br>
-            - <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017).
+            - <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017, {{ workedAtRoutyxFor() }}).
             <br>
             <br>
             Also, I was a mentor at <a href="https://femalebootcamp.adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva's Female Bootcamp 2018</a>. You can read more about the bootcamp experience <a href="https://blog.usejournal.com/the-tech-bootcamp-experience-ff53367b79a7" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">here</a>
@@ -55,7 +58,22 @@
             },
             yearsOfExperience() {
                 return moment().diff('2015-06-01', 'years') + ' years';
-            }
+            },
+            withAdevaSince() {
+                return moment().diff('2018-01-17', 'years') + ' years'
+            },
+            withQuantoxSince() {
+                return moment().diff('2019-12-01', 'months') + ' months'
+            },
+            workedAtTabellariusFor() {
+                return moment('2016-03-31').diff('2015-06-01', 'months') + ' months'
+            },
+            workedAtNewMediaCorpFor() {
+                return moment('2017-02-28').diff('2016-04-12', 'months') + ' months'
+            },
+            workedAtRoutyxFor() {
+                return moment('2017-12-31').diff('2017-03-01', 'months') + ' months'
+            },
         }
     }
 
