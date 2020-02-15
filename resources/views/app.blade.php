@@ -5,10 +5,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Davor Minchorov - personal website and blog">
+        <!--FB Meta-->
+        <meta property="og:locale" content="en_US">
         <meta property="og:title" content="Davor Minchorov"/>
         <meta property="og:image" content="https://avatars3.githubusercontent.com/u/6518995?s=274&v=4"/>
         <meta property="og:site_name" content="Davor Minchorov"/>
         <meta property="og:description" content="Davor Minchorov - personal website and blog"/>
+        <meta property="og:url" content="http://davorminchorov.com">
+        <!--Twitter Meta-->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="http://davorminchorov.com">
+        <meta name="twitter:domain" content="via @davorminchorov">
+        <meta name="twitter:creator" content="@davorminchorov">
+        <meta name="twitter:title" content="Davor Minchorov">
+        <meta name="twitter:description" content="Davor Minchorov - personal website and blog">
+        
+        <meta name="author" content="Davor Minchorov">
+        <meta name="application-name" content="Davor Minchorov">
+        <meta name="robots" content="index,follow,noodp">
 
         @if(env('APP_ENV') !== 'local')
             <!-- Google Tag Manager -->
