@@ -4,14 +4,14 @@
             <span>Loading blog post, please wait...</span>
         </div>
         <div v-else>
-            <div class="gradient-green flex flex-col pl-6 pr-6 text-white rounded-lg">
+            <div class="gradient-green flex flex-col pl-6 pr-6 text-white mb-4">
                 <h1 class="text-center lg:text-2xl text-xl lg:font-bold font-semibold pt-10 text-white uppercase tracking-wider">{{ post.title }}</h1>
                 <h3 class="text-center lg:text-lg text-md lg:font-bold font-semibold pt-5 pb-10 text-white tracking-normal">by {{ post.author.name }}
                     <br class="lg:hidden"> on {{ post.published_at }}
                     <span v-if="post.created_at !== post.updated_at"><br> Last update on {{ post.updated_at }} </span>
                 </h3>
             </div>
-            <div class="tracking-wider leading-normal text-lg lg:pl-32 lg:pr-32 p-6 bg-white text-gray-900 border-2 rounded-lg border-white">
+            <div class="tracking-normal leading-normal text-lg lg:pl-32 lg:pr-32 p-6 bg-white text-gray-900">
                 <vue-simple-markdown :source="post.body"></vue-simple-markdown>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3 class="text-gray-500 uppercase font-semibold text-xl text-center">About <span class="text-green-500">Me</span></h3>
-        <div class="pt-4 pr-10 text-lg tracking-wide leading-normal">
+        <div class="pt-4 p-6 text-lg tracking-normal leading-normal">
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
@@ -28,7 +28,7 @@
             <br>
             To contact me, you can use the contact form below. You can also find more or contact me on the following social networks:
         </div>
-        <div class="flex mt-6">
+        <div class="flex mt-4 pl-6">
             <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" rel="noreferrer" class="pl-1">
                 <svg class="h-12 w-12" viewBox="0 0 24 24">
                     <path fill="#0077B5" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/>

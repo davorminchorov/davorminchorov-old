@@ -57,3 +57,11 @@
 - [ ] Implement the admin delete existing tag API
 - [ ] Implement Laravel Passport for storing http only cookies for the JWT token
 - [ ] Make improvements to the vuex store using Vuex ORM
+- [ ] Implement webmentions as a comment system
+- [ ] Implement an RSS feed
+- [ ] Implement a social media share buttons on each blog post
+- [ ] Improve the SEO for each blog post
+- [ ] Move over the project to Digital Ocean or AWS for better SEO and performance
+- [ ] Improve the loading of the assets to reduce the size
+- [ ] Implement images for each of the blog posts to improve the SEO when the blog post is linked on social media
+- [ ] Add each of the listed items to a separate div so that the words don't wrap on new lines
