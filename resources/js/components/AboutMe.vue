@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h3 class="text-gray-500 uppercase font-semibold text-xl text-center">About <span class="text-green-500">Me</span></h3>
+        <h3 class="text-gray-500 uppercase font-semibold text-xl text-center">About Me</h3>
         <div class="pt-4 p-6 text-lg tracking-normal leading-normal">
-            I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
+            I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at University American College Skopje and have about {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
             Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
@@ -13,17 +13,20 @@
             <br>
             Previously, I worked at:
             <br>
-            - <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016, {{ workedAtTabellariusFor() }}),
+            <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+            <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016, {{ workedAtTabellariusFor() }}),
             <br>
-            - New Media Corp (April 2016 - February 2017, {{ workedAtNewMediaCorpFor() }})
+            <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+            New Media Corp (April 2016 - February 2017, {{ workedAtNewMediaCorpFor() }})
             <br>
-            - <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017, {{ workedAtRoutyxFor() }}).
+            <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+            <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017, {{ workedAtRoutyxFor() }}).
             <br>
             <br>
             Also, I was a mentor at <a href="https://femalebootcamp.adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva's Female Bootcamp 2018</a>. You can read more about the bootcamp experience <a href="https://blog.usejournal.com/the-tech-bootcamp-experience-ff53367b79a7" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">here</a>
             <br>
             <br>
-            If you have any questions or feedback related to some of my blog posts, my website or you need help with something that I can help you with, feel free to contact me using the contact form or the social links below. I am currently not looking for any new job opportunities.
+            If you have any questions or feedback related to blog posts, my website or you need help with something that I can help you with, feel free to contact me using the contact form or the social links below. I am currently not looking for any new job opportunities.
         </div>
         <div class="flex pl-6">
             <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" rel="noreferrer" class="pl-1">
@@ -47,8 +50,12 @@
 
 <script>
     import moment from 'moment';
+    import CheckboxMarkedCircleIcon from 'vue-material-design-icons/CheckboxMarkedCircle.vue';
 
     export default {
+        components: {
+            CheckboxMarkedCircleIcon,
+        },
         methods: {
             age() {
                 return moment().diff('1990-11-22', 'years') + ' years';

@@ -2,14 +2,14 @@
     <div class="max-w-3xl w-full lg:p-10 p-6">
         <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
             <form action="#" @submit.prevent="send()" @keydown="form.errors.clear($event.target.name)">
-                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Contact <span class="text-green-500">Me</span></h2>
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Contact Me</h2>
                 <div class="text-center font-semibold text-sm mb-4"
                      :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
                      v-if="form.errors.any() || status === 'success'"
                      v-text="message">
                 </div>
                 <label class="block mb-4">
-                    <span class="block text-sm font-bold mb-2 uppercase">Full <span class="text-green-500">Name</span>:</span>
+                    <span class="block text-sm font-bold mb-2 uppercase">Full Name:</span>
                     <input type="text"
                            name="name"
                            class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
@@ -19,7 +19,7 @@
                 </label>
 
                 <label class="block mb-4">
-                    <span class="block text-sm font-bold mb-2 uppercase">Email <span class="text-green-500">Address</span>:</span>
+                    <span class="block text-sm font-bold mb-2 uppercase">Email Address:</span>
                     <input type="email"
                            name="email"
                            class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
