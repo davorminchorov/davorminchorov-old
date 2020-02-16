@@ -5,13 +5,10 @@
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at <a href="http://www.uacs.edu.mk/home/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">University American College Skopje</a> and have more than {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
-            After I finished my college education, I started exploring the internet for more and better education in the world of web development. I started watching video courses, conference talks, read books, blogs, listen to podcasts and even participate in forum discussions and other community chats which helped me teach myself everything I need to know to start my career as a web developer.
-            <br>
-            <br>
             Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
             <br>
             <br>
-            I am also a PHP Community Tech Lead as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, for about {{ withAdevaSince() }}. <a href="https://adevait.com/apply?ref=baaah" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Wanna apply to join the community?</a>
+            I am also a PHP Community Tech Lead as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, for about {{ withAdevaSince() }}.
             <br>
             <br>
             Previously, I worked at:
