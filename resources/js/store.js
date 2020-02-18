@@ -55,7 +55,7 @@ export default {
         },
         sendContactEmail({commit}, {form}) {
             this.state.isLoading = true;
-            return form.post('/admin/posts')
+            return form.post('/contact')
                 .then(response => {
                     this.state.isLoading = false;
                     return response;

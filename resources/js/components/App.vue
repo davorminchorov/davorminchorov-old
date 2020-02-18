@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col">
         <dm-navigation></dm-navigation>
 
-        <main class="container lg:mx-auto shadow-xl">
+        <main class="container lg:mx-auto">
             <router-view></router-view>
         </main>
 

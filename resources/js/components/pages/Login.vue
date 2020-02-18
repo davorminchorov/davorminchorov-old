@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-center">
-        <div class="bg-white p-6 max-w-xl w-full p-8 rounded-lg shadow-lg">
-            <form action="#" @submit.prevent="login()" @keydown="form.errors.clear($event.target.name)">
+        <div class="bg-white p-6 max-w-xl w-full p-8 rounded-lg">
+            <form action="#" @submit.prevent="login()" @keydown="form.errors.clear($event.target.name)" class="shadow-lg">
                 <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Admin Login</h2>
                 <div class="text-center font-semibold text-sm mb-4"
                      :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"

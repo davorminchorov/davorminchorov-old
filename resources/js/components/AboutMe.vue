@@ -58,7 +58,7 @@
         },
         methods: {
             age() {
-                return moment().diff('1990-11-22', 'years') + ' years';
+                return moment().diff('1990-11-22', 'years') + ' year';
             },
             yearsOfExperience() {
                 return moment().diff('2015-06-01', 'years') + ' years';
