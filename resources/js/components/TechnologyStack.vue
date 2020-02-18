@@ -52,11 +52,19 @@
                 </li>
                 <li>
                     <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+                    Lumen
+                </li>
+                <li>
+                    <checkbox-marked-circle-icon class="pr-2 text-green-500" />
                     NodeJS
                 </li>
                 <li>
                     <checkbox-marked-circle-icon class="pr-2 text-green-500" />
                     ExpressJS
+                </li>
+                <li>
+                    <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+                    AdonisJS
                 </li>
             </ul>
             <ul class="lg:flex-1 mb-6">
@@ -99,6 +107,10 @@
                 <li>
                     <checkbox-marked-circle-icon class="pr-2 text-green-500" />
                     PHPUnit
+                </li>
+                <li>
+                    <checkbox-marked-circle-icon class="pr-2 text-green-500" />
+                    Jenkins (CI/CD)
                 </li>
             </ul>
         </div>
