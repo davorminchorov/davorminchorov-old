@@ -67,3 +67,4 @@
 - [x] Add each of the listed items to a separate div so that the words don't wrap on new lines
 - [ ] Upgrage the project to Laravel 7.x
 - [ ] Implement Laravel Airlock for secure authentication
+- [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
