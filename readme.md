@@ -68,3 +68,4 @@
 - [ ] Upgrage the project to Laravel 7.x
 - [ ] Implement Laravel Airlock for secure authentication
 - [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
+- [ ] Check MX records corresponding to a given Internet host name before sending contact email
