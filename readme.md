@@ -66,6 +66,8 @@
 - [ ] Implement images for each of the blog posts to improve the SEO when the blog post is linked on social media
 - [x] Add each of the listed items to a separate div so that the words don't wrap on new lines
 - [ ] Upgrage the project to Laravel 7.x
-- [ ] Implement Laravel Airlock for secure authentication
+- [ ] Implement Laravel Sanctum for secure authentication
 - [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
 - [ ] Check MX records corresponding to a given Internet host name before sending contact email
+- [ ] Setup .env file and a config.js file for the Vue part
+- [ ] Refactor the Vue components to use async/await
