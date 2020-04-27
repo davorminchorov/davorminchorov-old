@@ -15,8 +15,6 @@ class ContactTest extends TestCase
      */
     public function a_user_can_send_a_contact_email(): void
     {
-        $this->withExceptionHandling();
-
         Mail::fake();
 
         Mail::assertNotQueued(SendContactEmail::class);
@@ -47,8 +45,6 @@ class ContactTest extends TestCase
      */
     public function a_name_is_required(): void
     {
-        $this->withExceptionHandling();
-
         $response = $this->json('post', $this->apiV1Url . 'contact', [
             'test' => 'test',
             'email' => 'test@example.com',
@@ -72,8 +68,6 @@ class ContactTest extends TestCase
      */
     public function an_email_is_required(): void
     {
-        $this->withExceptionHandling();
-
         $response = $this->json('post', $this->apiV1Url . 'contact', [
             'test' => 'test',
             'name' => 'John Doe',
@@ -96,8 +90,6 @@ class ContactTest extends TestCase
      */
     public function an_email_must_be_a_valid_email_address(): void
     {
-        $this->withExceptionHandling();
-
         $response = $this->json('post', $this->apiV1Url . 'contact', [
             'test' => 'test',
             'name' => 'John Doe',
@@ -119,10 +111,54 @@ class ContactTest extends TestCase
     /**
      * @test
      */
+    public function an_email_must_be_a_valid_email_address_with_a_valid_email_domain(): void
+    {
+        $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
+            'name' => 'John Doe',
+            'email' => 'test@adomainthatdoesnotexist.com',
+            'message' => 'This is a test message',
+        ]);
+
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+        $response->assertExactJson([
+            'message' => 'The given data was invalid.',
+            'errors' => [
+                'email' => [
+                    'The email must be a valid email address.'
+                ],
+            ]
+        ]);
+    }
+
+    /**
+     * @test
+     */
+    public function an_email_must_be_a_valid_email_address_with_a_valid_rfc_format(): void
+    {
+        $response = $this->json('post', $this->apiV1Url . 'contact', [
+            'test' => 'test',
+            'name' => 'John Doe',
+            'email' => 'op[p[p[opopl;[@example.com',
+            'message' => 'This is a test message',
+        ]);
+
+        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
+        $response->assertExactJson([
+            'message' => 'The given data was invalid.',
+            'errors' => [
+                'email' => [
+                    'The email must be a valid email address.'
+                ],
+            ]
+        ]);
+    }
+
+    /**
+     * @test
+     */
     public function a_message_is_required(): void
     {
-        $this->withExceptionHandling();
-
         $response = $this->json('post', $this->apiV1Url . 'contact', [
             'test' => 'test',
             'name' => 'John Doe',
