@@ -61,7 +61,13 @@
 - [ ] Implement an RSS feed
 - [ ] Implement a social media share buttons on each blog post
 - [ ] Improve the SEO for each blog post
-- [ ] Move over the project to Digital Ocean or AWS for better SEO and performance
+- [ ] Move over the project to Digital Ocean for better SEO and performance
 - [ ] Improve the loading of the assets to reduce the size
 - [ ] Implement images for each of the blog posts to improve the SEO when the blog post is linked on social media
-- [ ] Add each of the listed items to a separate div so that the words don't wrap on new lines
+- [x] Add each of the listed items to a separate div so that the words don't wrap on new lines
+- [ ] Upgrage the project to Laravel 7.x
+- [ ] Implement Laravel Sanctum for secure authentication
+- [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
+- [ ] Check MX records corresponding to a given Internet host name before sending contact email
+- [ ] Setup .env file and a config.js file for the Vue part
+- [ ] Refactor the Vue components to use async/await
