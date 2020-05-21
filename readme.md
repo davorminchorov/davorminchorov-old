@@ -71,3 +71,5 @@
 - [x] Validate the email address based on the RFC format and email domain before sending an email through the contact form
 - [ ] Setup .env file and a config.js file for the Vue part
 - [ ] Refactor the Vue components to use async/await
+- [ ] Use chunk based imports for components to reduce bundle size
+- [ ] Convert the project to typescript class based components
