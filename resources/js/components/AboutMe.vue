@@ -8,7 +8,7 @@
             Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
             <br>
             <br>
-            I am also a Senior PHP Developer as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive developers' network</a>, for about {{ withAdevaSince() }}.
+            I am also a Senior PHP Developer as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive remote developers' network</a>, for about {{ withAdevaSince() }}.
             <br>
             <br>
             Previously, I worked at:
