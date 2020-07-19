@@ -1,12 +1,8 @@
 /*!
- * Sizzle CSS Selector Engine v2.3.4
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://js.foundation/
- *
- * Date: 2019-04-08
+ * @toast-ui/editor
+ * @version 2.2.0 | Tue Jun 16 2020
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
+ * @license MIT
  */
 
 /*!
@@ -16,51 +12,44 @@
  */
 
 /*!
- * jQuery JavaScript Library v3.4.1
- * https://jquery.com/
- *
- * Includes Sizzle.js
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2019-05-01T21:04Z
- */
-
-/*!
- * tui-code-snippet.js
- * @version 1.5.2
- * @author NHN. FE Development Lab <dl_javascript@nhn.com>
- * @license MIT
- */
-
-/*!
- * tui-editor
- * @version 1.4.10
- * @author NHN FE Development Lab <dl_javascript@nhn.com> (https://nhn.github.io/tui.editor/)
- * @license MIT
- */
-
-/*!
- * vue-datetime v1.0.0-beta.11
- * (c) 2019 Mario Juárez
+ * vue-datetime v1.0.0-beta.13
+ * (c) 2020 Mario Juárez
  * Released under the MIT License.
  */
 
 /*!
- * vue-simple-markdown v1.1.1
- * (c) 2019 Milan Bačkonja
+ * vue-simple-markdown v1.1.4
+ * (c) 2020 Milan Bačkonja
  * Released under the MIT License.
  */
+
+/*!
+ * vuex v3.5.1
+ * (c) 2020 Evan You
+ * @license MIT
+ */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
 
 /*! highlight.js v9.16.2 | BSD3 License | git.io/hljslicense */
 
-/*! https://mths.be/punycode v1.4.1 by @mathias */
+/*! http://mths.be/fromcodepoint v0.2.1 by @mathias */
 
-/**
- * vuex v3.1.2
- * (c) 2019 Evan You
- * @license MIT
- */
+//! moment.js
+
+//! moment.js language configuration
+
+//! moment.js locale configuration

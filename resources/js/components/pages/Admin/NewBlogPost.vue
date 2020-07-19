@@ -30,13 +30,13 @@
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Excerpt:</span>
-                                <editor v-model="form.excerpt" previewStyle="tab" height="300px" />
+                                <editor :initialValue="form.excerpt" ref="excerpt" previewStyle="tab" height="500px" initialEditType="markdown" />
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('excerpt')" v-text="form.errors.get('excerpt')"></span>
                             </label>
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Body:</span>
-                                <editor v-model="form.body" previewStyle="tab" height="300px" />
+                                <editor :initialValue="form.body" ref="body" previewStyle="tab" height="500px" initialEditType="markdown" />
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('body')" v-text="form.errors.get('body')"></span>
                             </label>
 
@@ -77,12 +77,12 @@
 </template>
 
 <script>
-    import 'tui-editor/dist/tui-editor.css';
-    import 'tui-editor/dist/tui-editor-contents.css';
+    import '@toast-ui/editor/dist/toastui-editor.css';
+    import '@toast-ui/editor/dist/toastui-editor-layout.css';
     import 'codemirror/lib/codemirror.css';
     import 'vue-datetime/dist/vue-datetime.css';
 
-    import {Form} from '../../../Helpers/Form';
+    import { Form } from '../../../Helpers/Form';
     import { Datetime } from 'vue-datetime';
     import { Editor } from '@toast-ui/vue-editor';
     import moment from 'moment';
@@ -117,6 +117,8 @@
         methods: {
             publish() {
                 this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
+                this.form.excerpt = this.$refs.excerpt.invoke('getMarkdown');
+                this.form.body = this.$refs.body.invoke('getMarkdown');
                 this.buttonText = 'Publishing...';
                 this.$store.dispatch('publishNewPost', {
                     form: this.form,

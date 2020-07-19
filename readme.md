@@ -67,9 +67,12 @@
 - [x] Add each of the listed items to a separate div so that the words don't wrap on new lines
 - [ ] Upgrage the project to Laravel 7.x
 - [ ] Implement Laravel Sanctum for secure authentication
-- [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
+- [x] Upgrade Tailwind CSS to version 1.5
+- [x] Upgrade the Tailwind CSS configuration to use the newer and updated config values
 - [x] Validate the email address based on the RFC format and email domain before sending an email through the contact form
 - [ ] Setup .env file and a config.js file for the Vue part
 - [ ] Refactor the Vue components to use async/await
 - [ ] Use chunk based imports for components to reduce bundle size
 - [ ] Convert the project to typescript class based components
+- [ ] Fix the bug where the page is being redirected even though there are validation errors on publish new and edit existing post pages
+- [ ] Use the official typography Tailwind CSS plugin to style the blog post page
