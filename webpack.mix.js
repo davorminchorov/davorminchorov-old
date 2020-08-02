@@ -10,7 +10,8 @@ mix.extend('prettyNotifications', new Notifications)
     .tailwind('./tailwind.config.js')
     .purgeCss({
         extend: {
-            whitelistPatterns: [/vdatetime/],
+            whitelistPatterns: [/vdatetime/, /prose$/],
+            whitelistPatternsChildren: [/prose$/],
         },
     })
     .prettyNotifications();

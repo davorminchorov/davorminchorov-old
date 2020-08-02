@@ -5,6 +5,37 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    typography: (theme) => ({
+      default: {
+        css: {
+            h1: {
+              color: theme('colors.gray.500'),
+            },
+            h2: {
+                color: theme('colors.gray.500'),
+            },
+            h3: {
+                color: theme('colors.gray.500'),
+            },
+            h4: {
+                color: theme('colors.gray.500'),
+            },
+            h5: {
+                color: theme('colors.gray.500'),
+            },
+            h6: {
+                color: theme('colors.gray.500'),
+            },
+          a: {
+            color: theme('colors.green.500'),
+            '&:hover': {
+              color: theme('colors.green.600'),
+            },
+            'text-decoration': 'none',
+          },
+        }
+      }
+    }),
     screens: {
       sm: '640px',
       md: '768px',
@@ -724,5 +755,7 @@ module.exports = {
     transitionDelay: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+      require('@tailwindcss/typography'),
+  ],
 }

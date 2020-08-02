@@ -11,13 +11,11 @@
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
                 <div class="flex flex-col pb-10" v-for="post in posts" v-else>
-                    <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="text-center lg:text-2xl text-lg text-green-500 hover:text-green-600 lg:font-bold font-semibold uppercase tracking-wide pb-2">{{ post.title }}</router-link>
-                    <span class="text-center lg:text-lg text-md text-gray-500 pb-2 tracking-normal">
+                    <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="lg:text-2xl text-lg text-green-500 hover:text-green-600 lg:font-bold font-semibold uppercase tracking-wide pb-2">{{ post.title }}</router-link>
+                    <span class="lg:text-lg text-md text-gray-500 pb-2 tracking-normal">
                         {{ post.published_at }}
                     </span>
-                    <div class="tracking-normal leading-normal">
-                        <vue-simple-markdown :source="post.excerpt" class="lg:text-lg text-md"></vue-simple-markdown>
-                    </div>
+                    <article class="prose prose-lg lg:prose-xl xl:prose-2xl" v-html="displayMarkdown(post.excerpt)"></article>
                 </div>
             </div>
         </div>
@@ -25,6 +23,8 @@
 </template>
 
 <script>
+    import marked from 'marked';
+
     export default {
         data() {
             return {}
@@ -35,6 +35,11 @@
             },
             isLoading() {
                 return this.$store.state.isLoading;
+            },
+        },
+        methods: {
+            displayMarkdown(text) {
+                return marked(text);
             }
         },
         mounted() {

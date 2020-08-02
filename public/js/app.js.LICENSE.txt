@@ -11,15 +11,7 @@
  */
 
 /*!
- * vue-simple-markdown v1.1.4
- * (c) 2020 Milan Bačkonja
- * Released under the MIT License.
- */
-
-/*!
  * vuex v3.5.1
  * (c) 2020 Evan You
  * @license MIT
  */
-
-/*! highlight.js v9.16.2 | BSD3 License | git.io/hljslicense */
