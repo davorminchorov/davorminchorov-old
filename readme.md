@@ -61,25 +61,15 @@
 - [ ] Implement an RSS feed
 - [ ] Implement a social media share buttons on each blog post
 - [ ] Improve the SEO for each blog post
-- [x] Move over the project to Digital Ocean for better SEO and performance
+- [ ] Move over the project to Digital Ocean for better SEO and performance
 - [ ] Improve the loading of the assets to reduce the size
 - [ ] Implement images for each of the blog posts to improve the SEO when the blog post is linked on social media
 - [x] Add each of the listed items to a separate div so that the words don't wrap on new lines
-- [ ] Upgrade the project to Laravel 7.x
-- [ ] Upgrade the project to Laravel 8.x
+- [ ] Upgrage the project to Laravel 7.x
 - [ ] Implement Laravel Sanctum for secure authentication
-- [x] Upgrade Tailwind CSS to version 1.5
-- [x] Upgrade Tailwind CSS to version 1.6
-- [x] Remove tui-editor and replace the forms with a normal textarea without preview
-- [x] Fix issues with unused CSS being ran on third party libraries like vue-datetime
-- [x] Replace moment with dayjs to reduce the JavaScript bundle size
-- [x] Upgrade the Tailwind CSS configuration to use the newer and updated config values
+- [ ] Upgrade the Tailwind CSS configuration to use the newer and updated config values
 - [x] Validate the email address based on the RFC format and email domain before sending an email through the contact form
 - [ ] Setup .env file and a config.js file for the Vue part
 - [ ] Refactor the Vue components to use async/await
 - [ ] Use chunk based imports for components to reduce bundle size
 - [ ] Convert the project to typescript class based components
-- [ ] Fix the bug where the admin is redirected when there are validation errors on publish new and edit existing post pages
-- [ ] Use the official typography Tailwind CSS plugin to style the blog post page
-- [ ] Create GitHub issues instead of updating the readme for each new feature or bug or improvement
-- [ ] Update the Tailwind CSS configuration to contain only configuration values that need to be updated instead of having the whole file there

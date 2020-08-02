@@ -8,9 +8,5 @@ mix.extend('prettyNotifications', new Notifications)
     .sass('resources/sass/app.scss', 'public/css')
     .version()
     .tailwind('./tailwind.config.js')
-    .purgeCss({
-        extend: {
-            whitelistPatterns: [/vdatetime/],
-        },
-    })
+    .purgeCss()
     .prettyNotifications();
