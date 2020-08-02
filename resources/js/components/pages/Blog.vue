@@ -15,7 +15,7 @@
                     <span class="text-center lg:text-lg text-md text-gray-500 pb-2 tracking-normal">
                         {{ post.published_at }}
                     </span>
-                    <div class="text-center tracking-normal leading-normal">
+                    <div class="tracking-normal leading-normal">
                         <vue-simple-markdown :source="post.excerpt" class="lg:text-lg text-md"></vue-simple-markdown>
                     </div>
                 </div>
