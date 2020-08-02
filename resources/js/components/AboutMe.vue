@@ -49,7 +49,7 @@
 </template>
 
 <script>
-    import moment from 'moment';
+    import dayjs from 'dayjs';
     import CheckboxMarkedCircleIcon from 'vue-material-design-icons/CheckboxMarkedCircle.vue';
 
     export default {
@@ -58,25 +58,25 @@
         },
         methods: {
             age() {
-                return moment().diff('1990-11-22', 'years') + ' year';
+                return dayjs().diff('1990-11-22', 'years') + ' year';
             },
             yearsOfExperience() {
-                return moment().diff('2015-06-01', 'years') + ' years';
+                return dayjs().diff('2015-06-01', 'years') + ' years';
             },
             withAdevaSince() {
-                return moment().diff('2018-01-17', 'years') + ' years'
+                return dayjs().diff('2018-01-17', 'years') + ' years'
             },
             withQuantoxSince() {
-                return moment().diff('2019-12-01', 'months') + ' months'
+                return dayjs().diff('2019-12-01', 'months') + ' months'
             },
             workedAtTabellariusFor() {
-                return moment('2016-03-31').diff('2015-06-01', 'months') + ' months'
+                return dayjs('2016-03-31').diff('2015-06-01', 'months') + ' months'
             },
             workedAtNewMediaCorpFor() {
-                return moment('2017-02-28').diff('2016-04-12', 'months') + ' months'
+                return dayjs('2017-02-28').diff('2016-04-12', 'months') + ' months'
             },
             workedAtRoutyxFor() {
-                return moment('2017-12-31').diff('2017-03-01', 'months') + ' months'
+                return dayjs('2017-12-31').diff('2017-03-01', 'months') + ' months'
             },
         }
     }
