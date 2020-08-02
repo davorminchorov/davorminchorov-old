@@ -30,13 +30,21 @@
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Excerpt:</span>
-                                <editor :initialValue="form.excerpt" ref="excerpt" previewStyle="tab" height="500px" initialEditType="markdown" />
+                                <textarea name="excerpt"
+                                          class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                                          v-model="form.excerpt"
+                                          rows="10"
+                                ></textarea>
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('excerpt')" v-text="form.errors.get('excerpt')"></span>
                             </label>
 
                             <label class="block mb-4">
                                 <span class="block text-sm font-bold mb-2 uppercase">Body:</span>
-                                <editor :initialValue="form.body" ref="body" previewStyle="tab" height="500px" initialEditType="markdown" />
+                                <textarea name="body"
+                                          class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                                          v-model="form.body"
+                                          rows="10"
+                                ></textarea>
                                 <span class="w-full text-red-400 block" v-if="form.errors.has('body')" v-text="form.errors.get('body')"></span>
                             </label>
 
@@ -77,19 +85,12 @@
 </template>
 
 <script>
-    import '@toast-ui/editor/dist/toastui-editor.css';
-    import '@toast-ui/editor/dist/toastui-editor-layout.css';
-    import 'codemirror/lib/codemirror.css';
-    import 'vue-datetime/dist/vue-datetime.css';
-
     import { Form } from '../../../Helpers/Form';
     import { Datetime } from 'vue-datetime';
-    import { Editor } from '@toast-ui/vue-editor';
-    import moment from "moment";
+    import dayjs from "dayjs";
 
     export default {
         mounted() {
-            Editor.usageStatistics = false;
             window.axios.get('/api/v1/admin/posts/' + this.$route.params.id , {
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,16 +100,12 @@
             }).then(response => {
                 let accessToken = this.$store.getters.auth.access_token;
                 this.form = new Form(response.data.data, accessToken);
-                console.log();
-                this.form.excerpt = this.$refs.excerpt.invoke('setMarkdown', this.form.excerpt);
-                this.form.body = this.$refs.body.invoke('setMarkdown', this.form.body);
                 this.form.published_at = new Date(this.form.published_at).toISOString();
             }).catch(error => {
 
             });
         },
         components: {
-            'editor': Editor,
             'datetime': Datetime,
         },
         data() {
@@ -132,9 +129,7 @@
         },
         methods: {
             updateExistingPost() {
-                this.form.published_at = moment(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
-                this.form.excerpt = this.$refs.excerpt.invoke('getMarkdown');
-                this.form.body = this.$refs.body.invoke('getMarkdown');
+                this.form.published_at = dayjs(this.form.published_at).format('YYYY-MM-DD HH:mm:ss');
                 this.buttonText = 'Saving Changes...';
                 this.$store.dispatch('updateExistingPost', {
                     form: this.form,
@@ -149,20 +144,3 @@
         }
     }
 </script>
-
-
-<style>
-    .datetime-theme .vdatetime-popup__header,
-    .datetime-theme .vdatetime-calendar__month__day--selected > span > span,
-    .datetime-theme .vdatetime-calendar__month__day--selected:hover > span > span {
-        background-color: #48bb78;
-        color: white;
-    }
-
-    .datetime-theme .vdatetime-year-picker__item--selected,
-    .datetime-theme .vdatetime-time-picker__item--selected,
-    .datetime-theme .vdatetime-popup__actions__button {
-        background-color: #48bb78;
-        color: white;
-    }
-</style>
