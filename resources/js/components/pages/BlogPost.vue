@@ -10,15 +10,16 @@
                     {{ post.published_at }}
                 </h3>
             </div>
-            <div class="tracking-normal leading-normal text-lg lg:pl-32 lg:pr-32 p-6 bg-white text-gray-900 rounded-lg">
-                <vue-simple-markdown :source="post.body"></vue-simple-markdown>
+            <div class="lg:pl-32 lg:pr-32 p-6 bg-white rounded-lg">
+                <article class="prose prose-lg lg:prose-xl xl:prose-2xl" v-html="displayMarkdown"></article>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
+    import marked from 'marked';
+
     export default {
         data() {
             return {
@@ -36,6 +37,11 @@
                     created_at: '',
                     updated_at: '',
                 },
+            }
+        },
+        computed: {
+            displayMarkdown() {
+                return marked(this.post.body);
             }
         },
         mounted() {

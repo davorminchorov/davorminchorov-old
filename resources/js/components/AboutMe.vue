@@ -5,25 +5,25 @@
             I am a {{ age() }} old web developer from Skopje, Macedonia, who studied software engineering at University American College Skopje and have about {{ yearsOfExperience() }} of experience building custom web based solutions.
             <br>
             <br>
-            Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
+            Currently, I am working as a Senior PHP Developer for clients as part of <a href="https://quantox.com/" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600">Quantox Technology</a>, for about {{ withQuantoxSince() }}.
             <br>
             <br>
-            I am also a Senior PHP Developer as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva, an exclusive remote developers' network</a>, for about {{ withAdevaSince() }}.
+            I am also a Senior PHP Developer as part of <a href="https://adevait.com/" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600 ">Adeva, an exclusive remote developers' network</a>, for about {{ withAdevaSince() }}.
             <br>
             <br>
             Previously, I worked at:
             <br>
             <checkbox-marked-circle-icon class="pr-2 text-green-500" />
-            <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016, {{ workedAtTabellariusFor() }}),
+            <a href="http://tabellarius.mk" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600 ">Tabellarius</a> (June 2015 - March 2016, {{ workedAtTabellariusFor() }}),
             <br>
             <checkbox-marked-circle-icon class="pr-2 text-green-500" />
             New Media Corp (April 2016 - February 2017, {{ workedAtNewMediaCorpFor() }})
             <br>
             <checkbox-marked-circle-icon class="pr-2 text-green-500" />
-            <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017, {{ workedAtRoutyxFor() }}).
+            <a href="http://www.intertec.io/" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600 ">Intertec</a> as part of the Routyx team (March 2017 - December 2017, {{ workedAtRoutyxFor() }}).
             <br>
             <br>
-            Also, I was a mentor at <a href="https://femalebootcamp.adevait.com/" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">Adeva's Female Bootcamp 2018</a>. You can read more about the bootcamp experience <a href="https://blog.usejournal.com/the-tech-bootcamp-experience-ff53367b79a7" target="_blank" rel="noreferrer" class="font-semibold text-green-500 hover:text-green-600 ">here</a>
+            Also, I was a mentor at <a href="https://femalebootcamp.adevait.com/" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600 ">Adeva's Female Bootcamp 2018</a>. You can read more about the bootcamp experience <a href="https://blog.usejournal.com/the-tech-bootcamp-experience-ff53367b79a7" target="_blank" rel="noreferrer" class="text-green-500 hover:text-green-600 ">here</a>
             <br>
             <br>
             If you have any questions or feedback related to blog posts, my website or you need help with something that I can help you with, feel free to contact me using the contact form or the social links below. I am currently not looking for any new job opportunities.
