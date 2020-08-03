@@ -1,17 +1,17 @@
 <template>
     <div class="flex flex-col justify-around">
-        <div class="lg:p-10 p-6 text-center bg-gray-300 text-gray-600 rounded-lg" v-if="isLoading">
-            <span>Loading blog post, please wait...</span>
+        <div class="lg:p-10 p-6 text-center text-gray-300 text-lg lg:text-2xl pointer-events-none" v-if="isLoading">
+            <span>Loading blog post, please wait... <pulse-loader color="white" /></span>
         </div>
         <div v-else>
-            <div class="gradient-green flex flex-col pl-6 pr-6 text-white mb-4 rounded-lg">
-                <h1 class="text-center lg:text-2xl text-xl lg:font-bold font-semibold pt-10 text-white uppercase tracking-wider">{{ post.title }}</h1>
-                <h3 class="text-center lg:text-lg text-md lg:font-bold font-semibold pt-5 pb-10 text-white tracking-normal">
-                    {{ post.published_at }}
+            <div class="flex flex-col pl-6 pr-6 text-gray-300 mb-4">
+                <h1 class="text-center lg:text-3xl text-xl lg:font-bold font-semibold pt-10 text-green-300 tracking-wider pointer-events-none">{{ post.title }}</h1>
+                <h3 class="text-center lg:text-2xl text-lg lg:font-bold font-semibold pt-5 pb-10 text-gray-500 tracking-normal pointer-events-none">
+                    Published {{ humanPublishDate }}
                 </h3>
             </div>
-            <div class="lg:pl-32 lg:pr-32 p-6 bg-white rounded-lg">
-                <article class="prose prose-lg lg:prose-xl xl:prose-2xl" v-html="displayMarkdown"></article>
+            <div class="lg:pl-32 lg:pr-32 p-6">
+                <article class="prose lg:prose-lg xl:prose-xl" v-html="displayMarkdown"></article>
             </div>
         </div>
     </div>
@@ -19,8 +19,14 @@
 
 <script>
     import marked from 'marked';
+    import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+    import dayjs from 'dayjs';
+    import relativeTime from 'dayjs/plugin/relativeTime';
 
     export default {
+        components: {
+            PulseLoader,
+        },
         data() {
             return {
                 isLoading: false,
@@ -31,7 +37,8 @@
                     excerpt: '',
                     body: '',
                     author: {
-                        id: '', name: ''
+                        id: '',
+                        name: '',
                     },
                     published_at: '',
                     created_at: '',
@@ -42,7 +49,13 @@
         computed: {
             displayMarkdown() {
                 return marked(this.post.body);
-            }
+            },
+            humanPublishDate() {
+                return dayjs(this.post.published_at).fromNow();
+            },
+        },
+        created() {
+            dayjs.extend(relativeTime);
         },
         mounted() {
             this.isLoading = true;

@@ -7,7 +7,7 @@ export class Form {
      * @param {object} data
      * @param {string} accessToken
      */
-    constructor(data, accessToken) {
+    constructor(data, accessToken = '') {
         this.apiUrl = '/api/v1';
         this.accessToken = accessToken;
 

@@ -1,8 +1,8 @@
 <template>
     <div class="flex items-center justify-center">
-        <div class="bg-white p-6 max-w-xl w-full p-8 rounded-lg">
+        <div class="p-6 max-w-xl w-full p-8 shadow-lg">
             <form action="#" @submit.prevent="login()" @keydown="form.errors.clear($event.target.name)" class="shadow-lg">
-                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Admin Login</h2>
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4 pointer-events-none">Login</h2>
                 <div class="text-center font-semibold text-sm mb-4"
                      :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
                      v-if="form.errors.any() || status === 'success'"
@@ -12,7 +12,7 @@
                     <span class="block text-sm font-bold mb-2 uppercase">Email Address:</span>
                     <input type="email"
                            name="email"
-                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                           class="text-gray-100 leading-normal block w-full rounded bg-gray-600 px-4 py-2 focus:outline-none"
                            v-model="form.email"
                     >
                     <span class="w-full text-red-400 block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
@@ -22,7 +22,7 @@
                     <span class="block text-sm font-bold mb-2 uppercase">Password:</span>
                     <input type="password"
                            name="password"
-                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                           class="text-gray-100 leading-normal block w-full rounded bg-gray-600 px-4 py-2 focus:outline-none"
                            v-model="form.password"
                     >
                     <span class="w-full text-red-400 block" v-if="form.errors.has('password')" v-text="form.errors.get('password')"></span>
@@ -47,7 +47,7 @@
 
                 <button type="submit"
                         :class="{ 'opacity-50 cursor-not-allowed': form.errors.any() || isLoading }"
-                        class="w-full rounded px-4 py-2 uppercase bg-green-500 text-white text-lg leading-normal font-bold hover:bg-green-600 focus:outline-none active:bg-green-500"
+                        class="w-full rounded-full px-4 py-2 uppercase bg-green-500 text-white text-lg leading-normal font-bold hover:bg-green-600 focus:outline-none active:bg-green-500"
                         :disabled="isLoading || form.errors.any()"
                         v-text="buttonText"
                 ></button>
@@ -72,7 +72,7 @@
                     password: '',
                     recaptcha: '',
                 }),
-                buttonText: 'Login',
+                buttonText: 'Enter',
                 message: '',
                 status: '',
             }
@@ -84,14 +84,14 @@
         },
         methods: {
             login() {
-                this.buttonText = 'Logging In...';
+                this.buttonText = 'Entering...';
                 this.message = '';
                 this.status = '';
                 this.$refs.captcha.execute();
                 this.$store.dispatch('signIn', {
                     form: this.form,
                 }).then((response) => {
-                    this.buttonText = 'Login';
+                    this.buttonText = 'Enter';
                     this.$router.push({ name: 'admin_dashboard' });
                 })
                   .catch((error) => {

@@ -21,9 +21,9 @@ class PostResource extends JsonResource
             'slug' => $this->slug,
             'excerpt' => $this->excerpt,
             'body' => $this->body,
-            'published_at' => $this->published_at->format('F j, Y H:i'),
-            'created_at' => $this->created_at->format('F j, Y H:i'),
-            'updated_at' => $this->updated_at->format('F j, Y H:i'),
+            'published_at' => $this->published_at->format('Y-m-d H:i:s'),
+            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+            'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
         ];
     }
 }

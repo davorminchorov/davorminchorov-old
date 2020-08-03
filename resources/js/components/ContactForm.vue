@@ -1,8 +1,8 @@
 <template>
-    <div class="max-w-3xl w-full lg:p-10 p-6">
-        <div class="bg-white p-6 p-8 rounded-lg shadow-lg">
+    <div class="max-w-3xl w-full lg:p-10 lg:pt-0 p-6 pt-0">
+        <div class="p-6 p-8 rounded-lg shadow-lg">
             <form action="#" @submit.prevent="send()" @keydown="form.errors.clear($event.target.name)">
-                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">Contact Me</h2>
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4 pointer-events-none">Contact Me</h2>
                 <div class="text-center font-semibold text-sm mb-4"
                      :class="{ 'text-red-400': form.errors.any(), 'text-green-400': status === 'success'}"
                      v-if="form.errors.any() || status === 'success'"
@@ -12,7 +12,7 @@
                     <span class="block text-sm font-bold mb-2 uppercase">Full Name:</span>
                     <input type="text"
                            name="name"
-                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                           class="text-gray-100 leading-normal block w-full rounded bg-gray-600 px-4 py-2 focus:outline-none"
                            v-model="form.name"
                     >
                     <span class="w-full text-red-400 block" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
@@ -22,7 +22,7 @@
                     <span class="block text-sm font-bold mb-2 uppercase">Email Address:</span>
                     <input type="email"
                            name="email"
-                           class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                           class="text-gray-100 leading-normal block w-full rounded bg-gray-600 px-4 py-2 focus:outline-none"
                            v-model="form.email"
                     >
                     <span class="w-full text-red-400 block" v-if="form.errors.has('email')" v-text="form.errors.get('email')"></span>
@@ -32,7 +32,7 @@
                 <label class="block mb-4">
                     <span class="block text-sm font-bold mb-2 uppercase">Message:</span>
                     <textarea name="message"
-                              class="text-gray-900 leading-normal block w-full rounded bg-gray-200 px-4 py-2 focus:outline-none"
+                              class="text-gray-100 leading-normal block w-full rounded bg-gray-600 px-4 py-2 focus:outline-none"
                               v-model="form.message"
                               rows="5"
                     ></textarea>
@@ -58,7 +58,7 @@
 
                 <button type="submit"
                         :class="{ 'opacity-50 cursor-not-allowed': form.errors.any() || isLoading }"
-                        class="w-full rounded px-4 py-2 uppercase bg-green-500 hover:bg-green-600 text-white text-lg leading-normal font-bold focus:outline-none active:bg-green-500"
+                        class="w-full rounded-full px-4 py-2 uppercase bg-green-500 hover:bg-green-600 text-white text-lg leading-normal font-bold focus:outline-none active:bg-green-500"
                         :disabled="isLoading || form.errors.any()"
                         v-text="buttonText"
                 >

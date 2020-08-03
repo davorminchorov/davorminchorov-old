@@ -20,6 +20,16 @@
     width: 1.5em;
 }
 
+.material-design-icon.icon-3x {
+    height: 3em;
+    width: 3em;
+}
+
+.material-design-icon.icon-3x > .material-design-icon__svg {
+    height: 3em;
+    width: 3em;
+}
+
 iframe, img, object, svg {
     display: inline;
     vertical-align: middle;
