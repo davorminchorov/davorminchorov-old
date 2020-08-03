@@ -36,9 +36,9 @@ class PostTest extends TestCase
                     'author' => [
                         'name' => 'Davor Minchorov'
                     ],
-                    'published_at' => $publishedPosts[2]['published_at']->format('F j, Y H:i'),
-                    'created_at' => $publishedPosts[2]['created_at']->format('F j, Y H:i'),
-                    'updated_at' => $publishedPosts[2]['updated_at']->format('F j, Y H:i'),
+                    'published_at' => $publishedPosts[2]['published_at']->format('Y-m-d H:i:s'),
+                    'created_at' => $publishedPosts[2]['created_at']->format('Y-m-d H:i:s'),
+                    'updated_at' => $publishedPosts[2]['updated_at']->format('Y-m-d H:i:s'),
                 ],
                 [
                     'id' => $publishedPosts[1]['id'],
@@ -49,9 +49,9 @@ class PostTest extends TestCase
                     'author' => [
                         'name' => 'Davor Minchorov'
                     ],
-                    'published_at' => $publishedPosts[1]['published_at']->format('F j, Y H:i'),
-                    'created_at' => $publishedPosts[1]['created_at']->format('F j, Y H:i'),
-                    'updated_at' => $publishedPosts[1]['updated_at']->format('F j, Y H:i'),
+                    'published_at' => $publishedPosts[1]['published_at']->format('Y-m-d H:i:s'),
+                    'created_at' => $publishedPosts[1]['created_at']->format('Y-m-d H:i:s'),
+                    'updated_at' => $publishedPosts[1]['updated_at']->format('Y-m-d H:i:s'),
                 ],
                 [
                     'id' => $publishedPosts[0]['id'],
@@ -62,9 +62,9 @@ class PostTest extends TestCase
                     'author' => [
                         'name' => 'Davor Minchorov'
                     ],
-                    'published_at' => $publishedPosts[0]['published_at']->format('F j, Y H:i'),
-                    'created_at' => $publishedPosts[0]['created_at']->format('F j, Y H:i'),
-                    'updated_at' => $publishedPosts[0]['updated_at']->format('F j, Y H:i'),                ],
+                    'published_at' => $publishedPosts[0]['published_at']->format('Y-m-d H:i:s'),
+                    'created_at' => $publishedPosts[0]['created_at']->format('Y-m-d H:i:s'),
+                    'updated_at' => $publishedPosts[0]['updated_at']->format('Y-m-d H:i:s'),                ],
             ],
         ]);
 
@@ -108,9 +108,9 @@ class PostTest extends TestCase
                 'slug' => $publishedPost->slug,
                 'body' => $publishedPost->body,
                 'excerpt' => $publishedPost->excerpt,
-                'published_at' => $publishedPost->published_at->format('F j, Y H:i'),
-                'created_at' => $publishedPost->created_at->format('F j, Y H:i'),
-                'updated_at' => $publishedPost->updated_at->format('F j, Y H:i'),
+                'published_at' => $publishedPost->published_at->format('Y-m-d H:i:s'),
+                'created_at' => $publishedPost->created_at->format('Y-m-d H:i:s'),
+                'updated_at' => $publishedPost->updated_at->format('Y-m-d H:i:s'),
             ],
         ]);
 
