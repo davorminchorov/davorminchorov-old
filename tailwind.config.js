@@ -8,6 +8,7 @@ module.exports = {
     typography: (theme) => ({
       default: {
         css: {
+            color: theme('colors.gray.300'),
             h1: {
               color: theme('colors.gray.500'),
             },
@@ -27,11 +28,18 @@ module.exports = {
                 color: theme('colors.gray.500'),
             },
           a: {
-            color: theme('colors.green.500'),
+            color: theme('colors.green.300'),
             '&:hover': {
-              color: theme('colors.green.600'),
+              color: theme('colors.green.500'),
             },
             'text-decoration': 'none',
+          },
+          strong: {
+              color: theme('colors.gray-100'),
+              fontWeight: '600',
+          },
+          blockquote: {
+              color: theme('colors.white'),
           },
         }
       }
