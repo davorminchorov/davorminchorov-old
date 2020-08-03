@@ -10,9 +10,11 @@
                     <span v-if="isLoading">Loading blog posts, please wait... <pulse-loader color="white" /></span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
-                <div class="flex flex-col pb-10" v-for="post in posts" v-else>
-                    <div class="flex justify-between items-center pb-2">
-                        <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="lg:text-2xl text-lg text-green-300 hover:text-green-400 lg:font-bold font-semibold tracking-wide pb-2">{{ post.title }}</router-link>
+                <div class="md:flex md:flex-col pb-10" v-for="post in posts" v-else>
+                    <div class="md:flex md:justify-between md:items-center pb-2">
+                        <div>
+                            <router-link :to="{name: 'single_blog_post', params: {slug: post.slug }}" class="lg:text-2xl text-lg text-green-300 hover:text-green-400 lg:font-bold font-semibold tracking-wide pb-2">{{ post.title }}</router-link>
+                        </div>
                         <span class="lg:text-lg text-md text-gray-500 pb-2 tracking-normal pointer-events-none">
                             Published {{ humanPublishDate(post.published_at) }}
                         </span>
