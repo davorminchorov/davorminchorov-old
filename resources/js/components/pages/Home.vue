@@ -5,10 +5,10 @@
                 <dm-image></dm-image>
             </div>
             <div class="flex flex-col items-center justify-center text-white mb-4">
-                <div class="flex flex-col lg:w-3/4 lg:p-6 p-3">
+                <div class="flex flex-col lg:w-3/4 lg:p-6 lg:pr-32 lg:pl-32 p-3">
                     <dm-about-me></dm-about-me>
                 </div>
-                <div class="flex flex-col lg:w-3/4 lg:p-6 p-3">
+                <div class="flex flex-col lg:w-3/4 lg:p-6 lg:pr-32 lg:pl-32 p-3">
                     <dm-technology-stack></dm-technology-stack>
                 </div>
             </div>
