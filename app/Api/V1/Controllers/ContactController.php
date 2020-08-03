@@ -10,7 +10,6 @@ use TimeHunter\LaravelGoogleReCaptchaV3\GoogleReCaptchaV3;
 
 class ContactController extends ApiController
 {
-
     /**
      * Send contact email to website owner.
      *

@@ -10,7 +10,6 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-
     use RefreshDatabase;
 
     /**
@@ -22,16 +21,16 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $jsonResponse = $response->json();
 
-        $response = $this->json('GET', $this->apiV1Url . 'admin/posts', [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        $response = $this->json('GET', $this->apiV1Url.'admin/posts', [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJson([
@@ -84,26 +83,24 @@ class PostTest extends TestCase
         $publishedPost = factory(Post::class)->states('published')->create();
         $unpublishedPost = factory(Post::class)->states('unpublished')->create();
 
-
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $jsonResponse = $response->json();
 
-        $response = $this->json('GET', $this->apiV1Url . 'admin/posts', [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        $response = $this->json('GET', $this->apiV1Url.'admin/posts', [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertSeeText($unpublishedPost->title);
         $response->assertSeeText($publishedPost->title);
         $response->assertStatus(Response::HTTP_OK);
     }
-
 
     /**
      * @test
@@ -114,21 +111,21 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => $title = 'A new title',
             'slug' => str_slug($title),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $this->assertDatabaseHas('posts', [
@@ -162,7 +159,6 @@ class PostTest extends TestCase
         $response->assertStatus(Response::HTTP_CREATED);
     }
 
-
     /**
      * @test
      */
@@ -172,20 +168,20 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('title');
@@ -201,26 +197,25 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => 'A new title',
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('slug');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -231,26 +226,25 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('excerpt');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -261,20 +255,20 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('body');
@@ -290,26 +284,25 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('published_at');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -320,21 +313,21 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('POST', $this->apiV1Url . 'admin/posts', [
+        $response = $this->json('POST', $this->apiV1Url.'admin/posts', [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y/m/d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('published_at');
@@ -351,23 +344,22 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => $title = 'A new updated title',
             'slug' => str_slug($title),
             'body' => 'This is test body updated text',
             'excerpt' => 'This is test excerpt updated text',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
-
 
         $this->assertDatabaseHas('posts', [
             'id' => 1,
@@ -411,20 +403,20 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('title');
@@ -441,26 +433,25 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => 'A new title',
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('slug');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -472,26 +463,25 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('excerpt');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -503,20 +493,20 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y-m-d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('body');
@@ -533,26 +523,25 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('published_at');
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
-
 
     /**
      * @test
@@ -564,21 +553,21 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('PATCH', $this->apiV1Url . 'admin/posts/' . $post->id, [
+        $response = $this->json('PATCH', $this->apiV1Url.'admin/posts/'.$post->id, [
             'title' => 'A new title',
             'slug' => str_slug('A new title'),
             'body' => 'This is test body text',
             'excerpt' => 'This is test excerpt test',
             'published_at' => now()->subDays(3)->format('Y/m/d H:i:s'),
         ], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertJsonValidationErrors('published_at');
@@ -595,15 +584,15 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $post = factory(Post::class)->create();
 
-        $response = $this->json('POST', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
-        $response = $this->json('DELETE', $this->apiV1Url . 'admin/posts/' . $post->id, [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token']
+        $response = $this->json('DELETE', $this->apiV1Url.'admin/posts/'.$post->id, [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $this->assertDatabaseMissing('posts', [
@@ -620,5 +609,4 @@ class PostTest extends TestCase
 
         $response->assertStatus(Response::HTTP_OK);
     }
-
 }

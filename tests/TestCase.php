@@ -14,13 +14,10 @@ abstract class TestCase extends BaseTestCase
      */
     protected $apiV1Url;
 
-    /**
-     *
-     */
     public function setUp() : void
     {
         parent::setUp();
 
-        $this->apiV1Url = config('app.url') . '/api/v1/';
+        $this->apiV1Url = config('app.url').'/api/v1/';
     }
 }

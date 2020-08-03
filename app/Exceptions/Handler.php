@@ -57,7 +57,7 @@ class Handler extends ExceptionHandler
                 'status' => 'error',
                 'message' => 'The provided token has expired.',
             ], Response::HTTP_UNAUTHORIZED);
-        } else if ($exception instanceof TokenInvalidException) {
+        } elseif ($exception instanceof TokenInvalidException) {
             return response()->json([
                 'status_code' => Response::HTTP_UNAUTHORIZED,
                 'status_message' => $exception->getMessage(),
