@@ -123,7 +123,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'predis'),
-            'prefix' => str_slug(env('APP_NAME', 'laravel'), '_') . '_database_',
+            'prefix' => str_slug(env('APP_NAME', 'laravel'), '_').'_database_',
             'parameters' => ['password' => env('REDIS_PASSWORD', $url['pass'] ?? null)],
         ],
 

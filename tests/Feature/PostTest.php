@@ -19,7 +19,7 @@ class PostTest extends TestCase
     {
         $user = factory(User::class)->create();
         $publishedPosts = factory(Post::class, 3)->state('published')->create();
-        $response = $this->json('GET', $this->apiV1Url . 'posts');
+        $response = $this->json('GET', $this->apiV1Url.'posts');
 
         $response->assertJson([
             'status_code' => Response::HTTP_OK,
@@ -34,7 +34,7 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[2]['body'],
                     'excerpt' => $publishedPosts[2]['excerpt'],
                     'author' => [
-                        'name' => 'Davor Minchorov'
+                        'name' => 'Davor Minchorov',
                     ],
                     'published_at' => $publishedPosts[2]['published_at']->format('Y-m-d H:i:s'),
                     'created_at' => $publishedPosts[2]['created_at']->format('Y-m-d H:i:s'),
@@ -47,7 +47,7 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[1]['body'],
                     'excerpt' => $publishedPosts[1]['excerpt'],
                     'author' => [
-                        'name' => 'Davor Minchorov'
+                        'name' => 'Davor Minchorov',
                     ],
                     'published_at' => $publishedPosts[1]['published_at']->format('Y-m-d H:i:s'),
                     'created_at' => $publishedPosts[1]['created_at']->format('Y-m-d H:i:s'),
@@ -60,7 +60,7 @@ class PostTest extends TestCase
                     'body' => $publishedPosts[0]['body'],
                     'excerpt' => $publishedPosts[0]['excerpt'],
                     'author' => [
-                        'name' => 'Davor Minchorov'
+                        'name' => 'Davor Minchorov',
                     ],
                     'published_at' => $publishedPosts[0]['published_at']->format('Y-m-d H:i:s'),
                     'created_at' => $publishedPosts[0]['created_at']->format('Y-m-d H:i:s'),
@@ -80,7 +80,7 @@ class PostTest extends TestCase
         $publishedPost = factory(Post::class)->state('published')->create();
         $unpublishedPost = factory(Post::class)->state('unpublished')->create();
 
-        $response = $this->json('GET', $this->apiV1Url . 'posts');
+        $response = $this->json('GET', $this->apiV1Url.'posts');
 
         $response->assertDontSeeText($unpublishedPost->title);
         $response->assertSeeText($publishedPost->title);
@@ -95,7 +95,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
         $publishedPost = factory(Post::class)->state('published')->create();
 
-        $response = $this->json('GET', $this->apiV1Url . 'posts/' . $publishedPost->slug);
+        $response = $this->json('GET', $this->apiV1Url.'posts/'.$publishedPost->slug);
 
         $response->assertJson([
             'status_code' => Response::HTTP_OK,
