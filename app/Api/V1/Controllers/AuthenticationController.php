@@ -25,7 +25,7 @@ class AuthenticationController extends ApiController
             return $this->respondWithBadRequest('It looks like you are a robot or you did something a robot would do.');
         }
 
-        if (!$token = auth()->attempt($loginRequest->only(['email', 'password']))) {
+        if (! $token = auth()->attempt($loginRequest->only(['email', 'password']))) {
             return $this->respondWithUnauthorized();
         }
 

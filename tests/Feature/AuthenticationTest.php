@@ -20,10 +20,10 @@ class AuthenticationTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
@@ -36,11 +36,10 @@ class AuthenticationTest extends TestCase
             'data' => [
                 'access_token' => $jsonResponse['data']['access_token'],
                 'token_type' => 'bearer',
-                'expires_in' => $jsonResponse['data']['expires_in']
+                'expires_in' => $jsonResponse['data']['expires_in'],
             ],
         ]);
     }
-
 
     /**
      * @test
@@ -51,10 +50,10 @@ class AuthenticationTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => 'test@example.com',
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
@@ -75,10 +74,10 @@ class AuthenticationTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
@@ -91,12 +90,12 @@ class AuthenticationTest extends TestCase
             'data' => [
                 'access_token' => $jsonResponse['data']['access_token'],
                 'token_type' => 'bearer',
-                'expires_in' => $jsonResponse['data']['expires_in']
+                'expires_in' => $jsonResponse['data']['expires_in'],
             ],
         ]);
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/logout', [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token'],
+        $response = $this->json('post', $this->apiV1Url.'auth/logout', [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -107,15 +106,14 @@ class AuthenticationTest extends TestCase
             'message' => 'You logged out successfully!',
         ]);
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/me', [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token'],
+        $response = $this->json('post', $this->apiV1Url.'auth/me', [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
-            'message' => 'Unauthenticated.'
+            'message' => 'Unauthenticated.',
         ]);
-
     }
 
     /**
@@ -127,10 +125,10 @@ class AuthenticationTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $jsonResponse = $response->json();
 
@@ -143,12 +141,12 @@ class AuthenticationTest extends TestCase
             'data' => [
                 'access_token' => $jsonResponse['data']['access_token'],
                 'token_type' => 'bearer',
-                'expires_in' => $jsonResponse['data']['expires_in']
+                'expires_in' => $jsonResponse['data']['expires_in'],
             ],
         ]);
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/me', [], [
-            'Authorization' => 'Bearer ' . $jsonResponse['data']['access_token'],
+        $response = $this->json('post', $this->apiV1Url.'auth/me', [], [
+            'Authorization' => 'Bearer '.$jsonResponse['data']['access_token'],
         ]);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -175,10 +173,10 @@ class AuthenticationTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $jsonResponse = $response->json();
@@ -193,12 +191,12 @@ class AuthenticationTest extends TestCase
             'data' => [
                 'access_token' => $accessToken,
                 'token_type' => 'bearer',
-                'expires_in' => $jsonResponse['data']['expires_in']
+                'expires_in' => $jsonResponse['data']['expires_in'],
             ],
         ]);
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/refresh', [], [
-            'Authorization' => 'Bearer ' . $accessToken,
+        $response = $this->json('post', $this->apiV1Url.'auth/refresh', [], [
+            'Authorization' => 'Bearer '.$accessToken,
         ]);
 
         $jsonResponse = $response->json();
@@ -214,14 +212,14 @@ class AuthenticationTest extends TestCase
             'data' => [
                 'access_token' => $newAccessToken,
                 'token_type' => 'bearer',
-                'expires_in' => $jsonResponse['data']['expires_in']
+                'expires_in' => $jsonResponse['data']['expires_in'],
             ],
         ]);
 
         $this->assertNotEquals($accessToken, $newAccessToken);
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/refresh', [], [
-            'Authorization' => 'Bearer ' . $accessToken,
+        $response = $this->json('post', $this->apiV1Url.'auth/refresh', [], [
+            'Authorization' => 'Bearer '.$accessToken,
         ]);
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
@@ -240,11 +238,11 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/me');
+        $response = $this->json('post', $this->apiV1Url.'auth/me');
 
         $response->assertStatus(Response::HTTP_UNAUTHORIZED);
         $response->assertExactJson([
-            'message' => 'Unauthenticated.'
+            'message' => 'Unauthenticated.',
         ]);
     }
 
@@ -255,9 +253,9 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -266,9 +264,9 @@ class AuthenticationTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email field is required.'
+                    'The email field is required.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -279,9 +277,9 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
-            'email' => 'test@example.com'
+            'email' => 'test@example.com',
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -290,9 +288,9 @@ class AuthenticationTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'password' => [
-                    'The password field is required.'
+                    'The password field is required.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -303,10 +301,10 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $response = $this->json('post', $this->apiV1Url . 'auth/login', [
+        $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
             'email' => 'test',
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -315,9 +313,9 @@ class AuthenticationTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email must be a valid email address.'
+                    'The email must be a valid email address.',
                 ],
-            ]
+            ],
         ]);
     }
 }

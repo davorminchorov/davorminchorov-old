@@ -9,7 +9,6 @@ use Tests\TestCase;
 
 class ContactTest extends TestCase
 {
-
     /**
      * @test
      */
@@ -19,7 +18,7 @@ class ContactTest extends TestCase
 
         Mail::assertNotQueued(SendContactEmail::class);
 
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test@example.com',
@@ -36,16 +35,14 @@ class ContactTest extends TestCase
         ]);
 
         Mail::assertQueued(SendContactEmail::class);
-
     }
-
 
     /**
      * @test
      */
     public function a_name_is_required(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'email' => 'test@example.com',
             'message' => 'This is a test message',
@@ -56,19 +53,18 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'name' => [
-                    'The name field is required.'
+                    'The name field is required.',
                 ],
-            ]
+            ],
         ]);
     }
-
 
     /**
      * @test
      */
     public function an_email_is_required(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'message' => 'This is a test message',
@@ -79,9 +75,9 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email field is required.'
+                    'The email field is required.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -90,7 +86,7 @@ class ContactTest extends TestCase
      */
     public function an_email_must_be_a_valid_email_address(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test',
@@ -102,9 +98,9 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email must be a valid email address.'
+                    'The email must be a valid email address.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -113,7 +109,7 @@ class ContactTest extends TestCase
      */
     public function an_email_must_be_a_valid_email_address_with_a_valid_email_domain(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test@adomainthatdoesnotexist.com',
@@ -125,9 +121,9 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email must be a valid email address.'
+                    'The email must be a valid email address.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -136,7 +132,7 @@ class ContactTest extends TestCase
      */
     public function an_email_must_be_a_valid_email_address_with_a_valid_rfc_format(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'email' => 'op[p[p[opopl;[@example.com',
@@ -148,9 +144,9 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'email' => [
-                    'The email must be a valid email address.'
+                    'The email must be a valid email address.',
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -159,7 +155,7 @@ class ContactTest extends TestCase
      */
     public function a_message_is_required(): void
     {
-        $response = $this->json('post', $this->apiV1Url . 'contact', [
+        $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
             'email' => 'test@example.com',
@@ -170,9 +166,9 @@ class ContactTest extends TestCase
             'message' => 'The given data was invalid.',
             'errors' => [
                 'message' => [
-                    'The message field is required.'
+                    'The message field is required.',
                 ],
-            ]
+            ],
         ]);
     }
 }

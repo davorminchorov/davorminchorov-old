@@ -24,7 +24,7 @@ class ApiController
             'data' => [
                 'access_token' => $token,
                 'token_type' => 'bearer',
-                'expires_in' => auth()->factory()->getTTL() * 60
+                'expires_in' => auth()->factory()->getTTL() * 60,
             ],
         ]);
     }
@@ -45,7 +45,7 @@ class ApiController
     }
 
     /**
-     * Respond with the status code of 200 and data if applicable
+     * Respond with the status code of 200 and data if applicable.
      *
      * @param $message
      * @param array $data
@@ -63,7 +63,7 @@ class ApiController
     }
 
     /**
-     * Respond with the status code of 400 and data if applicable
+     * Respond with the status code of 400 and data if applicable.
      *
      * @param $message
      * @return JsonResponse

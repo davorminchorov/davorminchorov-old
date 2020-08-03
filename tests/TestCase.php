@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Illuminate\Foundation\Testing\TestResponse;
+use Illuminate\Testing\TestResponse;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -14,13 +14,10 @@ abstract class TestCase extends BaseTestCase
      */
     protected $apiV1Url;
 
-    /**
-     *
-     */
     public function setUp() : void
     {
         parent::setUp();
 
-        $this->apiV1Url = config('app.url') . '/api/v1/';
+        $this->apiV1Url = config('app.url').'/api/v1/';
     }
 }
