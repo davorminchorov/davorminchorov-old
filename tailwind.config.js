@@ -8,6 +8,9 @@ module.exports = {
     typography: (theme) => ({
       default: {
         css: {
+            code: {
+              color: theme('color.gray.300'),
+            },
             color: theme('colors.gray.300'),
             h1: {
               color: theme('colors.gray.500'),
