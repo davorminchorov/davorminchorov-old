@@ -17,9 +17,9 @@ class PostTest extends TestCase
      */
     public function it_shows_a_list_of_admin_blog_posts(): void
     {
-        $posts = factory(Post::class, 3)->create();
+        $posts = Post::factory()->times(3)->create();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -80,10 +80,10 @@ class PostTest extends TestCase
      */
     public function it_shows_a_list_of_both_published_and_unpublished_posts(): void
     {
-        $publishedPost = factory(Post::class)->states('published')->create();
-        $unpublishedPost = factory(Post::class)->states('unpublished')->create();
+        $publishedPost = Post::factory()->published()->create();
+        $unpublishedPost = Post::factory()->unpublished()->create();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -109,7 +109,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -166,7 +166,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -195,7 +195,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -224,7 +224,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -253,7 +253,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -282,7 +282,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -311,7 +311,7 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -341,8 +341,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -400,8 +400,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -430,8 +430,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -460,8 +460,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -490,8 +490,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -520,8 +520,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -550,8 +550,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -581,8 +581,8 @@ class PostTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $post = factory(Post::class)->create();
+        $user = User::factory()->create();
+        $post = Post::factory()->create();
 
         $response = $this->json('POST', $this->apiV1Url.'auth/login', [
             'test' => 'test',
