@@ -38,9 +38,11 @@ return [
         ],
         'options' => [
             'endpoint' => env('SPARKPOST_ENDPOINT', 'https://api.eu.sparkpost.com/api/v1'),
-            'open_tracking' => false,
-            'click_tracking' => false,
-            'transactional' => true,
+            'options' => [
+                'open_tracking' => false,
+                'click_tracking' => false,
+                'transactional' => true,
+            ],
         ],
     ],
 
