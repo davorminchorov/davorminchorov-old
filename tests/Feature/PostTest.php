@@ -17,8 +17,8 @@ class PostTest extends TestCase
      */
     public function it_shows_a_list_of_published_posts(): void
     {
-        $user = factory(User::class)->create();
-        $publishedPosts = factory(Post::class, 3)->state('published')->create();
+        $user = User::factory()->create();
+        $publishedPosts = Post::factory()->times(3)->published()->create();
         $response = $this->json('GET', $this->apiV1Url.'posts');
 
         $response->assertJson([
@@ -76,9 +76,9 @@ class PostTest extends TestCase
      */
     public function it_does_not_show_a_list_of_unpublished_posts(): void
     {
-        $user = factory(User::class)->create();
-        $publishedPost = factory(Post::class)->state('published')->create();
-        $unpublishedPost = factory(Post::class)->state('unpublished')->create();
+        $user = User::factory()->create();
+        $publishedPost = Post::factory()->published()->create();
+        $unpublishedPost = Post::factory()->unpublished()->create();
 
         $response = $this->json('GET', $this->apiV1Url.'posts');
 
@@ -92,8 +92,8 @@ class PostTest extends TestCase
      */
     public function it_shows_a_single_blog_post(): void
     {
-        $user = factory(User::class)->create();
-        $publishedPost = factory(Post::class)->state('published')->create();
+        $user = User::factory()->create();
+        $publishedPost = Post::factory()->published()->create();
 
         $response = $this->json('GET', $this->apiV1Url.'posts/'.$publishedPost->slug);
 

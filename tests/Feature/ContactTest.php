@@ -21,7 +21,7 @@ class ContactTest extends TestCase
         $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
-            'email' => 'test@example.com',
+            'email' => 'test@gmail.com',
             'message' => 'This is a test message',
         ]);
 
@@ -44,7 +44,7 @@ class ContactTest extends TestCase
     {
         $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
-            'email' => 'test@example.com',
+            'email' => 'test@gmail.com',
             'message' => 'This is a test message',
         ]);
 
@@ -135,7 +135,7 @@ class ContactTest extends TestCase
         $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
-            'email' => 'op[p[p[opopl;[@example.com',
+            'email' => 'op[p[p[opopl;[@gmail.com',
             'message' => 'This is a test message',
         ]);
 
@@ -158,7 +158,7 @@ class ContactTest extends TestCase
         $response = $this->json('post', $this->apiV1Url.'contact', [
             'test' => 'test',
             'name' => 'John Doe',
-            'email' => 'test@example.com',
+            'email' => 'test@gmail.com',
         ]);
 
         $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);

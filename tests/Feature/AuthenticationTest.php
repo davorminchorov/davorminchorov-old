@@ -18,7 +18,7 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -48,7 +48,7 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -72,7 +72,7 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -123,7 +123,7 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
@@ -171,7 +171,7 @@ class AuthenticationTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->json('post', $this->apiV1Url.'auth/login', [
             'test' => 'test',
