@@ -14,7 +14,7 @@ abstract class TestCase extends BaseTestCase
      */
     protected $apiV1Url;
 
-    public function setUp() : void
+    protected function setUp() : void
     {
         parent::setUp();
 
