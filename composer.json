@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "davorminchorov/davorminchorov",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Davor Minchorov's personal website and blog",
     "keywords": [
-        "framework",
-        "laravel"
+        "portfolio",
+        "website",
+        "blog"
     ],
     "license": "MIT",
     "require": {
@@ -18,9 +19,9 @@
         "predis/predis": "^1.1",
         "timehunter/laravel-google-recaptcha-v3": "^v2.4.0",
         "tymon/jwt-auth": "^1.0",
-        "vemcogroup/laravel-sparkpost-driver": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1"
+        "guzzlehttp/guzzle": "^7.0.1",
+        "aws/aws-sdk-php": "^3.173"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
