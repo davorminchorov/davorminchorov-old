@@ -151,13 +151,13 @@
 }
 
 .markdown-body a {
-  @apply .font-semibold .text-green-500 .no-underline;
+  @apply font-semibold text-green-500 no-underline;
 }
 
 .markdown-body a:active,
 .markdown-body a:hover {
   outline-width: 0;
-  @apply .text-green-600 .no-underline;
+  @apply text-green-600 no-underline;
 }
 
 .markdown-body strong {
