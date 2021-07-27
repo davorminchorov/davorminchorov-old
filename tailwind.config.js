@@ -4,48 +4,6 @@ module.exports = {
     important: false,
     separator: ':',
     theme: {
-        typography: (theme) => ({
-            default: {
-                css: {
-                    code: {
-                        color: theme('color.gray.300'),
-                    },
-                    color: theme('colors.gray.300'),
-                    h1: {
-                        color: theme('colors.gray.500'),
-                    },
-                    h2: {
-                        color: theme('colors.gray.500'),
-                    },
-                    h3: {
-                        color: theme('colors.gray.500'),
-                    },
-                    h4: {
-                        color: theme('colors.gray.500'),
-                    },
-                    h5: {
-                        color: theme('colors.gray.500'),
-                    },
-                    h6: {
-                        color: theme('colors.gray.500'),
-                    },
-                    a: {
-                        color: theme('colors.green.300'),
-                        '&:hover': {
-                            color: theme('colors.green.500'),
-                        },
-                        'text-decoration': 'none',
-                    },
-                    strong: {
-                        color: theme('colors.gray-100'),
-                        fontWeight: '600',
-                    },
-                    blockquote: {
-                        color: theme('colors.white'),
-                    },
-                },
-            },
-        }),
         colors: {
             black: '#000',
             white: '#fff',
@@ -265,6 +223,50 @@ module.exports = {
         skew: ['0'],
         transitionProperty: {
             default: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+        },
+        extend: {
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        code: {
+                            color: theme('color.gray.300'),
+                        },
+                        color: theme('colors.gray.300'),
+                        h1: {
+                            color: theme('colors.gray.500'),
+                        },
+                        h2: {
+                            color: theme('colors.gray.500'),
+                        },
+                        h3: {
+                            color: theme('colors.gray.500'),
+                        },
+                        h4: {
+                            color: theme('colors.gray.500'),
+                        },
+                        h5: {
+                            color: theme('colors.gray.500'),
+                        },
+                        h6: {
+                            color: theme('colors.gray.500'),
+                        },
+                        a: {
+                            color: theme('colors.green.300'),
+                            '&:hover': {
+                                color: theme('colors.green.500'),
+                            },
+                            'text-decoration': 'none',
+                        },
+                        strong: {
+                            color: theme('colors.gray-100'),
+                            fontWeight: '600',
+                        },
+                        blockquote: {
+                            color: theme('colors.white'),
+                        },
+                    },
+                },
+            }),
         },
     },
     variants: { extend: { fontWeight: ['hover', 'focus'] } },
