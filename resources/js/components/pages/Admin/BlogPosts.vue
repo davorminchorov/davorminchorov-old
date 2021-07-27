@@ -10,7 +10,7 @@
                         Publish New Blog Post
                     </router-link>
                 </div>
-                <div class="lg:p-10 p-6 text-center bg-gray-300 text-gray-600" v-if="isLoading || ! posts.length">
+                <div class="lg:p-10 p-6 text-center bg-gray-200 text-gray-500" v-if="isLoading || ! posts.length">
                     <span v-if="isLoading">Loading posts, please wait...</span>
                     <span v-else>There are no blog posts at the moment.</span>
                 </div>
@@ -24,7 +24,7 @@
                         <th class="p-2">Last Updated At</th>
                         <th class="p-2" colspan="2">Actions</th>
                     </thead>
-                    <tbody class="bg-gray-300">
+                    <tbody class="bg-gray-200">
                         <tr v-for="post in posts" :key="post.id">
                             <td class="p-2"> {{ post.id }}</td>
                             <td class="p-2">{{ post.title }}</td>

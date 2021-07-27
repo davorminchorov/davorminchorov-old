@@ -1,12 +1,12 @@
 <template>
     <div class="flex flex-col justify-around">
-        <div class="lg:p-10 p-6 text-center text-gray-300 text-lg lg:text-2xl pointer-events-none" v-if="isLoading">
+        <div class="lg:p-10 p-6 text-center text-gray-200 text-lg lg:text-2xl pointer-events-none" v-if="isLoading">
             <span>Loading blog post, please wait... <pulse-loader color="white" /></span>
         </div>
         <div v-else>
-            <div class="flex flex-col pl-6 pr-6 text-gray-300 mb-4">
+            <div class="flex flex-col pl-6 pr-6 text-gray-200 mb-4">
                 <h1 class="text-center lg:text-3xl text-xl lg:font-bold font-semibold pt-10 text-green-300 tracking-wider pointer-events-none">{{ post.title }}</h1>
-                <h3 class="text-center lg:text-2xl text-lg lg:font-bold font-semibold pt-5 pb-10 text-gray-500 tracking-normal pointer-events-none">
+                <h3 class="text-center lg:text-2xl text-lg lg:font-bold font-semibold pt-5 pb-10 text-gray-400 tracking-normal pointer-events-none">
                     Published {{ humanPublishDate }}
                 </h3>
             </div>

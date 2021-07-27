@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     target: 'relaxed',
     prefix: '',
@@ -153,7 +155,7 @@ module.exports = {
                     },
                 },
             }),
-            colors: [],
+            colors: { gray: colors.blueGray, green: colors.green },
         },
     },
     variants: { extend: { fontWeight: ['hover', 'focus'] } },

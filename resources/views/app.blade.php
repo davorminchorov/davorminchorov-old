@@ -47,13 +47,13 @@
         <link rel="canonical" href="https://davorminchorov.com" />
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
-    <body class="font-sans text-gray-300 antialiased leading-tight bg-gray-900">
+    <body class="font-sans text-gray-200 antialiased leading-tight bg-gray-900">
         <noscript>
             @if(env('APP_ENV') !== 'local')
                 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53NH9B9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
             @endif
             <div class="flex items-center justify-center">
-                <h2 class="uppercase text-center text-2xl font-semibold text-gray-500 mb-4">
+                <h2 class="uppercase text-center text-2xl font-semibold text-gray-400 mb-4">
                     I'm 100% JavaScript!
                 </h2>
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez">
