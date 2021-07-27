@@ -59,8 +59,13 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez">
             </div>
         </noscript>
-
-        <div id="app"></div>
+        <div class="flex items-center justify-center">
+            <h2 class="uppercase text-center text-2xl font-semibold text-gray-400 mb-4">
+                We’re making redesigns. I’m the designer!
+            </h2>
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez">
+        </div>
+{{--        <div id="app"></div>--}}
     </body>
 
     <script src="{{ mix('/js/app.js') }}"></script>
