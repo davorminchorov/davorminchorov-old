@@ -7,25 +7,13 @@ module.exports = {
     separator: ':',
     theme: {
         spacing: ['0'],
-        backgroundColor: (theme) => theme('colors'),
-        backgroundOpacity: (theme) => theme('opacity'),
         borderColor: (theme) => ({
             ...theme('colors'),
             default: theme('colors.gray.300', 'currentColor'),
         }),
-        borderOpacity: (theme) => theme('opacity'),
-        borderRadius: { none: '0', DEFAULT: '0.25rem' },
-        borderWidth: { 0: '0', DEFAULT: '1px' },
-        boxShadow: {
-            xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-            outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-            DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-        },
-        divideColor: (theme) => theme('borderColor'),
-        divideOpacity: (theme) => theme('borderOpacity'),
-        divideWidth: (theme) => theme('borderWidth'),
-        flexGrow: { DEFAULT: '1' },
-        flexShrink: { DEFAULT: '1' },
+        borderRadius: { none: '0' },
+        borderWidth: ['0'],
+        boxShadow: { xs: '0 0 0 1px rgba(0, 0, 0, 0.05)', outline: '0 0 0 3px rgba(66, 153, 225, 0.5)' },
         fontFamily: {
             sans: [
                 'Roboto',
@@ -69,11 +57,6 @@ module.exports = {
         maxHeight: { full: '100%', screen: '100vh' },
         minHeight: ['0'],
         minWidth: ['0'],
-        padding: (theme) => theme('spacing'),
-        placeholderColor: (theme) => theme('colors'),
-        placeholderOpacity: (theme) => theme('opacity'),
-        textColor: (theme) => theme('colors'),
-        textOpacity: (theme) => theme('opacity'),
         width: (theme) => ({
             auto: 'auto',
             ...theme('spacing'),
@@ -106,12 +89,8 @@ module.exports = {
             full: '100%',
             screen: '100vw',
         }),
-        gap: (theme) => theme('spacing'),
         rotate: ['0'],
         skew: ['0'],
-        transitionProperty: {
-            DEFAULT: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
-        },
         extend: {
             typography: (theme) => ({
                 DEFAULT: {
