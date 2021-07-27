@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-row items-center justify-center text-gray-500 rounded-lg">
+            <div class="flex flex-row items-center justify-center text-gray-400 rounded-lg">
                 <dm-contact-form></dm-contact-form>
             </div>
         </div>

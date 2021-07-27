@@ -6,7 +6,7 @@
             <router-view></router-view>
         </main>
 
-        <footer class="flex items-center justify-center w-full text-gray-500 text-md lg:py-10 py-6">
+        <footer class="flex items-center justify-center w-full text-gray-400 text-md lg:py-10 py-6">
             <a href="https://www.linkedin.com/in/davorminchorov" target="_blank" rel="noreferrer" class="pl-4">
                 <linkedin-icon :size="48" />
             </a>
