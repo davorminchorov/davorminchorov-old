@@ -1,4 +1,5 @@
 # Davor Minchorov
+[![Fix PHP Code Styles](https://github.com/davorminchorov/davorminchorov/actions/workflows/main.yml/badge.svg)](https://github.com/davorminchorov/davorminchorov/actions/workflows/main.yml)
 
 ## Davor Minchorov's personal website and blog.
 
